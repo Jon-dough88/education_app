@@ -11,8 +11,16 @@ class Login extends Component {
         return (
             <div className="jumbotron">
                 <div className="card-body" id="login-card">
-                    <form>
-                        
+                    <form className="form-inline justify-content-center" 
+                    // onSubmit={}
+                    >
+                    <div className="form-group">
+                        <input className="form-control form-control-lg" type="text" required={true} placeholder="Username"></input>
+                    </div>
+                    <div className="form-group">
+                        <input className="form-control form-control-lg" type="text" required={true} placeholder="Password"></input>
+                    </div>  
+                    <input className="btn btn-primary btn-lg" type="submit" value="Login!"></input>
                     </form>
                 </div>
             </div>

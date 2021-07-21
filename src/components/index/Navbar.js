@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import './Navbar.css';
 
-class Navbar extends Component {
+class Navmenu extends Component {
     state = {  }
     render() { 
         return ( 
-           <div>
-               <Navbar bg="primary" fixed="top">
+           <div className="jumbotron" id="navbar">
+               <Navbar bg="dark" fixed="top">
                     <Nav>
                         <LinkContainer to="/">
                             <Nav.Link>
@@ -26,4 +27,4 @@ class Navbar extends Component {
     }
 }
  
-export default Navbar;
+export default Navmenu;
