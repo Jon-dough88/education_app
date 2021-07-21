@@ -9,7 +9,7 @@ class Login extends Component {
 
     render() { 
         return (
-            <div className="jumbotron">
+            <div className="card" id="login-page">
                 <div className="card-body" id="login-card">
                     <form className="form-inline justify-content-center" 
                     // onSubmit={}

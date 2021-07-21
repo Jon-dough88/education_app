@@ -8,7 +8,7 @@ class Navmenu extends Component {
     render() { 
         return ( 
            <div className="jumbotron" id="navbar">
-               <Navbar bg="dark" fixed="top">
+               <Navbar bg="primary" fixed="top">
                     <Nav>
                         <LinkContainer to="/">
                             <Nav.Link>
