@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import './Navbar.css';
 
@@ -9,6 +9,7 @@ class Navmenu extends Component {
         return ( 
            <div className="jumbotron" id="navbar">
                <Navbar bg="primary" fixed="top">
+                    <Container>
                     <Nav>
                         <LinkContainer to="/">
                             <Nav.Link>
@@ -21,6 +22,7 @@ class Navmenu extends Component {
                             </Nav.Link>
                         </LinkContainer>
                     </Nav>
+                    </Container>
                </Navbar>
            </div>     
         );
