@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LessonCard from '../content/lessons/LessonCard';
 
 class Main extends Component { 
 
@@ -13,12 +14,12 @@ class Main extends Component {
                 </div>
                 <div className="row">
                     <div className="col" id="lessons">
-
+                        <LessonCard />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col" id="suggestions">
-                        
+
                     </div>
                 </div> 
 
