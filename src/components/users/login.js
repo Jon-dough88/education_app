@@ -22,6 +22,8 @@ class Login extends Component {
                         <input className="form-control form-control-lg" type="text" required={true} placeholder="Password"></input>
                     </div>  
                     <input className="btn btn-primary btn-lg" type="submit" value="Login!"></input>
+                    <br/>
+                   
                     </form>
                 </div>
             </div>
