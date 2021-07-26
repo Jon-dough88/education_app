@@ -6,8 +6,23 @@ import './Navbar.css';
 import Bell from '../content/notifications/Bell';
 
 class Navmenu extends Component {
-    state = {  }
-    render() { 
+    
+    // constructor(props) {
+    //     super(props);
+    //     this.state = { scrollBackground: 'nav-bg' };
+    //     this.handleScroll = this.handleScroll.bind(this)
+    // }
+
+    // handleScroll() {
+    //     this.setState({
+    //         scrollBackground: !this.state.scrollBackground
+    //     })
+    // }
+
+    render() {
+
+        
+
         return ( 
            <div className="jumbotron" id="navbar">
                {/* <Navbar bg="primary" fixed="top">
@@ -27,7 +42,9 @@ class Navmenu extends Component {
                     </Container>
                </Navbar> */}
 
-                <Navbar bg="primary" expand="lg" fixed="top" variant="dark">
+                <Navbar bg="primary" expand="lg" fixed="top" variant="dark" 
+                // className={this.state.scrollBackground} onScroll={this.handleScroll}
+                >
                     <Container>
                         <Navbar.Brand href="#home">Logo</Navbar.Brand>
                         <Bell />
