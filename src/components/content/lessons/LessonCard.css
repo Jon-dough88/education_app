@@ -1,0 +1,68 @@
+.lesson-title {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; */
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 80%;
+    
+}
+
+.package-container {
+    /* display: flex;
+    flex-direction: column; */
+    padding-left: 3rem;
+    align-items: center;
+    height: 4rem;
+    width: 15rem;
+}
+
+.package-bar {
+    height: 1.5rem;
+    width: 10rem;
+    border: 2px solid black;
+    background-color: blue;
+}
+
+.lesson-image {
+    height: 40%;
+    width: 45%;
+    margin: 5rem auto 5rem auto;
+}
+
+.btn-container {
+    
+    align-items: center;
+    height: 6rem;
+    width: 90%;
+    padding-left: 2.5rem;
+    margin: 1rem 1rem 2rem 1rem;
+    position: relative;
+    right: 3.5rem;
+}
+
+
+.start-btn-container {
+    /* border: 1px solid orangered; */
+    
+}
+
+
+.secondary-button-container {
+    align-items: center;
+    
+}
+
+.favorite-btn-container {
+    /* position: absolute;
+    right: 10rem; */
+    /* margin-right: 1rem; */
+}
+
+.stats-btn-container {
+    margin-left: 1rem;
+}
+
+
+
