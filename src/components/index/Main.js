@@ -16,15 +16,17 @@ class Main extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col" id="lessons">
+                    <div className="col" id="main-content">
                         <LessonCard />
                         <LessonCard />
-                        <LessonCard />     
+                        <LessonCard /> 
+                        <SuggestionCard />
+    
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col" id="suggestions">
-                        <SuggestionCard />
+                    <div className="col" id="footer">
+                    
                     </div>
                 </div> 
 
