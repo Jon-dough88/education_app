@@ -18,8 +18,8 @@ class Main extends Component {
                 <div className="row">
                     <div className="col" id="lessons">
                         <LessonCard />
-                      
-                        
+                        <LessonCard />
+                        <LessonCard />     
                     </div>
                 </div>
                 <div className="row">
