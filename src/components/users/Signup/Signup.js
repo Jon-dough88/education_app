@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import './Signup.css';
 
 
 class Signup extends Component {
     render() {
         return (
             <div className="jumbotron">
-                <div className="card">
-                    <div className="card-body">
-                        <form className="form-inline justify-content-center">
+                <div className="card" >
+                    <div className="card-body" id="signup-body">
+                        <form className="form-inline justify-content-center" id="signup-form">
                             <div className="form-group">
                                 <input className="form-control form-control-lg" 
                                 type="text" 
