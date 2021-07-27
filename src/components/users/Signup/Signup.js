@@ -16,6 +16,8 @@ class Signup extends Component {
                                 placeholder="First Name"
                                 >    
                                 </input>
+                            </div>
+                            <div className="form-group">
                                 <input className="form-control form-control-lg" 
                                 type="text" 
                                 id=""
@@ -23,20 +25,27 @@ class Signup extends Component {
                                 placeholder="Last Name"
                                 > 
                                 </input>
+                            </div>
+                            <div className="form-group">
                                  <input className="form-control form-control-lg" 
                                 type="email" 
                                 id=""
                                 // ref={}
                                 placeholder="Email"
                                 >    
-                                </input> 
+                                </input>
+                            </div>
+                            <div className="form-group"> 
                                 <input className="form-control form-control-lg" 
                                 type="password" 
                                 id=""
                                 // ref={}
                                 placeholder="Password"
-                                > 
-                                 <input className="form-control form-control-lg" 
+                                >
+                                </input>
+                            </div>
+                            <div className="form-group">
+                                <input className="form-control form-control-lg" 
                                 type="password" 
                                 id=""
                                 // ref={}
@@ -44,9 +53,8 @@ class Signup extends Component {
                                 >    
                                 </input> 
 
-                                
-                                </input>
                             </div>
+                                 
                         </form>
                     </div>
                 </div>     
