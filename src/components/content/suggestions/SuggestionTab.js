@@ -7,7 +7,7 @@ class SuggestionTab extends Component {
         return(
             <div className="col-sm-4 col-md-2">
                 <div className="card suggestion-tab">
-                
+                    
                 </div>    
             </div>
         )
