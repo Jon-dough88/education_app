@@ -25,23 +25,7 @@ class Navmenu extends Component {
 
         return ( 
            <div className="jumbotron" id="navbar">
-               {/* <Navbar bg="primary" fixed="top">
-                    <Container>
-                    <Nav>
-                        <LinkContainer to="/">
-                            <Nav.Link>
-                                Home
-                            </Nav.Link>
-                        </LinkContainer>
-                        <LinkContainer to="/login">
-                            <Nav.Link>
-                                Login
-                            </Nav.Link>
-                        </LinkContainer>
-                    </Nav>
-                    </Container>
-               </Navbar> */}
-
+              
                 <Navbar bg="primary" expand="lg" fixed="top" variant="dark" 
                 // className={this.state.scrollBackground} onScroll={this.handleScroll}
                 >
@@ -66,7 +50,7 @@ class Navmenu extends Component {
                                     Sign up
                                 </Nav.Link>
                             </LinkContainer>
-                        <NavDropdown title={<i className="fas fa-bars fa-2x"></i>} id="basic-nav-dropdown" style={{margin: "0 3rem"}}>
+                        <NavDropdown title="" id="basic-nav-dropdown" style={{margin: "0 3rem"}}>
                             
                             
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

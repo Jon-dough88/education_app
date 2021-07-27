@@ -5,7 +5,7 @@ class SuggestionTab extends Component {
     render() {
 
         return(
-            <div className="col-2">
+            <div className="col-sm-4 col-md-2">
                 <div className="card suggestion-tab">
                 
                 </div>    

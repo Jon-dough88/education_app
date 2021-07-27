@@ -1,26 +1,41 @@
+
+
+.image{
+    height: 12rem;
+}
+
+.left-row {
+    justify-content: center;
+}
+
+
+.start-button {
+    width: 15rem;
+    margin: 3rem auto;
+}
+
+
 .lesson-title {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; */
+      
     align-items: center;
     justify-content: center;
+    padding-left: 5rem;
     height: 6rem;
     width: 80%;
     
 }
 
 .package-container {
-    /* display: flex;
-    flex-direction: column; */
-    padding-left: 3rem;
+    padding-left: 8rem;
     align-items: center;
-    height: 4rem;
-    width: 15rem;
+    justify-content: center; 
+
 }
 
 .package-bar {
     height: 1.5rem;
-    width: 10rem;
+    max-width: 20rem;
+    padding-left: 20%;
     border: 2px solid black;
     background-color: blue;
 }
@@ -29,6 +44,13 @@
     height: 40%;
     width: 45%;
     margin: 5rem auto 5rem auto;
+}
+
+
+
+.separator {
+    height: 4rem;
+    
 }
 
 .btn-container {
@@ -43,14 +65,11 @@
 }
 
 
-.start-btn-container {
-    /* border: 1px solid orangered; */
-    
-}
 
 
 .secondary-button-container {
-    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
     
 }
 
