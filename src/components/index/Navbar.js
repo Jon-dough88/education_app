@@ -26,7 +26,7 @@ class Navmenu extends Component {
         return ( 
            <div className="jumbotron" id="navbar">
               
-                <Navbar bg="primary" expand="lg" fixed="top" variant="dark" 
+                <Navbar bg="primary" expand="md" fixed="top" variant="dark" 
                 // className={this.state.scrollBackground} onScroll={this.handleScroll}
                 >
                     <Container>
@@ -35,7 +35,7 @@ class Navmenu extends Component {
                         <Bell />
                         
                         <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className="ms-auto">
                             <LinkContainer to="/">
                                 <Nav.Link>
                                     Home
@@ -113,8 +113,8 @@ class Navmenu extends Component {
                             
                             <NavDropdown.Item href="/notifications">Notifications</NavDropdown.Item>
                             <NavDropdown.Item href="/recommendations">Recommendations</NavDropdown.Item>
-                            <NavDropdown.Item href="/saved">Saved</NavDropdown.Item>
-                            <NavDropdown.Item href="/starred">Starred</NavDropdown.Item>
+                            <NavDropdown.Item href="/saved"><i class="far fa-save" style={{color: "grey"}}></i> Saved</NavDropdown.Item>
+                            <NavDropdown.Item href="/starred"><i class="far fa-star" style={{color: "gold"}}></i> Starred</NavDropdown.Item>
                             <NavDropdown.Item href="/groups">My Groups</NavDropdown.Item>
                             <NavDropdown.Item href="/profile">My Profile</NavDropdown.Item>
                             <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
@@ -122,7 +122,7 @@ class Navmenu extends Component {
                             <NavDropdown.Item href="/privacy">Privacy Policy</NavDropdown.Item>
                             
                             <NavDropdown.Divider />
-                                <NavDropdown.Item href="#">Upgrade to Premium</NavDropdown.Item>
+                                <NavDropdown.Item href="/upgrade">Upgrade to Premium</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                       </Navbar.Collapse>
