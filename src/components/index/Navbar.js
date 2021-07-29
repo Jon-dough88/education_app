@@ -4,6 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import './Navbar.css';
 import Bell from '../content/notifications/Bell';
+import Counter from '../content/notifications/Counter';
 
 class Navmenu extends Component {
     
@@ -109,9 +110,9 @@ class Navmenu extends Component {
                             </LinkContainer>   */}
                             
 
-                        <NavDropdown title="" id="basic-nav-dropdown" style={{margin: "0 3rem"}}>
+                        <NavDropdown title="" id="basic-nav-dropdown" menuVariant="primary" style={{margin: "0 3rem"}}>
                             
-                            <NavDropdown.Item href="/notifications">Notifications</NavDropdown.Item>
+                            <NavDropdown.Item href="/notifications"><span>Notifications <Counter/></span> </NavDropdown.Item>
                             <NavDropdown.Item href="/recommendations">Recommendations</NavDropdown.Item>
                             <NavDropdown.Item href="/saved"><i class="far fa-save" style={{color: "grey"}}></i> Saved</NavDropdown.Item>
                             <NavDropdown.Item href="/starred"><i class="far fa-star" style={{color: "gold"}}></i> Starred</NavDropdown.Item>
