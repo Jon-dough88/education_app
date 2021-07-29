@@ -6,6 +6,7 @@ import Navmenu from '../src/components/index/Navbar';
 import  Login  from '../src/components/users/login';
 import Signup from '../src/components/users/Signup/Signup';
 import Main from '../src/components/index/Main';
+import AdminPage from '../src/components/content/admin/AdminPage';
 
 
 class Homepage extends Component {
@@ -22,10 +23,11 @@ class Homepage extends Component {
 
                     <Navmenu />
 
-                    <Switch>
+                    <Switch>     
                         <Route path="/" exact component={Main}></Route>
                         <Route path="/login" component={Login}></Route>
                         <Route path="/signup" component={Signup}></Route>
+                        <Route path="/admin" component={AdminPage}></Route>
                     </Switch>
                     
                 </div>

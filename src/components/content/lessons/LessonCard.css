@@ -2,10 +2,20 @@
 
 .image{
     height: 12rem;
+    width: 10rem;
 }
 
+.lesson-image {
+    max-height: 65%;
+    /* width: 65%; */
+    min-height: 44%;
+    min-width: 55%;
+    margin: 5rem auto 5rem auto;
+}
+
+
 .left-row {
-    justify-content: center;
+    margin-left: 2rem;
 }
 
 
@@ -19,14 +29,15 @@
       
     align-items: center;
     justify-content: center;
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
     height: 6rem;
-    width: 80%;
+    min-width: 60%;
     
 }
 
 .package-container {
     padding-left: 8rem;
+    min-width: 20rem; 
     align-items: center;
     justify-content: center; 
 
@@ -36,15 +47,12 @@
     height: 1.5rem;
     max-width: 20rem;
     padding-left: 20%;
+    border-radius: 8%;
     border: 2px solid black;
     background-color: blue;
 }
 
-.lesson-image {
-    height: 40%;
-    width: 45%;
-    margin: 5rem auto 5rem auto;
-}
+
 
 
 
@@ -56,10 +64,10 @@
 .btn-container {
     
     align-items: center;
-    height: 6rem;
-    width: 90%;
+    max-height: 6rem;
+    max-width: 90%;
     padding-left: 2.5rem;
-    margin: 4rem 1rem 2rem 1rem;
+    margin: 4rem 3rem 2rem 1rem;
     position: relative;
     right: 3.5rem;
 }
@@ -69,18 +77,18 @@
 
 .secondary-button-container {
     padding: 1rem;
-    margin-bottom: 1rem;
-    
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    min-width: 10rem;
 }
 
 .favorite-btn-container {
-    /* position: absolute;
-    right: 10rem; */
-    /* margin-right: 1rem; */
+    margin-top: 1rem;
 }
 
 .stats-btn-container {
     margin-left: 1rem;
+    margin-top: 1rem;
 }
 
 

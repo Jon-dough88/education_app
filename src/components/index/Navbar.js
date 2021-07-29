@@ -30,9 +30,10 @@ class Navmenu extends Component {
                 // className={this.state.scrollBackground} onScroll={this.handleScroll}
                 >
                     <Container>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Brand href="#home">Logo</Navbar.Brand>
                         <Bell />
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <LinkContainer to="/">
@@ -50,14 +51,78 @@ class Navmenu extends Component {
                                     Sign up
                                 </Nav.Link>
                             </LinkContainer>
+                            <LinkContainer to="/admin">
+                                <Nav.Link>
+                                    Admin access
+                                </Nav.Link>
+                            </LinkContainer>
+                            
+                            {/* <LinkContainer to="/upgrade">   
+                                <Nav.Link>
+                                Upgrade to Premium
+                                </Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/notifications">
+                                <Nav.Link>
+                                    Notifications
+                                </Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/recommendations">
+                                <Nav.Link>
+                                    Recommendations
+                                </Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/saved">
+                                <Nav.Link>
+                                    Saved
+                                </Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/starred">
+                                <Nav.Link>
+                                    Starred
+                                </Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/groups">
+                                <Nav.Link>
+                                    My Groups
+                                </Nav.Link>
+                            </LinkContainer> 
+                            <LinkContainer to="/profile">
+                                <Nav.Link>
+                                    My Profile
+                                </Nav.Link>
+                            </LinkContainer> 
+                            <LinkContainer to="/settings">
+                                <Nav.Link>
+                                    Settings
+                                </Nav.Link>
+                            </LinkContainer> 
+                            <LinkContainer to="/contact">
+                                <Nav.Link>
+                                    Contact us
+                                </Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/privacy">
+                                <Nav.Link>
+                                    Privacy Policy
+                                </Nav.Link>
+                            </LinkContainer>   */}
+                            
+
                         <NavDropdown title="" id="basic-nav-dropdown" style={{margin: "0 3rem"}}>
                             
+                            <NavDropdown.Item href="/notifications">Notifications</NavDropdown.Item>
+                            <NavDropdown.Item href="/recommendations">Recommendations</NavDropdown.Item>
+                            <NavDropdown.Item href="/saved">Saved</NavDropdown.Item>
+                            <NavDropdown.Item href="/starred">Starred</NavDropdown.Item>
+                            <NavDropdown.Item href="/groups">My Groups</NavDropdown.Item>
+                            <NavDropdown.Item href="/profile">My Profile</NavDropdown.Item>
+                            <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+                            <NavDropdown.Item href="/contact">Contact us</NavDropdown.Item>
+                            <NavDropdown.Item href="/privacy">Privacy Policy</NavDropdown.Item>
                             
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                             <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                                <NavDropdown.Item href="#">Upgrade to Premium</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                       </Navbar.Collapse>
