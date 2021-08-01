@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Login/Login.css'
+import './Login/Login.css';
 // import {connect} from react-redux;
 
 class Login extends Component {
@@ -21,9 +21,9 @@ class Login extends Component {
                     <div className="form-group">
                         <input className="form-control form-control-lg" type="text" required={true} placeholder="Password"></input>
                     </div>  
-                    <input className="btn btn-primary btn-lg" type="submit" value="Login!"></input>
+                    <input className="btn btn-primary btn-lg login-button" type="submit" value="Login!"></input>
                     <br/>
-                   
+                    <a href="/signup">Not a member yet? Sign up today!</a>
                     </form>
                 </div>
             </div>

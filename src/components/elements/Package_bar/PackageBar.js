@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-
+import './PackageBar.css';
 
 class PackageBar extends Component {
-    state = {  }
+    constructor(props) {
+        super(props)
+    
+    }
+    
     render() { 
         return ( 
-            <div>
-                
-            </div>
+            <div className="package-bar" color="blue"></div>
          );
     }
 }

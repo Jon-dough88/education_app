@@ -55,7 +55,9 @@ class Signup extends Component {
                                 </input> 
 
                             </div>
-                                 
+                            <input className="btn btn-primary btn-lg signup-button" type="submit" value="Sign up!"></input> 
+                            <br />   
+                            <a href="/login"><strong style={{fontSize: "18px"}}>Already a member? Click here!</strong></a>    
                         </form>
                     </div>
                 </div>     

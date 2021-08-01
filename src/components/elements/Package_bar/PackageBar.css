@@ -1,0 +1,8 @@
+.package-bar {
+    height: 1.5rem;
+    max-width: 20rem;
+    padding-left: 20%;
+    border-radius: 8%;
+    border: 2px solid black;
+    background-color: blue;
+}

@@ -5,6 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import './Navbar.css';
 import Bell from '../content/notifications/Bell';
 import Counter from '../content/notifications/Counter';
+import PackageBar from '../elements/Package_bar/PackageBar';
 
 class Navmenu extends Component {
     
@@ -27,7 +28,7 @@ class Navmenu extends Component {
         return ( 
            <div className="jumbotron" id="navbar">
               
-                <Navbar bg="primary" expand="md" fixed="top" variant="dark" 
+                <Navbar bg="primary" expand="md" sticky="top" variant="dark" 
                 // className={this.state.scrollBackground} onScroll={this.handleScroll}
                 >
                     <Container>
@@ -123,7 +124,7 @@ class Navmenu extends Component {
                             <NavDropdown.Item href="/privacy">Privacy Policy</NavDropdown.Item>
                             
                             <NavDropdown.Divider />
-                                <NavDropdown.Item href="/upgrade">Upgrade to Premium</NavDropdown.Item>
+                                <NavDropdown.Item href="/upgrade">Upgrade to Premium <PackageBar /> </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                       </Navbar.Collapse>

@@ -6,7 +6,7 @@ class LessonCard extends Component {
         return (
            <div className="card">
                <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-5 left-column">
                         <div className="row left-row">
                             <div className="col image">
                                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1" className="img-fluid rounded-start lesson-image" alt=""></img>    
@@ -19,18 +19,17 @@ class LessonCard extends Component {
                         </div>
                     </div>
 
-                    <div className="col-md-6">
+                    <div className="col-6">
                         <div className="row separator"></div>
                         <div className="row title-row">
-                            <div className="col-md-8 col-lg-6 col-sm-12">
-                                <h2 className="lesson-title">Lesson Title</h2> 
-          
+                            <div className="col-md-8 col-lg-5 col-sm-12 item-type-container">
+                                <h2 className="lesson-title">Item Type</h2> 
+                                <div className="package-bar">Free</div>
                             </div>
-                            <div className="col-md-4 col-lg-4 col-sm-12 package-container">
+                            <div className="col-md-4 col-lg-4 col-sm-10 package-container">
                                 <div className="row">
                                     <div className="col-6">
-                                        <h5>Package name</h5>
-                                        <div className="package-bar"></div>
+                                        {/* <div className="package-bar">Free</div> */}
                                     </div>
                                 
                                     
