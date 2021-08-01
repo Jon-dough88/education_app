@@ -4,6 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import './Navbar.css';
 import Bell from '../content/notifications/Bell';
+import Dumbbell from '../content/notifications/Dumbbell';
 import Counter from '../content/notifications/Counter';
 import PackageBar from '../elements/Package_bar/PackageBar';
 
@@ -35,7 +36,7 @@ class Navmenu extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Brand href="#home">Logo</Navbar.Brand>
                         <Bell />
-                        
+                        <Dumbbell />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <LinkContainer to="/">
