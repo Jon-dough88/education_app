@@ -22,11 +22,11 @@ class LessonCard extends Component {
                     <div className="col-6">
                         <div className="row separator"></div>
                         <div className="row title-row">
-                            <div className="col-md-8 col-lg-3 col-sm-12 item-type-container">
+                            <div className="col-md-8 col-lg-4 col-sm-4 item-type-container">
                                 <h2 className="lesson-title">Item Type</h2> 
                                 {/* <div className="package-bar">Free</div> */}
                             </div>
-                            <div className="col-md-3 col-lg-2 col-sm-10 package-container">
+                            <div className="col-md-3 col-lg-2 col-sm-3 package-container">
                                 <div className="row">
                                     <div className="col-sm-6">
                                         <div className="package-bar">Free</div>

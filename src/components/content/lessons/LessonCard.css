@@ -29,17 +29,19 @@
 
 .lesson-title {
       
-    align-items: center;
+    /* align-items: center; */
+    text-align: right;
     justify-content: center;
-    /* padding-left: 5rem; */
-    height: 6rem;
-    width: 60%;
+    
+    height: 5rem;
+    /* width: 60%; */
     
 }
 
 .item-type-container {
     border: 1px solid red;
-    display: flex;
+    /* display: flex; */
+    align-items: right;
 }
 
 .package-container {
