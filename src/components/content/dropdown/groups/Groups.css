@@ -1,0 +1,27 @@
+.group-menu {
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.group-title-row {
+    margin: 3rem auto;
+}
+
+.group-item {
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.group-separator {
+    border-right: 2px solid rgb(189, 186, 186);
+}
+
+.add-button {
+    color: rgb(40, 182, 40);
+}
+
+.add-button:hover {
+    color: rgb(48, 218, 48);
+}

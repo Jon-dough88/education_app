@@ -7,6 +7,7 @@ import  Login  from '../src/components/users/login';
 import Signup from '../src/components/users/Signup/Signup';
 import Main from '../src/components/index/Main';
 import AdminPage from '../src/components/content/admin/AdminPage';
+import GroupMenu from '../src/components/content/dropdown/groups/GroupsMenu';
 
 
 class Homepage extends Component {
@@ -28,6 +29,7 @@ class Homepage extends Component {
                         <Route path="/login" component={Login}></Route>
                         <Route path="/signup" component={Signup}></Route>
                         <Route path="/admin" component={AdminPage}></Route>
+                        <Route path="/groups" component={GroupMenu}></Route>
                     </Switch>
                     
                 </div>

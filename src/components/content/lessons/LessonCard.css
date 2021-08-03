@@ -38,15 +38,16 @@
 }
 
 .item-type-container {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
 }
 
 .package-container {
-    padding-left: 8rem;
-    min-width: 20rem; 
+    /* padding-left: 8rem; */
+    /* min-width: 20rem;  */
     align-items: center;
     justify-content: center; 
+    border: 1px solid blue;
 
 }
 
