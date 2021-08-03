@@ -8,7 +8,7 @@ class LessonCard extends Component {
                <div className="row">
                     <div className="col-5 left-column">
                         <div className="row left-row">
-                            <div className="col image">
+                            <div className="col-lg-9 col-sm-12 col-xs-12 image">
                                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1" className="img-fluid rounded-start lesson-image" alt=""></img>    
                             </div>
                         </div>
@@ -22,13 +22,13 @@ class LessonCard extends Component {
                     <div className="col-6">
                         <div className="row separator"></div>
                         <div className="row title-row">
-                            <div className="col-md-8 col-lg-4 col-sm-4 item-type-container">
+                            <div className="col-md-4 col-lg-3 col-sm-4 col-xs-2 item-type-container">
                                 <h2 className="lesson-title">Item Type</h2> 
                                 {/* <div className="package-bar">Free</div> */}
                             </div>
-                            <div className="col-md-3 col-lg-2 col-sm-3 package-container">
+                            <div className="col-md-3 col-lg-2 col-sm-4 package-container">
                                 <div className="row">
-                                    <div className="col-sm-6">
+                                    <div className="col-sm-10">
                                         <div className="package-bar">Free</div>
                                     </div>
                                 
@@ -44,8 +44,8 @@ class LessonCard extends Component {
                                 <div className="card secondary-button-container">
                                     <div className="row" id="separator"></div>    
                                         <div className="row">   
-                                            <div className="col-sm-6 col-md-6"><i class="fas fa-star fa-3x" style={{color: "gold"}}></i></div>
-                                            <div className="col-sm-6 col-md-6"><i class="far fa-chart-bar fa-3x" style={{color: "indigo"}}></i></div>
+                                            <div className="col-sm-4 col-md-6"><i class="fas fa-star fa-3x" style={{color: "gold"}}></i></div>
+                                            <div className="col-sm-4 col-md-6"><i class="far fa-chart-bar fa-3x" style={{color: "indigo"}}></i></div>
                                         </div>
                                 </div>                     
                             </div>
