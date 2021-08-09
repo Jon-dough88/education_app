@@ -7,7 +7,7 @@ class Bell extends Component {
         return ( 
 
             <div className="bell-container">
-                <i class="fas fa-bell fa-2x"></i>
+                <i class="fas fa-bell fa-2x bell"></i>
             </div>
         );
     }

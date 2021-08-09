@@ -34,8 +34,8 @@ class Navmenu extends Component {
                 >
                     <Container>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Brand href="/" className="brand">Logo</Navbar.Brand>
-                        <Bell />
+                        <Navbar.Brand href="/"><h2 className="onHover">Logo</h2></Navbar.Brand>
+                        <Bell className="bell" />
                         <Dumbbell />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
