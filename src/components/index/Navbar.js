@@ -34,7 +34,7 @@ class Navmenu extends Component {
                 >
                     <Container>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Brand href="/">Logo</Navbar.Brand>
+                        <Navbar.Brand href="/" className="brand">Logo</Navbar.Brand>
                         <Bell />
                         <Dumbbell />
                         <Navbar.Collapse id="basic-navbar-nav">
