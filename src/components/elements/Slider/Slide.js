@@ -27,7 +27,7 @@ class Slide extends Component {
     }
 
 
-    touchMove() {
+    handleTouchMove() {
         console.log("Touch move")
     }
 
@@ -52,11 +52,11 @@ class Slide extends Component {
                     onDragStart={(e) => {this.cancelDragEffect(e)}} 
                     onTouchStart={(index) => {this.handleTouchEvent(index)}}
                     onTouchEnd={() => {this.handleTouchEnd()}}
-                    onTouchMove={() => {this.touchMove()}}
+                    onTouchMove={() => {this.handleTouchMove()}}
                     onMouseDown={(index) => {this.handleTouchEvent(index)}}
-                    onMouseUp={() => {this.touchEnd()}}
-                    onMouseLeave={() => {this.touchEnd()}}
-                    onMouseMove={() => {this.touchMove()}}
+                    onMouseUp={() => {this.handleTouchEnd()}}
+                    onMouseLeave={() => {this.handleTouchEnd()}}
+                    onMouseMove={() => {this.handleTouchMove()}}
 
 
                     ></img>
