@@ -44,15 +44,21 @@ class Slide extends Component {
 
     handleTouchEnd() {
         console.log("end")
-        this.state.isDragging = false
+        this.setState({
+            isDragging: false
+        })
     }
 
 
     handleMouseDown(event, index) {
         console.log("Touch started!")
-         this.state.currentIndex = index;
+         this.setState({
+             currentIndex: index
+         })
          console.log(event.type)
-         this.state.isDragging = true
+         this.setState({
+             isDragging: true
+         })
     }
 
     
