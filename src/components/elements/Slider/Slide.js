@@ -11,6 +11,7 @@ class Slide extends Component {
             isDragging: false,
             startPos: 0,
             currentTranslate: 0,
+            currentIndex: 0,
             prevTranslate: 0,
             animationId: 0
         }
@@ -23,6 +24,8 @@ class Slide extends Component {
     // Touch event methods
     handleTouchEvent(index) {
          console.log("Touch started!")
+         this.state.currentIndex = index;
+         console.log()
          this.state.isDragging = true
         
     }
@@ -41,7 +44,7 @@ class Slide extends Component {
     }
 
 
-   
+    
 
 
     
@@ -58,17 +61,16 @@ class Slide extends Component {
                     <img className="demo-image" 
                     src={this.props.image} 
                     onDragStart={(e) => {this.cancelDragEffect(e)}} 
-                    onTouchStart={(index) => {this.handleTouchEvent(index)}}
+                    onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
                     onTouchEnd={() => {this.handleTouchEnd()}}
                     onTouchMove={() => {this.handleTouchMove()}}
-                    onMouseDown={(index) => {this.handleTouchEvent(index)}}
+                    onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
                     onMouseUp={() => {this.handleTouchEnd()}}
                     onMouseLeave={() => {this.handleTouchEnd()}}
                     onMouseMove={() => {this.handleTouchMove()}}
                     onContextMenu={(e) => {
                         e.preventDefault();
-                        e.stopPropagation();
-                        return false
+                    
                     }}
 
                     ></img>

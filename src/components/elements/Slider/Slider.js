@@ -44,8 +44,11 @@ class Slider extends Component {
                 <Slide />
                 <Slide />
                 <Slide /> */}
+                
                 {slides.map((slide, index) => (
+                    // <div className="col-1 slide">
                     <Slide key={slide.id} index={index} subject={slide.subject} image={slide.image}/>
+                    // </div>
                 ))}
             </div>
          );
