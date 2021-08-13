@@ -23,16 +23,21 @@ class Slide extends Component {
     // Touch event methods
     handleTouchEvent(index) {
          console.log("Touch started!")
+         this.state.isDragging = true
         
     }
 
 
     handleTouchMove() {
-        console.log("Touch move")
+        
+        if(this.state.isDragging === true) {
+            console.log("Touch move")
+        }
     }
 
     handleTouchEnd() {
         console.log("end")
+        this.state.isDragging = false
     }
 
 
