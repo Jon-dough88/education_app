@@ -22,10 +22,10 @@ class Slide extends Component {
     }
 
     // Touch event methods
-    handleTouchEvent(index) {
+    handleTouchEvent(event, index) {
          console.log("Touch started!")
          this.state.currentIndex = index;
-         console.log()
+         console.log(event.type)
          this.state.isDragging = true
         
     }
@@ -43,6 +43,13 @@ class Slide extends Component {
         this.state.isDragging = false
     }
 
+
+    handleMouseDown(event, index) {
+        console.log("Touch started!")
+         this.state.currentIndex = index;
+         console.log(event.type)
+         this.state.isDragging = true
+    }
 
     
 
@@ -64,7 +71,7 @@ class Slide extends Component {
                     onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
                     onTouchEnd={() => {this.handleTouchEnd()}}
                     onTouchMove={() => {this.handleTouchMove()}}
-                    onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
+                    onMouseDown={(event, index) => {this.handleMouseDown(event, index)}}
                     onMouseUp={() => {this.handleTouchEnd()}}
                     onMouseLeave={() => {this.handleTouchEnd()}}
                     onMouseMove={() => {this.handleTouchMove()}}
