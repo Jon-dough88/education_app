@@ -113,6 +113,23 @@
     max-height: 6rem;
 }
 
+.star {
+    color: gold;
+}
+
+.star:hover{
+    color: rgb(253, 224, 59);
+    text-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px darkblue;
+}
+
+.save {
+    color: indigo;
+}
+
+.save:hover {
+    color: rgb(126, 4, 212);
+    text-shadow: 0 0 0  rgb(50, 0, 85), 0 0 25px rgb(149, 2, 255), 0 0 5px rgb(255, 255, 255);
+}
 
 
 

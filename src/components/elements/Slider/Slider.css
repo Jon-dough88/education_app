@@ -1,0 +1,45 @@
+.slider-container {
+    /* border: 2px solid blue; */
+    height: 100%;
+    overflow: hidden;
+    display: inline-flex;
+    
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 1rem;
+    max-height: 80%;
+    min-width: 10rem;
+    overflow: hidden;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    cursor: grab;
+    user-select: none;
+}
+
+.demo-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.demo-image {
+    max-height: 10rem;
+    max-width: 10rem;
+}
+
+.grabbing {
+    cursor: grabbing;
+}
+
+.grabbing .demo-content {
+    transform: scale(1.1)
+}

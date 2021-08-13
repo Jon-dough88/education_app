@@ -44,8 +44,8 @@ class LessonCard extends Component {
                                 <div className="card secondary-button-container">
                                     {/* <div className="row"></div>     */}
                                         <div className="row">   
-                                            <div className="col-sm-6 col-md-6"><i class="fas fa-star fa-2x star" style={{color: "gold"}}></i></div>
-                                            <div className="col-sm-6 col-md-6"><i class="far fa-chart-bar fa-2x" style={{color: "indigo"}}></i></div>
+                                            <div className="col-sm-6 col-md-6"><i className="fas fa-star fa-2x star"></i></div>
+                                            <div className="col-sm-6 col-md-6"><i class="fas fa-save fa-2x save"></i></div>
                                         </div>
                                 </div>                     
                             </div>
