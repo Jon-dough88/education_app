@@ -24,13 +24,20 @@ class Slide extends Component {
     // Touch event methods
     handleTouchEvent(event, index) {
          console.log("Touch started!")
-         this.setState({
-            currentIndex: index 
-         })
          console.log(event.type)
+         console.log(`Start position: ${this.state.startPos}`)
+
          this.setState({
-             isDragging: true
+            currentIndex: index,
+            isDragging: true,
          })
+
+         this.getPosition(event)
+
+         this.animate()
+
+         
+         
         
     }
 
@@ -49,17 +56,36 @@ class Slide extends Component {
         })
     }
 
-
-    handleMouseDown(event, index) {
-        console.log("Touch started!")
-         this.setState({
-             currentIndex: index
-         })
-         console.log(event.type)
-         this.setState({
-             isDragging: true
-         })
+    getPosition(event){
+        this.setState({
+            startPos: event.type.includes('mouse') 
+               ? event.pageX
+               : event.touches[0].clientX
+        })
     }
+
+    
+    animate() {
+        this.setState({
+            animationId: requestAnimationFrame(this.animation())
+        })
+    }
+
+    animation() {
+
+    }
+
+
+    // handleMouseDown(event, index) {
+    //     console.log("Touch started!")
+    //      this.setState({
+    //          currentIndex: index
+    //      })
+    //      console.log(event.type)
+    //      this.setState({
+    //          isDragging: true
+    //      })
+    // }
 
     
 
@@ -69,19 +95,19 @@ class Slide extends Component {
 
     render() { 
 
-        console.log(this.props.index)
+        // console.log(this.props.index)
 
         return ( 
             <div className="slide" key={this.props.id} index={this.props.index}>
                 <div className="demo-content">
                     {/* <h2>{this.props.subject}</h2> */}
-                    <img className="demo-image" 
+                    <img className="demo-image" alt="Lesson" 
                     src={this.props.image} 
                     onDragStart={(e) => {this.cancelDragEffect(e)}} 
                     onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
                     onTouchEnd={() => {this.handleTouchEnd()}}
                     onTouchMove={() => {this.handleTouchMove()}}
-                    onMouseDown={(event, index) => {this.handleMouseDown(event, index)}}
+                    onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
                     onMouseUp={() => {this.handleTouchEnd()}}
                     onMouseLeave={() => {this.handleTouchEnd()}}
                     onMouseMove={() => {this.handleTouchMove()}}

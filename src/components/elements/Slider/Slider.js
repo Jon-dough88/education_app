@@ -30,7 +30,7 @@ class Slider extends Component {
     render() { 
 
         const slides = this.state
-        console.log(slides);
+        // console.log(slides);
 
         return ( 
             <div className="slider-container">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './History.css';
-import HistoryTab from './HistoryTab';
+// import HistoryTab from './HistoryTab';
 import Slider from '../../elements/Slider/Slider';
 
 class HistoryContainer extends Component {
