@@ -40,8 +40,14 @@ class Slide extends Component {
         this.state.isDragging = false
     }
 
+    disableContextMenu(event){
+        event.preventDefault();
+        event.stopPropagation();
+        return false
+    }
 
-    // Mouse event methods
+
+    
 
 
     render() { 
@@ -62,7 +68,7 @@ class Slide extends Component {
                     onMouseUp={() => {this.handleTouchEnd()}}
                     onMouseLeave={() => {this.handleTouchEnd()}}
                     onMouseMove={() => {this.handleTouchMove()}}
-
+                    onContextMenu={(e) => {this.disableContextMenu(e)}}
 
                     ></img>
                 </div>
