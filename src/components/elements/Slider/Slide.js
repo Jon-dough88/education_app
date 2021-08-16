@@ -46,7 +46,8 @@ class Slide extends Component {
         
         if(this.state.isDragging === true) {
             console.log("Touch move")
-            const currentPosition = this.getPosition(event)
+            const currentPosition = this.getPosition(event);
+            this.state.currentTranslate = this.state.prevTranslate;
         }
     }
 
