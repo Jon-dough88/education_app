@@ -42,10 +42,11 @@ class Slide extends Component {
     }
 
 
-    handleTouchMove() {
+    handleTouchMove(event) {
         
         if(this.state.isDragging === true) {
             console.log("Touch move")
+            const currentPosition = this.getPosition(event)
         }
     }
 
@@ -64,16 +65,27 @@ class Slide extends Component {
         })
     }
 
-    
     animate() {
-        this.setState({
-            animationId: requestAnimationFrame(this.animation())
-        })
+        this.setSliderPosition()
+        this.state.isDragging === true && this.requestAnimationFrame(this.animate())
     }
 
-    animation() {
-
+    setSliderPosition() {
+        this.transform = `translateX(${this.state.currentTranslate}px)`
     }
+    
+    // animate() {
+    //     console.log(this.state.animationId)
+    //     this.setState({
+    //         animationId: requestAnimationFrame(this.animation())
+    //     })
+    // }
+
+    // animation() {
+    //     console.log('The animation has been triggered!')
+    //     // this.state.isDragging === true &&
+    //     // requestAnimationFrame(this.animation())
+    // }
 
 
     // handleMouseDown(event, index) {
@@ -94,7 +106,7 @@ class Slide extends Component {
 
 
     render() { 
-
+        
         // console.log(this.props.index)
 
         return ( 
