@@ -13,7 +13,8 @@ class Slide extends Component {
             currentTranslate: 0,
             currentIndex: 0,
             prevTranslate: 0,
-            animationId: 0
+            animationId: 0,
+            transform: ''
         }
     }
 
@@ -66,19 +67,24 @@ class Slide extends Component {
 
     
     animate() {
-        console.log(this.state.animationId)
 
-        
-        this.setState({
-            animationId: window.requestAnimationFrame(this.draw.bind(this))
+        this.style({
+            transform: `translateX(${this.state.currentTranslate}px)`
         })
+
+        this.state.isDragging === true &&
+            this.setState({
+                animationId: window.webkitRequestAnimationFrame(this.animate())
+            })
+
+        console.log(this.state.animationId)
     }
 
-    animation() {
-        console.log('The animation has been triggered!')
-        this.state.isDragging === true &&
-        requestAnimationFrame(this.animate())
-    }
+    // animation() {
+    //     console.log('The animation has been triggered!')
+    //     this.state.isDragging === true &&
+    //     requestAnimationFrame(this.animate())
+    // }
 
 
     // handleMouseDown(event, index) {
