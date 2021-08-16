@@ -12,6 +12,7 @@ class Slide extends Component {
             startPos: 0,
             currentTranslate: 0,
             currentIndex: 0,
+            currentPosition: 0,
             prevTranslate: 0,
             animationId: 0,
             transform: ''
@@ -43,10 +44,17 @@ class Slide extends Component {
     }
 
 
-    handleTouchMove() {
+    handleTouchMove(event) {
+        
         
         if(this.state.isDragging === true) {
             console.log("Touch move")
+            this.setState({
+                currentPosition: this.getPosition(event)
+            })
+            // const currentPosition = this.getPosition(event)
+            // console.log(currentPosition)
+            // this.state.currentTranslate = this.state.prevTranslate + currentPosition - this.state.startPos
         }
     }
 
@@ -58,13 +66,21 @@ class Slide extends Component {
     }
 
     getPosition(event){
+        
+
         this.setState({
-            startPos: event.type.includes('mouse') 
-               ? event.pageX
-               : event.touches[0].clientX
+            startPos: this.getStartPosition(event)
         })
 
         
+        
+    }
+
+    getStartPosition(event) {
+        console.log(event)
+        const startPos = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+        console.log(`Start position: ${startPos}`)
+        return startPos
     }
 
     
