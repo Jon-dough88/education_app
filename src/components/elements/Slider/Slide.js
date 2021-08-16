@@ -63,21 +63,21 @@ class Slide extends Component {
                ? event.pageX
                : event.touches[0].clientX
         })
+
+        
     }
 
     
     animate() {
 
-        this.style({
-            transform: `translateX(${this.state.currentTranslate}px)`
-        })
-
+        
         this.state.isDragging === true &&
             this.setState({
-                animationId: window.webkitRequestAnimationFrame(this.animate())
+                animationId: window.webkitRequestAnimationFrame(this.animate()),
+                transform: `translateX(${this.state.currentTranslate}px)`
             })
 
-        console.log(this.state.animationId)
+        console.log(this.state.currentTranslate)
     }
 
     // animation() {
@@ -109,10 +109,10 @@ class Slide extends Component {
         // console.log(this.props.index)
 
         return ( 
-            <div className="slide" key={this.props.id} index={this.props.index}>
+            <div className="slide" key={this.props.id} index={this.props.index}> 
                 <div className="demo-content">
                     {/* <h2>{this.props.subject}</h2> */}
-                    <img className="demo-image" alt="Lesson" 
+                    <img className="demo-image" alt="Lesson" style={{transform: `${this.state.transform}`}}
                     src={this.props.image} 
                     onDragStart={(e) => {this.cancelDragEffect(e)}} 
                     onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
