@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Redirect from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 class GroupItem extends Component {
    
     toGroupMenu() {
-
+        return <Redirect to="/groupPage"></Redirect>
     }
    
     render() {
