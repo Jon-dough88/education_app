@@ -6,11 +6,12 @@ class GroupPage extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className="jumbotron container">
+            <div className="jumbotron group-page-container">
                 <div className="row">
                     <div className="col group-title">
                         
                         <div className="row">
+                            <div className="col"></div>
                             <div className="col">
                                 {/* <h1>{{GroupName}}</h1> */}
                                 <h1>Group Name</h1>
@@ -18,12 +19,14 @@ class GroupPage extends Component {
                             <div className="col">
                                 <h2>Number of students</h2>
                             </div>
+                            <div className="col"></div>
+                    
                         </div> 
                     </div>
                     <div className="row">
                         <div className="col group-btn-container">
-                            <button className="btn btn-lg btn-primary">Manage Group</button>
-                            <button className="btn btn-lg btn-primary">Group Profile</button>
+                            <button className="btn btn-lg btn-primary group-page-btn">Manage Group</button>
+                            <button className="btn btn-lg btn-primary group-page-btn">Group Profile</button>
                         </div>
 
                     </div>
