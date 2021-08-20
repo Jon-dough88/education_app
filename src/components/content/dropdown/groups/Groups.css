@@ -1,3 +1,14 @@
+.group-creation-menu {
+    margin: 5%;
+}
+
+.input
+
+.groups-formGroup{
+    display: flex;
+    align-items: center;
+}
+
 .group-menu {
     padding: 5rem;
     align-items: center;
@@ -25,6 +36,7 @@
 .add-button:hover {
     color: rgb(48, 218, 48);
 }
+
 
 
 .level-btn {
