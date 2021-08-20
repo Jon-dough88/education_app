@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './GroupPage.css';
+import Slider from '../../elements/Slider/Slider';
 
 class GroupPage extends Component {
     state = {  }
@@ -31,12 +32,14 @@ class GroupPage extends Component {
 
                     </div>
                     <div className="row">
-                        <div className="col">
+                        <div className="col group-history-title">
                             <h2>Group History</h2>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col" id="group-history"></div>
+                        <div className="col group-history" id="group-history">
+                            <Slider />
+                        </div>
                     </div>
                     <div className="row">
                         <div className="col">
@@ -45,7 +48,7 @@ class GroupPage extends Component {
                     </div>
                     <div className="row">
                         <div className="col" id="group-recommendations">
-
+                            <Slider />
                         </div>
                     </div>
                     <div className="row">
@@ -54,9 +57,7 @@ class GroupPage extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col" id="group-saved-items">
-                            
-                        </div>
+                        
                     </div>
                 </div>
             </div>
