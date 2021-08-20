@@ -8,6 +8,7 @@ import Signup from '../src/components/users/Signup/Signup';
 import Main from '../src/components/index/Main';
 import AdminPage from '../src/components/content/admin/AdminPage';
 import GroupMenu from '../src/components/content/dropdown/groups/GroupsMenu';
+import GroupCreator from './components/content/dropdown/groups/GroupCreator';
 
 
 class Homepage extends Component {
@@ -30,6 +31,7 @@ class Homepage extends Component {
                         <Route path="/signup" component={Signup}></Route>
                         <Route path="/admin" component={AdminPage}></Route>
                         <Route path="/groups" component={GroupMenu}></Route>
+                        <Route path="/groupCreation" component={GroupCreator}></Route>
                     </Switch>
                     
                 </div>
