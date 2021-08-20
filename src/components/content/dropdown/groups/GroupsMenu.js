@@ -14,7 +14,8 @@ class GroupMenu extends Component {
                         <h1>My Groups</h1>
                     </div>
                     <div className="col-md-4 col-sm-6">
-                        <i class="fas fa-plus-circle fa-3x add-button"></i>
+                        <a href="/groupCreation"><i class="fas fa-plus-circle fa-3x add-button"></i></a>
+                        
                     </div>
                 </div>
                 <div className="row">
