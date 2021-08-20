@@ -9,10 +9,15 @@ class GroupPage extends Component {
             <div className="jumbotron container">
                 <div className="row">
                     <div className="col group-title">
-                        {/* <h1>{{GroupName}}</h1> */}
+                        
                         <div className="row">
-                            <div className="col"><h1>Group Name</h1></div>
-                            <div className="col"><h2>Number of students</h2></div>
+                            <div className="col">
+                                {/* <h1>{{GroupName}}</h1> */}
+                                <h1>Group Name</h1>
+                            </div>
+                            <div className="col">
+                                <h2>Number of students</h2>
+                            </div>
                         </div> 
                     </div>
                     <div className="row">

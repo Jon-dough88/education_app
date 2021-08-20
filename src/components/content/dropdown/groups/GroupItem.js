@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import Redirect from 'react-router-dom';
 
 
 class GroupItem extends Component {
    
+    toGroupMenu() {
+
+    }
    
     render() {
+
         return (
-            <div className="col-md-8 col-sm-12 group-item">
+            <div className="col-md-8 col-sm-12 group-item" onClick={() => this.toGroupMenu}>
                 <div className="card">
                     <div className="card-body">
                         <div className="row">
