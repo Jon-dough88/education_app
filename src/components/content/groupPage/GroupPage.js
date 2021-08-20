@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import './GroupPage.css';
 
 class GroupPage extends Component {
     state = {  }
@@ -9,7 +10,10 @@ class GroupPage extends Component {
                 <div className="row">
                     <div className="col group-title">
                         {/* <h1>{{GroupName}}</h1> */}
-                        <h1>Group Name</h1>
+                        <div className="row">
+                            <div className="col"><h1>Group Name</h1></div>
+                            <div className="col"><h2>Number of students</h2></div>
+                        </div> 
                     </div>
                     <div className="row">
                         <div className="col group-btn-container">
@@ -33,7 +37,7 @@ class GroupPage extends Component {
                     </div>
                     <div className="row">
                         <div className="col" id="group-recommendations">
-                            
+
                         </div>
                     </div>
                     <div className="row">
