@@ -4,8 +4,10 @@ class GroupCreator extends Component {
     state = {  }
     render() { 
         return ( 
-            <div>
-                
+            <div className="jumbotron container">
+                <form className="form-inline justify-content-center" id="group-creation-form">
+
+                </form>
             </div>
          );
     }

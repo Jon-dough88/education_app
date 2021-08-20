@@ -44,17 +44,16 @@ class Slide extends Component {
     }
 
 
-    handleTouchMove(event) {
-        
-        
+    handleTouchMove() {
+            
         if(this.state.isDragging === true) {
             console.log("Touch move")
             this.setState({
-                currentPosition: this.getPosition(event)
+                // correntPosition: this.getPosition(),
+                currentTranslate: this.state.prevTranslate + this.state.currentPosition - this.state.startPos
             })
-            // const currentPosition = this.getPosition(event)
-            // console.log(currentPosition)
-            // this.state.currentTranslate = this.state.prevTranslate + currentPosition - this.state.startPos
+            // 
+            // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
         }
     }
 
@@ -66,14 +65,11 @@ class Slide extends Component {
     }
 
     getPosition(event){
-        
 
         this.setState({
             startPos: this.getStartPosition(event)
         })
-
-        
-        
+    
     }
 
     getStartPosition(event) {
@@ -86,10 +82,9 @@ class Slide extends Component {
     
     animate() {
 
-        
         this.state.isDragging === true &&
             this.setState({
-                animationId: window.webkitRequestAnimationFrame(this.animate()),
+                animationId: window.requestAnimationFrame(this.animate()),
                 transform: `translateX(${this.state.currentTranslate}px)`
             })
 
@@ -125,10 +120,11 @@ class Slide extends Component {
         // console.log(this.props.index)
 
         return ( 
-            <div className="slide" key={this.props.id} index={this.props.index}> 
+            <div className="slide" key={this.props.id} index={this.props.index} style={{transform: `${this.state.transform}`}}> 
                 <div className="demo-content">
                     {/* <h2>{this.props.subject}</h2> */}
-                    <img className="demo-image" alt="Lesson" style={{transform: `${this.state.transform}`}}
+                    <img className="demo-image" alt="Lesson" 
+                    // style={{transform: `${this.state.transform}`}}
                     src={this.props.image} 
                     onDragStart={(e) => {this.cancelDragEffect(e)}} 
                     onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
