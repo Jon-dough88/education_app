@@ -32,6 +32,11 @@
     margin: 1rem auto;
 }
 
+.group-item-card {
+    text-decoration: none;
+   
+}
+
 .group-separator {
     border-right: 2px solid rgb(189, 186, 186);
 }
