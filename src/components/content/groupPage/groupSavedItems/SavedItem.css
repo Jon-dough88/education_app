@@ -1,0 +1,16 @@
+.saved-item {
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+#saved-item-image {
+    border: 1px solid blue;
+    max-height: 25%;
+    max-width: 25%;
+    min-width: 20%;
+}
+
+
+.separator {
+    height: 2rem;
+}

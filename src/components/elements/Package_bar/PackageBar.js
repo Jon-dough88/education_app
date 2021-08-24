@@ -9,7 +9,7 @@ class PackageBar extends Component {
     
     render() { 
         return ( 
-            <div className="package-bar" color="blue"></div>
+            <div className="package-bar blue"></div>
          );
     }
 }

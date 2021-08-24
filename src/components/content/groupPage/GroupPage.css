@@ -1,12 +1,37 @@
-.container {
 
+
+.group-page-container {
+    margin: 5rem;
 }
 
 .group-title {
+    align-items: center;
+    margin: 3rem auto;
+}
 
+.group-subtitle {
+    margin: 3rem auto;
 }
 
 
 .group-btn-container {
-    
+
+}
+
+.group-history-title {
+    margin: 3rem auto 2rem;
+}
+
+.group-page-btn {
+    margin: 2rem;
+}
+
+
+.group-history {
+    margin-bottom: 5rem;
+}
+
+
+.saved-title{
+    margin: 3rem;
 }
