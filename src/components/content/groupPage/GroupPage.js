@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './GroupPage.css';
 import Slider from '../../elements/Slider/Slider';
+import SavedItemContainer from './groupSavedItems/SavedItemContainer';
 
 class GroupPage extends Component {
     state = {  }
@@ -13,12 +14,13 @@ class GroupPage extends Component {
                         
                         <div className="row">
                             <div className="col"></div>
-                            <div className="col">
+                            <div className="col-md-3 col-sm-2">
                                 {/* <h1>{{GroupName}}</h1> */}
                                 <h1>Group Name</h1>
                             </div>
-                            <div className="col">
-                                <h2>Number of students</h2>
+                            <div className="col"></div>
+                            <div className="col-md-3 col-sm-3">
+                                <h2 className="group-subtitle">Number of students</h2>
                             </div>
                             <div className="col"></div>
                     
@@ -52,12 +54,15 @@ class GroupPage extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col">
+                        <div className="col saved-title">
                             <h2>Saved</h2>
                         </div>
                     </div>
                     <div className="row">
-                        
+                        <SavedItemContainer />
+                        <SavedItemContainer />
+                        <SavedItemContainer />
+                        <SavedItemContainer />
                     </div>
                 </div>
             </div>
