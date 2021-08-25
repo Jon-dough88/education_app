@@ -10,12 +10,12 @@ class Slide extends Component {
         this.state={
             isDragging: false,
             startPos: 0,
-            currentTranslate: 0,
+            // currentTranslate: 0,
             currentIndex: 0,
-            currentPosition: 0,
-            prevTranslate: 0,
-            animationId: 0,
-            transform: ''
+            // currentPosition: 0,
+            // prevTranslate: 0,
+            // animationId: 0,
+            // transform: ''
         }
     }
 
@@ -23,10 +23,11 @@ class Slide extends Component {
         event.preventDefault();
     }
 
-    // Touch event methods
+    // // Touch event methods
+
     handleTouchEvent(event, index) {
          console.log("Touch started!")
-         console.log(event.type)
+        //  console.log(event.type)
          console.log(`Start position: ${this.state.startPos}`)
 
          this.setState({
@@ -46,15 +47,19 @@ class Slide extends Component {
 
 
     handleTouchMove(e) {
-            
+           
+        // const currentPos = this.getPosition(e);
+
         if(this.state.isDragging === true) {
             console.log("Touch move")
-            
+            console.log(`Current position: ${this.state.currentPosition}`)
+
             this.setState({
                 correntPosition: this.getPosition(e),
                 currentTranslate: this.state.prevTranslate + this.state.currentPosition - this.state.startPos
             })
-            // 
+            
+
             // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
         }
     }
@@ -67,18 +72,19 @@ class Slide extends Component {
     }
 
     getPosition(event){
-
+        console.log(event)
         this.setState({
-            startPos: this.getStartPosition(event)
+            startPos: this.getCurrentPosition(event),
+            currentPosition: this.getCurrentPosition(event)
         })
     
     }
 
-    getStartPosition(event) {
-        console.log(event)
-        const startPos = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
-        console.log(`Start position: ${startPos}`)
-        return startPos
+    getCurrentPosition(event) {
+        // console.log(event)
+        const currentPos = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+        // console.log(`Start position: ${startPos}`)
+        return currentPos
     }
 
     
@@ -100,19 +106,18 @@ class Slide extends Component {
     // }
 
 
-    // handleMouseDown(event, index) {
-    //     console.log("Touch started!")
-    //      this.setState({
-    //          currentIndex: index
-    //      })
-    //      console.log(event.type)
-    //      this.setState({
-    //          isDragging: true
-    //      })
-    // }
+    handleMouseDown(event, index) {
+        console.log("Touch started!")
+         this.setState({
+             currentIndex: index
+         })
+         console.log(event.type)
+         this.setState({
+             isDragging: true
+         })
+    }
 
     
-
 
     
 
@@ -132,10 +137,11 @@ class Slide extends Component {
                     onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
                     onTouchEnd={() => {this.handleTouchEnd()}}
                     onTouchMove={(e) => {this.handleTouchMove(e)}}
+                    
                     onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
                     onMouseUp={() => {this.handleTouchEnd()}}
                     onMouseLeave={() => {this.handleTouchEnd()}}
-                    onMouseMove={() => {this.handleTouchMove()}}
+                    onMouseMove={(e) => {this.handleTouchMove(e)}}
                     onContextMenu={(e) => {
                         e.preventDefault();
                     
