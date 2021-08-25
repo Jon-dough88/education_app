@@ -45,13 +45,13 @@ class Slide extends Component {
     }
 
 
-    handleTouchMove() {
+    handleTouchMove(e) {
             
         if(this.state.isDragging === true) {
             console.log("Touch move")
             
             this.setState({
-                // correntPosition: this.getPosition(),
+                correntPosition: this.getPosition(e),
                 currentTranslate: this.state.prevTranslate + this.state.currentPosition - this.state.startPos
             })
             // 
