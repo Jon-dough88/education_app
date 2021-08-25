@@ -32,6 +32,7 @@ class Slide extends Component {
          this.setState({
             currentIndex: index,
             isDragging: true,
+            
          })
 
          this.getPosition(event)
@@ -48,6 +49,7 @@ class Slide extends Component {
             
         if(this.state.isDragging === true) {
             console.log("Touch move")
+            
             this.setState({
                 // correntPosition: this.getPosition(),
                 currentTranslate: this.state.prevTranslate + this.state.currentPosition - this.state.startPos
@@ -129,7 +131,7 @@ class Slide extends Component {
                     onDragStart={(e) => {this.cancelDragEffect(e)}} 
                     onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
                     onTouchEnd={() => {this.handleTouchEnd()}}
-                    onTouchMove={() => {this.handleTouchMove()}}
+                    onTouchMove={(e) => {this.handleTouchMove(e)}}
                     onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
                     onMouseUp={() => {this.handleTouchEnd()}}
                     onMouseLeave={() => {this.handleTouchEnd()}}
