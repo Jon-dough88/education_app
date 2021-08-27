@@ -8,89 +8,89 @@ class Slide extends Component {
         super();
 
         this.state={
-            isDragging: false,
-            startPos: 0,
-            currentTranslate: 0,
-            currentIndex: 0,
-            currentPosition: 0,
-            prevTranslate: 0,
-            animationId: 0,
-            transform: ''
+            // isDragging: false,
+            // startPos: 0,
+            // currentTranslate: 0,
+            // currentIndex: 0,
+            // currentPosition: 0,
+            // prevTranslate: 0,
+            // animationId: 0,
+            // transform: ''
         }
     }
 
-    cancelDragEffect(event){
-        event.preventDefault();
-    }
+    // cancelDragEffect(event){
+    //     event.preventDefault();
+    // }
 
-    // // Touch event methods
+    // // // Touch event methods
 
-    handleTouchEvent(event, index) {
-         console.log("Touch started!")
-        //  console.log(event.type)
-         console.log(this.props.index)
+    // handleTouchEvent(event, index) {
+    //      console.log("Touch started!")
+    //     //  console.log(event.type)
+    //      console.log(this.props.index)
 
-        const startPosition = this.getPositionX(event)
+    //     const startPosition = this.getPositionX(event)
 
-         this.setState({
-            currentIndex: index,
-            isDragging: true,
-            startPos: startPosition
-         })
+    //      this.setState({
+    //         currentIndex: index,
+    //         isDragging: true,
+    //         startPos: startPosition
+    //      })
 
-         console.log(`Start position: ${this.state.startPos}`)
+    //      console.log(`Start position: ${this.state.startPos}`)
 
-         this.animate()
+    //      this.animate()
    
         
-    }
+    // }
 
 
-    handleTouchMove(e) {
+    // handleTouchMove(e) {
            
-        // const currentPos = this.getPosition(e);
+    //     // const currentPos = this.getPosition(e);
 
-        if(this.state.isDragging === true) {
-            console.log("Touch move")
+    //     if(this.state.isDragging === true) {
+    //         console.log("Touch move")
 
-            console.log(`Previous translate: ${this.state.prevTranslate}`)
-            console.log(`Current position: ${this.state.currentPosition}`)
-            console.log(`Start position: ${this.state.startPos}`)
+    //         console.log(`Previous translate: ${this.state.prevTranslate}`)
+    //         console.log(`Current position: ${this.state.currentPosition}`)
+    //         console.log(`Start position: ${this.state.startPos}`)
             
 
-            const translate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos 
+    //         const translate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos 
             
 
 
-            this.setState({
-                correntPosition: this.getCurrentPosition(e),
-                currentTranslate: translate
-            })
+    //         this.setState({
+    //             correntPosition: this.getCurrentPosition(e),
+    //             currentTranslate: translate
+    //         })
             
-            console.log(`Current translate: ${translate}`)
-            // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
-        }
-    }
+    //         console.log(`Current translate: ${translate}`)
+    //         // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
+    //     }
+    // }
 
-    handleTouchEnd() {
-        console.log("end")
-        this.setState({
-            isDragging: false
-        })
-    }
+    // handleTouchEnd() {
+    //     console.log("end")
+    //     this.setState({
+    //         isDragging: false
+    //     })
+    // }
 
-    getCurrentPosition(event){
+    // getCurrentPosition(event){
         
-        this.setState({
-            currentPosition: this.getPositionX(event)
-        })
+    //     this.setState({
+    //         currentPosition: this.getPositionX(event)
+    //     })
     
-    }
+    // }
 
-    getPositionX(event) {
-        const positionX = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
-        return positionX
-    }
+    // getPositionX(event) {
+    //     const positionX = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+    //     return positionX
+    // }
 
     
     animate() {
