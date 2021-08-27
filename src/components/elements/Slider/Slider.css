@@ -1,6 +1,7 @@
 .slider-container {
     /* border: 2px solid blue; */
     height: 100%;
+    width: auto;
     overflow: hidden;
     display: inline-flex;
     transform: translateX(0);

@@ -10,10 +10,13 @@ class Slider extends Component {
 
         this.state={
             isDragging: false,
-            startPosition: 0,
+            currentIndex: 0,
+            startPos: 0,
             currentPosition: 0,
             prevTranslate: 0,
             currentTranslate: 0,
+            transform: '',
+            animationId: 0,
             slides: [    
                 {
                     id: 0,
@@ -37,153 +40,198 @@ class Slider extends Component {
     }
 
 
-    handleTouch(e) {
 
-        const startPosition = this.getPositionX(e);
+    // ******** New Methods ********
 
-        this.setState({
-            isDragging: true,
-            startPosition:  startPosition
-        })
-
-        console.log(`Start position: ${this.state.startPosition}`)
-    }
-
-  
-
-    getPositionX(e) {
-        const positionX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX
-        return positionX
-    }
-
-
-    handleMove(e) {
-        if(this.state.isDragging === true) {
-            console.log("Movement started")
-
-            const currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
-
-            this.setState({
-                currentPosition: this.getCurrentPosition(e),
-                currentTranslate: currentTranslate
-            })
-
-            console.log(`Current translate: ${this.state.currentTranslate}`)
-            
-        }
-    }
-
-
-    getCurrentPosition(e) {
-        this.setState({
-            currentPosition: this.getPositionX(e)
-        })
-
-        console.log(`Current Position: ${this.state.currentPosition}`)
-    }
-
-    handleTouchEnd(){
-        console.log("end")
-         this.setState({
-             isDragging: false
-         })
-    }
-
-
-    // cancelDragEffect(event){
-    //     event.preventDefault();
+    // cancelDragEffect(event) {
+    //     event.preventDefault()
     // }
-
-    // // // Touch event methods
-
-    // handleTouchEvent(event, index) {
-    //      console.log("Touch started!")
-    //     //  console.log(event.type)
-    //      console.log(this.props.index)
-
-    //     const startPosition = this.getPositionX(event)
-
-    //      this.setState({
-    //         // currentIndex: index,
-    //         isDragging: true,
-    //         startPos: startPosition
-    //      })
-
-    //      console.log(`Start position: ${this.state.startPos}`)
-
-    //      this.animate()
-   
-        
-    // }
-
-
-    // handleTouchMove(e) {
-           
-    //     // const currentPos = this.getPosition(e);
-
-    //     if(this.state.isDragging === true) {
-    //         console.log("Touch move")
-
-    //         console.log(`Previous translate: ${this.state.prevTranslate}`)
-    //         console.log(`Current position: ${this.state.currentPosition}`)
-    //         console.log(`Start position: ${this.state.startPos}`)
-            
-
-    //         const translate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos 
-            
-
-
-    //         this.setState({
-    //             correntPosition: this.getCurrentPosition(e),
-    //             currentTranslate: translate
-    //         })
-            
-    //         console.log(`Current translate: ${translate}`)
-    //         // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
-    //     }
-    // }
-
-    // handleTouchEnd() {
-    //     console.log("end")
-    //     this.setState({
-    //         isDragging: false
-    //     })
-    // }
-
-    // getCurrentPosition(event){
-        
-    //     this.setState({
-    //         currentPosition: this.getPositionX(event)
-    //     })
     
-    // }
-
-    // getPositionX(event) {
-    //     const positionX = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+    // getPositionX(e) {
+    //     const positionX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX
     //     return positionX
     // }
 
 
-    // animate() {
+    // handleTouch(e) {
 
-    //     // const transform = `translateX(${this.state.currentTranslate}px)`;
-    //     this.setSliderPosition()
-        
-    //     this.state.isDragging === true &&
+    //     this.setState({
+    //         startPos: this.getPositionX(e),
+    //         isDragging: true,
             
+    //     })
+    //     console.log("Touch started")
+    //     console.log(`Start position: ${this.state.startPos}`)
+    // }
+
+  
+
+    // handleMove(e) {
+    //     if(this.state.isDragging === true) {
+    //         // console.log("Movement started")
+    //         console.log(`Start position: ${this.state.startPos}`)
+    //         const currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
+
     //         this.setState({
-    //             animationId: window.requestAnimationFrame(this.animate()),
-    //             // transform: `translateX(${this.state.currentTranslate}px)`
+    //             currentTranslate: currentTranslate
     //         })
 
-    //     console.log(`Transform value: ${this.state.transform}`)
+    //         // this.getCurrentPosition(e)
+
+    //         console.log(`Current translate: ${this.state.currentTranslate}`)
+
+    //         this.animate()
+            
+    //     }
     // }
 
-    // setSliderPosition() {
-    //    this.setState({
-    //        transform: `translateX(${this.state.currentTranslate}px)`
-    //    }) 
+
+    // getCurrentPosition(e) {
+    //     this.setState({
+    //         currentPosition: this.getPositionX(e)
+    //     })
+
+    //     console.log(`Current Position: ${this.state.currentPosition}`)
     // }
+
+
+    // handleTouchEnd(){
+    //     console.log("end")
+    //      this.setState({
+    //          isDragging: false
+    //      })
+    // }
+
+    // animate() {
+
+    //         // const transform = `translateX(${this.state.currentTranslate}px)`;
+    //         this.setSliderPosition()
+            
+    //         this.state.isDragging === true &&
+                
+    //             this.setState({
+    //                 animationId: window.requestAnimationFrame(this.animate()),
+    //                 // transform: `translateX(${this.state.currentTranslate}px)`
+    //             })
+    
+    //             // console.log(`Transform value: ${this.state.transform}`)
+    //     }
+    
+
+    //     setSliderPosition() {
+    //        this.setState({
+    //            transform: `translateX(${this.state.currentTranslate}px)`
+    //        }) 
+
+    //     //    console.log(`Transform value: ${this.state.transform}`)
+    //     }
+
+
+    // *******Original methods*******
+
+    cancelDragEffect(event){
+        event.preventDefault();
+    }
+
+    // // Touch event methods
+
+    handleTouchEvent(event, index) {
+         console.log("Touch started!")
+
+        
+         this.setState({
+            currentIndex: index,
+            isDragging: true,
+            startPos: this.getPositionX(event)
+         })
+
+         console.log(`Start position: ${this.state.startPos}`)
+
+         this.getPositionX(event)
+
+         this.animate()
+   
+        
+    }
+
+
+    handleTouchMove(e) {
+           
+        // const currentPos = this.getPosition(e);
+
+        if(this.state.isDragging === true) {
+            console.log("Touch move")
+
+            console.log(`Previous translate: ${this.state.prevTranslate}`)
+            console.log(`Current position: ${this.state.currentPosition}`)
+            console.log(`Start position: ${this.state.startPos}`)
+            
+
+            const currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos 
+            
+
+
+            this.setState({
+                correntPosition: this.getCurrentPosition(e),
+                currentTranslate: currentTranslate
+            })
+
+            // this.isDragging === false && this.setState({
+            //     prevTranslate: this.currentTranslate
+            // })
+            
+            console.log(`Current translate: ${currentTranslate}`)
+            // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
+        }else {
+            this.setState({
+                prevTranslate: this.state.currentTranslate
+            })
+        }
+    }
+
+    handleTouchEnd() {
+        console.log("end")
+        this.setState({
+            isDragging: false
+        })
+    }
+
+    getCurrentPosition(event){
+        
+        this.setState({
+            currentPosition: this.getPositionX(event)
+        })
+    
+    }
+
+
+
+
+    getPositionX(event) {
+        const positionX = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+        console.log(`PositionX: ${positionX}`)
+        return positionX
+    }
+
+
+    animate() {
+
+        this.setSliderPosition()
+        
+        this.state.isDragging === true &&
+            
+            this.setState({
+                animationId: window.requestAnimationFrame(this.animate()),
+            })
+
+        console.log(`Transform value: ${this.state.transform}`)
+    }
+
+    setSliderPosition() {
+       this.setState({
+           transform: `translateX(${this.state.currentTranslate}px)`
+       }) 
+    }
 
 
 
@@ -191,24 +239,30 @@ class Slider extends Component {
 
 
         return ( 
-            <div className="slider-container" 
+            <div className="slider-container" style={{transform: `${this.state.transform}`}}
             
-                onMouseDown={(e) => {this.handleTouch(e)}}
-                onMouseMove={(e) => {this.handleMove(e)}}
-                onMouseLeave={() => {this.handleTouchEnd()}}
-                onMouseUp={() => {this.handleTouchEnd()}}
-            
-                // style={{transform: `${this.state.transform}`}}
-                // onDragStart={(e) => {this.cancelDragEffect(e)}} 
-                // // onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
-                // onTouchEnd={() => {this.handleTouchEnd()}}
-                // onTouchMove={(e) => {this.handleTouchMove(e)}}
-                    
-                // onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
-                // onMouseUp={() => {this.handleTouchEnd()}}
+                // ********** New Methods *********
+                // onDragStart={(e) => {this.cancelDragEffect(e)}}
+                // onMouseDown={(e) => {this.handleTouch(e)}}
+                // onMouseMove={(e) => {this.handleMove(e)}}
                 // onMouseLeave={() => {this.handleTouchEnd()}}
-                // onMouseMove={(e) => {this.handleTouchMove(e)}}
-                // onContextMenu={(e) => {e.preventDefault()}}
+                // onMouseUp={() => {this.handleTouchEnd()}}
+
+                // onTouchStart={(event) => {this.handleTouch(event)}}
+                // onTouchEnd={() => {this.handleTouchEnd()}}
+                // onTouchMove={(e) => {this.handleMove(e)}}
+            
+                
+                onDragStart={(e) => {this.cancelDragEffect(e)}} 
+                onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
+                onTouchEnd={() => {this.handleTouchEnd()}}
+                onTouchMove={(e) => {this.handleTouchMove(e)}}
+                    
+                onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
+                onMouseUp={() => {this.handleTouchEnd()}}
+                onMouseLeave={() => {this.handleTouchEnd()}}
+                onMouseMove={(e) => {this.handleTouchMove(e)}}
+                onContextMenu={(e) => {e.preventDefault()}}
 
             >
                 
