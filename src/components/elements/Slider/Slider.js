@@ -8,24 +8,77 @@ class Slider extends Component {
     constructor(props){
         super(props);
 
-        this.state=
-        [
-            {
-                id: 0,
-                subject: "Grammar",
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.technocrazed.com%2Fwp-content%2Fuploads%2F2018%2F09%2Fgrammar.jpg&f=1&nofb=1"
-            },
-            {
-                id: 1,
-                subject: "Reading comprehension",
-                image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.huffingtonpost.com%2F2016-06-05-1465146534-8456759-readingabook.jpeg&f=1&nofb=1"
-            },
-            {
-                id: 2,
-                subject: "Writing",
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200416164101-3-underscored-creative-writing-lead-super-tease.jpg&f=1&nofb=1"
-            },
-        ]
+        this.state={
+            isDragging: false,
+            startPosition: 0,
+            currentPosition: 0,
+            currentTranslate: 0,
+            slides: [    
+                {
+                    id: 0,
+                    subject: "Grammar",
+                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.technocrazed.com%2Fwp-content%2Fuploads%2F2018%2F09%2Fgrammar.jpg&f=1&nofb=1"
+                },
+                {
+                    id: 1,
+                    subject: "Reading comprehension",
+                    image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.huffingtonpost.com%2F2016-06-05-1465146534-8456759-readingabook.jpeg&f=1&nofb=1"
+                },
+                {
+                    id: 2,
+                    subject: "Writing",
+                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200416164101-3-underscored-creative-writing-lead-super-tease.jpg&f=1&nofb=1"
+                },
+            ]
+            
+        }
+        
+    }
+
+
+    handleTouch(e) {
+
+        const startPosition = this.getSliderX(e);
+
+        this.setState({
+            isDragging: true,
+            startPosition:  startPosition
+        })
+
+        console.log(`Start position: ${this.state.startPosition}`)
+    }
+
+  
+
+    getSliderX(e) {
+        const positionX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX
+        return positionX
+    }
+
+
+    handleMove(e) {
+        if(this.state.isDragging === true) {
+            console.log("Movement started")
+            this.setState({
+                currentPosition: this.getCurrentPosition()
+            })
+
+            console.log(`Current Position: ${this.state.currentPosition}`)
+        }
+    }
+
+
+    getCurrentPosition(e) {
+        this.setState({
+            currentPosition: this.getSliderX(e)
+        })
+    }
+
+    handleTouchEnd(){
+        console.log("end")
+         this.setState({
+             isDragging: false
+         })
     }
 
 
@@ -128,21 +181,14 @@ class Slider extends Component {
 
     render() { 
 
-        const slides = this.state
-
-        const sliderProps = {
-            isDragging: false,
-            startPos: 0,
-            currentTranslate: 0,
-            currentIndex: 0,
-            currentPosition: 0,
-            prevTranslate: 0,
-            animationId: 0,
-            transform: ''
-        }
 
         return ( 
             <div className="slider-container" 
+            
+                onMouseDown={(e) => {this.handleTouch(e)}}
+                onMouseMove={(e) => {this.handleMove(e)}}
+                onMouseLeave={() => {this.handleTouchEnd()}}
+                onMouseUp={() => {this.handleTouchEnd()}}
             
                 // style={{transform: `${this.state.transform}`}}
                 // onDragStart={(e) => {this.cancelDragEffect(e)}} 
@@ -158,7 +204,7 @@ class Slider extends Component {
 
             >
                 
-                {slides.map((slide, index) => (
+                {this.state.slides.map((slide, index) => (
                     
                     <Slide key={index} index={index} subject={slide.subject} image={slide.image}/>        
                 ))}
