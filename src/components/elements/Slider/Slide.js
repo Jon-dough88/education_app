@@ -93,26 +93,26 @@ class Slide extends Component {
     // }
 
     
-    animate() {
+    // animate() {
 
-        // const transform = `translateX(${this.state.currentTranslate}px)`;
-        this.setSliderPosition()
+    //     // const transform = `translateX(${this.state.currentTranslate}px)`;
+    //     this.setSliderPosition()
         
-        this.state.isDragging === true &&
+    //     this.state.isDragging === true &&
             
-            this.setState({
-                animationId: window.requestAnimationFrame(this.animate()),
-                // transform: `translateX(${this.state.currentTranslate}px)`
-            })
+    //         this.setState({
+    //             animationId: window.requestAnimationFrame(this.animate()),
+    //             // transform: `translateX(${this.state.currentTranslate}px)`
+    //         })
 
-        console.log(`Transform value: ${this.state.transform}`)
-    }
+    //     console.log(`Transform value: ${this.state.transform}`)
+    // }
 
-    setSliderPosition() {
-       this.setState({
-           transform: `translateX(${this.state.currentTranslate}px)`
-       }) 
-    }
+    // setSliderPosition() {
+    //    this.setState({
+    //        transform: `translateX(${this.state.currentTranslate}px)`
+    //    }) 
+    // }
 
     
     
@@ -122,17 +122,17 @@ class Slide extends Component {
         return ( 
             <div className="slide" key={this.props.id} 
                 index={this.props.index} 
-                style={{transform: `${this.state.transform}`}}
-                onDragStart={(e) => {this.cancelDragEffect(e)}} 
-                onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
-                onTouchEnd={() => {this.handleTouchEnd()}}
-                onTouchMove={(e) => {this.handleTouchMove(e)}}
+                // style={{transform: `${this.state.transform}`}}
+                // onDragStart={(e) => {this.cancelDragEffect(e)}} 
+                // onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
+                // onTouchEnd={() => {this.handleTouchEnd()}}
+                // onTouchMove={(e) => {this.handleTouchMove(e)}}
                     
-                onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
-                onMouseUp={() => {this.handleTouchEnd()}}
-                onMouseLeave={() => {this.handleTouchEnd()}}
-                onMouseMove={(e) => {this.handleTouchMove(e)}}
-                onContextMenu={(e) => {e.preventDefault()}}
+                // onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
+                // onMouseUp={() => {this.handleTouchEnd()}}
+                // onMouseLeave={() => {this.handleTouchEnd()}}
+                // onMouseMove={(e) => {this.handleTouchMove(e)}}
+                // onContextMenu={(e) => {e.preventDefault()}}
                 > 
                 
                 <div className="demo-content">
