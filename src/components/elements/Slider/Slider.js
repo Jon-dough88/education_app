@@ -12,6 +12,7 @@ class Slider extends Component {
             isDragging: false,
             startPosition: 0,
             currentPosition: 0,
+            prevTranslate: 0,
             currentTranslate: 0,
             slides: [    
                 {
@@ -38,7 +39,7 @@ class Slider extends Component {
 
     handleTouch(e) {
 
-        const startPosition = this.getSliderX(e);
+        const startPosition = this.getPositionX(e);
 
         this.setState({
             isDragging: true,
@@ -50,7 +51,7 @@ class Slider extends Component {
 
   
 
-    getSliderX(e) {
+    getPositionX(e) {
         const positionX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX
         return positionX
     }
@@ -59,19 +60,26 @@ class Slider extends Component {
     handleMove(e) {
         if(this.state.isDragging === true) {
             console.log("Movement started")
+
+            const currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
+
             this.setState({
-                currentPosition: this.getCurrentPosition()
+                currentPosition: this.getCurrentPosition(e),
+                currentTranslate: currentTranslate
             })
 
-            console.log(`Current Position: ${this.state.currentPosition}`)
+            console.log(`Current translate: ${this.state.currentTranslate}`)
+            
         }
     }
 
 
     getCurrentPosition(e) {
         this.setState({
-            currentPosition: this.getSliderX(e)
+            currentPosition: this.getPositionX(e)
         })
+
+        console.log(`Current Position: ${this.state.currentPosition}`)
     }
 
     handleTouchEnd(){
