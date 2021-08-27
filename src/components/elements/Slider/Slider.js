@@ -10,6 +10,16 @@ class Slider extends Component {
 
         this.state=[
             {
+                isDragging: false,
+                startPos: 0,
+                currentTranslate: 0,
+                currentIndex: 0,
+                currentPosition: 0,
+                prevTranslate: 0,
+                animationId: 0,
+                transform: ''
+            },
+            {
                 id: 0,
                 subject: "Grammar",
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.technocrazed.com%2Fwp-content%2Fuploads%2F2018%2F09%2Fgrammar.jpg&f=1&nofb=1"
@@ -27,28 +37,127 @@ class Slider extends Component {
         ]
     }
 
+
+    cancelDragEffect(event){
+        event.preventDefault();
+    }
+
+    // // Touch event methods
+
+    handleTouchEvent(event, index) {
+         console.log("Touch started!")
+        //  console.log(event.type)
+         console.log(this.props.index)
+
+        const startPosition = this.getPositionX(event)
+
+         this.setState({
+            currentIndex: index,
+            isDragging: true,
+            startPos: startPosition
+         })
+
+         console.log(`Start position: ${this.state.startPos}`)
+
+         this.animate()
+   
+        
+    }
+
+
+    handleTouchMove(e) {
+           
+        // const currentPos = this.getPosition(e);
+
+        if(this.state.isDragging === true) {
+            console.log("Touch move")
+
+            console.log(`Previous translate: ${this.state.prevTranslate}`)
+            console.log(`Current position: ${this.state.currentPosition}`)
+            console.log(`Start position: ${this.state.startPos}`)
+            
+
+            const translate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos 
+            
+
+
+            this.setState({
+                correntPosition: this.getCurrentPosition(e),
+                currentTranslate: translate
+            })
+            
+            console.log(`Current translate: ${translate}`)
+            // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
+        }
+    }
+
+    handleTouchEnd() {
+        console.log("end")
+        this.setState({
+            isDragging: false
+        })
+    }
+
+    getCurrentPosition(event){
+        
+        this.setState({
+            currentPosition: this.getPositionX(event)
+        })
+    
+    }
+
+    getPositionX(event) {
+        const positionX = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+        return positionX
+    }
+
+    
+    animate() {
+
+        // const transform = `translateX(${this.state.currentTranslate}px)`;
+        this.setSliderPosition()
+        
+        this.state.isDragging === true &&
+            
+            this.setState({
+                animationId: window.requestAnimationFrame(this.animate()),
+                // transform: `translateX(${this.state.currentTranslate}px)`
+            })
+
+        console.log(`Transform value: ${this.state.transform}`)
+    }
+
+    setSliderPosition() {
+       this.setState({
+           transform: `translateX(${this.state.currentTranslate}px)`
+       }) 
+    }
+
+
     render() { 
 
         const slides = this.state
         // console.log(slides);
 
         return ( 
-            <div className="slider-container">
-                {/* <Slide key={this.state.item1.id} subject={this.state.item1.subject} image={this.state.item1.image}/>
-                <Slide key={this.state.item2.id} subject={this.state.item2.subject} image={this.state.item2.image}/>
-                <Slide key={this.state.item3.id} subject={this.state.item3.subject} image={this.state.item3.image}/>
-                <Slide />
-                <Slide />
-                <Slide />
-                <Slide />
-                <Slide />
-                <Slide />
-                <Slide /> */}
+            <div className="slider-container"
+                style={{transform: `${this.state.transform}`}}
+                onDragStart={(e) => {this.cancelDragEffect(e)}} 
+                onTouchStart={(event, index) => {this.handleTouchEvent(event, index)}}
+                onTouchEnd={() => {this.handleTouchEnd()}}
+                onTouchMove={(e) => {this.handleTouchMove(e)}}
+                    
+                onMouseDown={(event, index) => {this.handleTouchEvent(event, index)}}
+                onMouseUp={() => {this.handleTouchEnd()}}
+                onMouseLeave={() => {this.handleTouchEnd()}}
+                onMouseMove={(e) => {this.handleTouchMove(e)}}
+                onContextMenu={(e) => {e.preventDefault()}}
+                
+            >
                 
                 {slides.map((slide, index) => (
-                    // <div className="col-1 slide">
-                    <Slide key={index} index={index} subject={slide.subject} image={slide.image}/>
-                    // </div>
+                    
+                    <Slide key={index} index={index} subject={slide.subject} image={slide.image}/>        
                 ))}
             </div>
          );
