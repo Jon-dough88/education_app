@@ -3,7 +3,10 @@
     height: 100%;
     overflow: hidden;
     display: inline-flex;
-    
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    cursor: grab;
+    user-select: none;
 }
 
 .slide {
@@ -16,7 +19,7 @@
     overflow: hidden;
     transform: translateX(0);
     transition: transform 0.3s ease-out;
-    cursor: grab;
+    /* cursor: grab; */
     user-select: none;
 }
 
