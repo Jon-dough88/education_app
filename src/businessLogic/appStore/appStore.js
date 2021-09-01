@@ -2,4 +2,4 @@ import { createStoreHook, combineReducers, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 
 
-const appStore
+const store
