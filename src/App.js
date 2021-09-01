@@ -1,4 +1,4 @@
-
+import { Provider } from 'react-redux';
 import './App.css';
 import Homepage from '../src/Homepage';
 

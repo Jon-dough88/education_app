@@ -17,6 +17,7 @@ class Slider extends Component {
             currentTranslate: 0,
             transform: '',
             animationId: 0,
+            cursor: 'grab',
             slides: [    
                 {
                     id: 0,
@@ -142,7 +143,8 @@ class Slider extends Component {
          this.setState({
             currentIndex: index,
             isDragging: true,
-            startPos: this.getPositionX(event)
+            startPos: this.getPositionX(event),
+            cursor: 'grabbing'
          })
 
          console.log(`Start position: ${this.state.startPos}`)
@@ -176,15 +178,13 @@ class Slider extends Component {
                 currentTranslate: currentTranslate
             })
 
-            // this.isDragging === false && this.setState({
-            //     prevTranslate: this.currentTranslate
-            // })
             
             console.log(`Current translate: ${currentTranslate}`)
-            // this.state.currentTranslate = this.state.prevTranslate + this.state.currentPosition - this.state.startPos
+
         }else {
             this.setState({
-                prevTranslate: this.state.currentTranslate
+                prevTranslate: this.state.currentTranslate,
+                cursor: 'grab'
             })
         }
     }
@@ -192,7 +192,8 @@ class Slider extends Component {
     handleTouchEnd() {
         console.log("end")
         this.setState({
-            isDragging: false
+            isDragging: false,
+            cursor: 'grab'
         })
     }
 
@@ -239,7 +240,7 @@ class Slider extends Component {
 
 
         return ( 
-            <div className="slider-container" style={{transform: `${this.state.transform}`}}
+            <div className="slider-container" style={{transform: `${this.state.transform}`, cursor: `${this.state.cursor}`}}
             
                 // ********** New Methods *********
                 // onDragStart={(e) => {this.cancelDragEffect(e)}}
