@@ -5,7 +5,7 @@ import Homepage from '../src/Homepage';
 function App() {
   return (
     <div className="App">
-      <Provider>
+      <Provider store={appStore}>
         <Homepage />
       </Provider>  
     </div>
