@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux';
 import './App.css';
 import Homepage from '../src/Homepage';
+import appStore from '../src/businessLogic/appStore/appStore';
 
 function App() {
   return (
