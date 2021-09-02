@@ -8,6 +8,7 @@ import groupReducer from '../groups/groupReducer';
 const appStore = createStore(combineReducers({
     users: usersReducer,
     content: contentReducer,
+    groups: groupReducer
 }), applyMiddleware(thunk))
 
 
