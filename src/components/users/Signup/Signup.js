@@ -63,7 +63,8 @@ let Signup = props => {
                             />
                         </div>
 
-                        <button className="btn btn-lg btn-primary signup-button" type="submit">Sign up!</button>
+                        <button className="btn btn-lg btn-primary signup-button" type="submit" disabled={pristine || submitting}>Sign up!</button>
+                        <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting}></button>
                         <br />   
                         <a href="/login"><strong style={{fontSize: "18px"}}>Already a member? Click here!</strong></a>
                     </form>    
