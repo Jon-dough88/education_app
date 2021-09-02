@@ -5,7 +5,7 @@ import './Signup.css';
 
 let Signup = props => {
 
-    const { handleSubmit } = props
+    const { handleSubmit, pristine, reset, submitting } = props
 
     return(
         <div className="jumbotron signup-container">
@@ -64,7 +64,7 @@ let Signup = props => {
                         </div>
 
                         <button className="btn btn-lg btn-primary signup-button" type="submit" disabled={pristine || submitting}>Sign up!</button>
-                        <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting}></button>
+                        <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
                         <br />   
                         <a href="/login"><strong style={{fontSize: "18px"}}>Already a member? Click here!</strong></a>
                     </form>    
