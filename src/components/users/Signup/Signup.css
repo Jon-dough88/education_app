@@ -1,11 +1,19 @@
-/* #signup-body{
-    
-} */
+ .signup-container {
+    align-items: center;
+    justify-content: center;
+} 
+
+.signup-title {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
 
 #signup-form {
     margin: 3rem auto;
     width: 50rem;
 }
+
+
 
 .signup-button {
     margin: 2rem auto;
