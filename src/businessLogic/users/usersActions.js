@@ -1,4 +1,13 @@
-// Creating a new user
+// Creating a new user/signing up
+
+
+
+// Fetching an existing user
+
+
+
+// Login
+
 
 
 // Editing account details
@@ -9,7 +18,12 @@
 
 
 
-// Login
+
+
 
 
 // Logout
+
+
+
+// Upgrading an account

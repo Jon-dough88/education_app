@@ -1,12 +1,26 @@
 // Creating a new lesson/recommendation
 
 
-// Editing the lesson's details
+// Editing a lesson's details
+
 
 
 // Sending students lessons/notifications
 
 
-// Providing students with feedback
+
+// Saving a lesson/recommendation
+
+
+
+// Highlighting a lesson/recommendation
+
+
+
+// Providing students with feedback/grading
+
+
+
+// Creating a group notification
 
 
