@@ -12,6 +12,7 @@ class LessonCard extends Component {
                                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1" className="img-fluid rounded-start lesson-image" alt=""></img>    
                             </div>
                         </div>
+                        <div className="row" id="bottom-separator"></div>
                         <div className="row left-row">
                             <div className="col">
                                 <button className="btn btn-lg btn-primary start-button"><h4>Start</h4></button>

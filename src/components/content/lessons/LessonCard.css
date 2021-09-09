@@ -1,6 +1,7 @@
 .card {
     width: auto;
     margin-top: 0.6rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .image{
@@ -12,10 +13,10 @@
 .lesson-image {
     height: 75%;
     width: 85%;  
-    min-height: 54%;
-    min-width: 65%;
+    min-height: 74%;
+    min-width: 75%;
     
-    margin: 4rem auto 0 auto;
+    margin: 3rem auto 0 auto;
 }
 
 
@@ -84,7 +85,7 @@
 
 #bottom-separator {
     /* border: 1px solid goldenrod; */
-    min-height: 8rem;
+    min-height: 3rem;
 }
 
     /* 
