@@ -1,0 +1,27 @@
+.main-page{
+    /* padding: 1rem; */
+    height: auto;
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+
+.main-column {
+    height: auto;
+    /* margin-left: 10px; */
+}
+
+
+#slider {
+    padding: 1rem;
+    align-items: center;
+}
+
+#content {
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+#promotional{
+    /* border: 1px solid blue; */
+    padding: 2rem;
+}
