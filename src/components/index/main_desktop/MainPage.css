@@ -17,6 +17,7 @@
 #slider {
     padding: 2rem;
     align-items: center;
+    margin-top: 1rem;
 }
 
 #content {
@@ -26,6 +27,8 @@
 
 #promotional{
     /* border: 1px solid blue; */
+    position: fixed;
+    left: 75%;
     align-items: center;
     padding: 2rem;
 }

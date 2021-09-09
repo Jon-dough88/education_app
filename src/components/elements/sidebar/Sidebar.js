@@ -56,13 +56,13 @@ class Sidebar extends Component {
                     {/* Saved */}
                     <li>
     
-                         <a className="slider-link" href="/saved"> <i class="far fa-save" style={{color: "grey"}}></i> Saved</a>
+                         <a className="slider-link" href="/saved"> <i className="far fa-save" style={{color: "grey"}}></i> Saved</a>
                     </li>  
 
                     {/* Starred */}
                     <li>
                         
-                        <a className="slider-link" href="/starred"><i class="far fa-star" style={{color: "gold"}}></i>Starred</a>
+                        <a className="slider-link" href="/starred"><i className="far fa-star sidebar-star"></i>Starred</a>
                     </li>
 
                     {/* My Groups */}

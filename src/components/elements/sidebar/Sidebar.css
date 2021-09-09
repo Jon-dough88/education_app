@@ -5,8 +5,9 @@
     /* display: flex;
     align-items: stretch; */
     /* border: 1px solid orangered; */
-    width: 100%;
+    /* width: 100%; */
     height: auto;
+    /* position: fixed; */
 }
 
 
@@ -14,6 +15,7 @@
     min-width: 16rem;
     max-width: 16rem;
     min-height: 100vh;
+    position: fixed;
 }
 
 
@@ -42,6 +44,14 @@ a[data-toggle="collapse"] {
 .login-block{
     padding: 1rem;
     margin: 1rem auto;
+}
+
+.sidebar-star {
+    color: gold;
+}
+
+.sidebar-star:hover {
+    color: rgb(208, 255, 0);
 }
 
 

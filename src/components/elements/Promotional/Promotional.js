@@ -7,7 +7,7 @@ class Promotional extends Component {
     render(){
 
         return(
-            <div className="container">
+            <div className="container promotional-container">
                 <div className="row card-row">
                     <div className="col">
                         <div className="card main-card text-center">

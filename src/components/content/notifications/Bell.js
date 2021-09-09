@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
+
+import Counter from './Counter.js';
 import './Bell.css'
 
 class Bell extends Component {
     
-    routeToNotifications(){
-         return <Redirect to="/notifications"/>   
-    }
+    
 
     render() { 
 
@@ -15,7 +14,10 @@ class Bell extends Component {
         return ( 
 
             <div className="bell-container">
-                <i className="fas fa-bell fa-2x bell" onClick={() => {this.routeToNotifications()}}></i>
+                <a href="/notifications">
+                    <i className="fas fa-bell fa-2x bell"></i>  
+                </a>
+                <Counter />
             </div>
         );
     }

@@ -7,7 +7,11 @@ class Dumbbell extends Component {
     render() {
         return (
             <div>
-                <i className="fas fa-dumbbell fa-2x dumbbell"></i>
+                <a href="/recommendations">
+                    <i className="fas fa-dumbbell fa-2x dumbbell"></i>
+                </a>
+                
+
             </div>
         )
     }
