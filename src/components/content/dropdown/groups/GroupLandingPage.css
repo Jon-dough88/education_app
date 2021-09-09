@@ -1,0 +1,45 @@
+.main-page{
+    /* padding: 1rem; */
+    height: auto;
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+
+.main-column {
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    
+    /* margin-left: 10px; */
+}
+
+
+#slider {
+    padding: 2rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#content {
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+#promotional{
+    /* border: 1px solid blue; */
+    position: fixed;
+    left: 75%;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+@media screen and (max-width: 950px){
+    #slider {
+        display: none;
+    }
+
+    #promotional{
+        display: none;
+    }
+}

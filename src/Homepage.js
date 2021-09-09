@@ -10,7 +10,8 @@ import SignupPage from './components/users/Signup/SignupPage';
 // import Main from '../src/components/index/Main';
 import MainPage from './components/index/main_desktop/MainPage';
 import AdminPage from '../src/components/content/admin/AdminPage';
-import GroupMenu from '../src/components/content/dropdown/groups/GroupsMenu';
+// import GroupMenu from '../src/components/content/dropdown/groups/GroupsMenu';
+import GroupLandingPage from '../src/components/content/dropdown/groups/GroupLandingPage';
 import GroupCreator from './components/content/dropdown/groups/GroupCreator';
 import GroupPage from './components/content/groupPage/GroupPage';
 
@@ -65,7 +66,8 @@ class Homepage extends Component {
                         <Route path="/login" component={LoginPage}></Route>
                         <Route path="/signup" component={SignupPage}></Route>
                         <Route path="/admin" component={AdminPage}></Route>
-                        <Route path="/groups" component={GroupMenu}></Route>
+                        {/* <Route path="/groups" component={GroupMenu}></Route> */}
+                        <Route path="/groups" component={GroupLandingPage}></Route>
                         <Route path="/groupCreation" component={GroupCreator}></Route>
                         <Route path="/groupPage" component={GroupPage}></Route>
                     </Switch>

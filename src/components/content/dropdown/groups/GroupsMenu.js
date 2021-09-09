@@ -11,7 +11,7 @@ class GroupMenu extends Component {
             <div className="container jumbotron group-menu">
                 <div className="row group-title-row">
                     <div className="col-md-7 col-sm-5">
-                        <h1>My Groups</h1>
+                        <h1 className="group-menu-title">My Groups</h1>
                     </div>
                     <div className="col-md-4 col-sm-6">
                         <a href="/groupCreation"><i class="fas fa-plus-circle fa-3x add-button"></i></a> 

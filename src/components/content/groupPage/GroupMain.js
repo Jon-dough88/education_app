@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import Sidebar from '../../../elements/sidebar/Sidebar';
-import GroupsMenu from './GroupsMenu';
-import Promotional from '../../../elements/Promotional/Promotional';
+import Sidebar from '../../elements/sidebar/Sidebar';
+import GroupPage from './GroupPage';
+import Promotional from '../../elements/Promotional/Promotional';
 
-import './GroupLandingPage.css';
+import '../../index/main_desktop/MainPage/MainPage.css'
 
-class GroupLandingPage extends Component {
+class MainPage extends Component {
 
     render() {
 
@@ -17,7 +17,7 @@ class GroupLandingPage extends Component {
                         <Sidebar />
                     </div>
                     <div className="col-md-7 main-column" id="content">
-                        <GroupsMenu />
+                        <GroupPage />
                     </div>
                     <div className="col-md-3 main-column" id="promotional">
                         <Promotional />
@@ -29,4 +29,4 @@ class GroupLandingPage extends Component {
 }
 
 
-export default GroupLandingPage
+export default MainPage
