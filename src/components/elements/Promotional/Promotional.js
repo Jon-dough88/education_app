@@ -17,9 +17,9 @@ class Promotional extends Component {
                             <div className="card-body">
                                 <img className="card-img promotional-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Aufgeschlagenes_Buch_--_2020_--_4204_%28bw%29.jpg/640px-Aufgeschlagenes_Buch_--_2020_--_4204_%28bw%29.jpg"></img>
                                 <div className="card-img-overlay image-overlay">
-                                    <h2 className="card-title promotional-content">
+                                    <h3 className="card-title promotional-content">
                                         Some promotional stuff
-                                    </h2>
+                                    </h3>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,41 @@
+
+.main-card{
+    min-width: 95%;
+    min-height: 95%;
+    margin: 2rem auto 1rem auto;
+    padding: 1rem;
+    align-items: center;
+    /* padding: 10rem; */
+}
+
+
+.top-card{
+    height: 4rem;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.image-overlay{
+    width: 90%;
+}
+
+.promotional-image{
+    opacity: 0.6;
+    align-items: center;
+}
+
+
+.promotional-content{
+    color: rgb(4, 4, 54);
+    text-align: center;
+    /* width: 18rem; */
+}
+
+
+
+.join-button{
+    width: 85%;
+}
+

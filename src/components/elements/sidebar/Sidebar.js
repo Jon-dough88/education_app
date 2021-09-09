@@ -9,8 +9,8 @@ class Sidebar extends Component {
         return (
             // <div className="wrapper">
             // </div>
-            <div className="row">
-                 <div className="col wrapper">
+            // <div className="row">
+                //  <div className="col wrapper">
                     <nav id="sidebar">
                     
                     <ul className="list-unstyled components">
@@ -20,9 +20,14 @@ class Sidebar extends Component {
                     <div className="sidebar-header">
                             <a className="navbar-brand" href="/">Home</a>
                     </div> 
+
+                    <div className="card login-block">
+                        <h4><strong>Have an account?</strong></h4>
+                        <a className="slider-link" href="/login"><h4><strong>Login!</strong></h4></a>
+                    </div>
                     
                     {/* User Menu: Sign up, login & admin access */}
-                    <li className="active" id="user-menu">
+                    {/* <li className="active" id="user-menu">
                         <a href="#userSubmenu" className="dropdown-toggle" data-toggle="collapse" aria-expanded="false" >Users</a>
                         <ul className="collapse list-unstyled" id="userSubmenu">
                             <li>
@@ -35,62 +40,62 @@ class Sidebar extends Component {
                                 <a href="/admin">Admin Access</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> */}
                     
 
                     {/* Notifications */}
                     <li>
-                    <a href="/notifications">Notifications</a>      
+                    <a className="slider-link" href="/notifications">Notifications</a>      
                     </li>
 
                     {/* Recommendations */}
                     <li>
-                    <a href="/recommendations">Recommendations</a> 
+                    <a className="slider-link" href="/recommendations">Recommendations</a> 
                     </li>
 
                     {/* Saved */}
                     <li>
     
-                         <a href="/saved"> <i class="far fa-save" style={{color: "grey"}}></i> Saved</a>
+                         <a className="slider-link" href="/saved"> <i class="far fa-save" style={{color: "grey"}}></i> Saved</a>
                     </li>  
 
                     {/* Starred */}
                     <li>
-                        <i class="far fa-star" style={{color: "gold"}}></i>
-                        <a href="/starred">Starred</a>
+                        
+                        <a className="slider-link" href="/starred"><i class="far fa-star" style={{color: "gold"}}></i>Starred</a>
                     </li>
 
                     {/* My Groups */}
                     <li>
-                    <a href="/groups">My Groups</a> 
+                    <a className="slider-link" href="/groups">My Groups</a> 
                     </li>  
 
                     {/* My Profile */}
                     <li>
-                    <a href="/profile">My Profile</a> 
+                    <a className="slider-link" href="/profile">My Profile</a> 
                     </li>
 
                     {/* Settings */}
                     <li>
-                    <a href="/settings">Settings</a> 
+                    <a className="slider-link" href="/settings">Settings</a> 
                     </li>
 
                     {/* Contact us */}
                     <li>
-                    <a href="/contact">Contact Us</a> 
+                    <a className="slider-link" href="/contact">Contact Us</a> 
                     </li>
 
                     {/* Privacy policy */}
                     <li>
-                    <a href="/privacy">Privacy Policy</a> 
+                    <a className="slider-link" href="/privacy">Privacy Policy</a> 
                     </li>
 
                     {/* Account type */}
                 </ul>    
             </nav>
            
-                </div>   
-            </div>
+                // </div>   
+            // </div>
         )
     }
 

@@ -7,12 +7,15 @@
 
 .main-column {
     height: auto;
+    align-items: center;
+    justify-content: center;
+    
     /* margin-left: 10px; */
 }
 
 
 #slider {
-    padding: 1rem;
+    padding: 2rem;
     align-items: center;
 }
 
@@ -23,5 +26,17 @@
 
 #promotional{
     /* border: 1px solid blue; */
+    align-items: center;
     padding: 2rem;
+}
+
+
+@media screen and (max-width: 850px){
+    #slider {
+        display: none;
+    }
+
+    #promotional{
+        display: none;
+    }
 }
