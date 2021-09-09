@@ -12,7 +12,7 @@ class GroupPage extends Component {
                 <div className="row">
                     <div className="col group-title">
                         
-                        <div className="row">
+                        <div className="row group-title-row">
                             <div className="col"></div>
                             <div className="col-md-3 col-sm-2">
                                 {/* <h1>{{GroupName}}</h1> */}

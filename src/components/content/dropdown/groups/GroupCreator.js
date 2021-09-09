@@ -18,6 +18,7 @@ class GroupCreator extends Component {
                             <button className="btn btn-primary btn-lg">Add</button>
                         </div>
                         <div className="form-group">
+                            <button className="btn-lg level-btn" >3p</button>
                             <button className="btn-lg level-btn" >4p</button>
                             <button className="btn-lg level-btn" >5p</button>
                         </div>

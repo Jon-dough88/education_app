@@ -10,17 +10,6 @@ import PackageBar from '../elements/Package_bar/PackageBar';
 
 class Navmenu extends Component {
     
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { scrollBackground: 'nav-bg' };
-    //     this.handleScroll = this.handleScroll.bind(this)
-    // }
-
-    // handleScroll() {
-    //     this.setState({
-    //         scrollBackground: !this.state.scrollBackground
-    //     })
-    // }
 
     render() {
 

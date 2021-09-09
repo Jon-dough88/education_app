@@ -1,3 +1,7 @@
+.login-container {
+    height: 50rem;
+}
+
 #login-page {
     justify-content: center;
     align-items: center;
@@ -9,6 +13,10 @@
     
 }
 
+.card-title {
+    margin-top: 5rem;
+}
+
 .form-control {
     width: 80%;
     margin: 2rem;
@@ -16,4 +24,9 @@
 
 .login-button {
     margin: 2rem;
+}
+
+
+.signup-link{
+    margin-bottom: 6rem;
 }

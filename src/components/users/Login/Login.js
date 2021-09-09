@@ -8,7 +8,7 @@ let Login = props => {
     const { handleSubmit, pristine, reset, submitting } = props
 
     return (
-        <div className="jumbotron container">
+        <div className="jumbotron login-container">
             <div className="card" id="login-page">
                 <h1 className="card-title">Login</h1>
                 <div className="card-body">
@@ -33,9 +33,10 @@ let Login = props => {
 
                         <button className="btn btn-lg btn-primary login-button" type="submit" disabled={pristine || submitting}>Login</button>
                     
-                        <button className="btn btn-lg btn-info" type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>
+                        <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>
                         <br />
-                        <a href="/signup">Not a member yet? Sign up today!</a>
+
+                        <a className="signup-link" href="/signup"><strong>Not a member yet? Sign up today!</strong></a>
 
                     </form>
                 </div>

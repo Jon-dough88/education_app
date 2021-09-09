@@ -2,7 +2,7 @@
 
 
 
-// Editing a group's details
+// Editing a group's details (grade, level, )
 
 
 
@@ -11,6 +11,10 @@
 
 
 // Adding a student
+
+
+
+// Removing a student
 
 
 
