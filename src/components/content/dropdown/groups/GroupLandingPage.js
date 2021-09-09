@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Sidebar from '../../elements/sidebar/Sidebar';
-import Main from '../Main';
+import GroupMenu from './GroupsMenu';
 import Promotional from '../../elements/Promotional/Promotional';
 
 import './MainPage.css';
@@ -17,7 +17,7 @@ class GroupLandingPage extends Component {
                         <Sidebar />
                     </div>
                     <div className="col-md-7 main-column" id="content">
-                        <Main />
+                        <GroupsMenu />
                     </div>
                     <div className="col-md-3 main-column" id="promotional">
                         <Promotional />
