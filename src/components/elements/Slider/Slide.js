@@ -67,13 +67,16 @@ class Slide extends Component {
                 onMouseDown={(event, index) => this.handleTouchEvent(event, index)}> 
                 
                 <div className="demo-content">
-                    {/* <h2>{this.props.subject}</h2> */}
                     <img className="demo-image" alt="Lesson" 
                     // style={{transform: `${this.state.transform}`}}
                     src={this.props.image} 
                     >
                     
                     </img>
+                    
+                </div>
+                <div className="slide-tag">
+                    <h4>{this.props.subject}</h4>
                 </div>
             </div>
          );
