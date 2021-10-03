@@ -1,7 +1,7 @@
 .card {
     width: auto;
     margin-top: 0.6rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -21,6 +21,10 @@
     margin: 3rem auto 1rem auto;
 }
 
+.lesson-level {
+    margin-top: 1rem;
+    color: rgb(18, 18, 156);
+}
 
 .left-row {
     margin-left: 2rem;
@@ -46,7 +50,7 @@
     text-align: center;
     justify-content: center;
     max-height: 5rem;
-    
+    margin-bottom: 1.5rem;
 }
 
 .item-type-container {
@@ -109,11 +113,22 @@
     } */
 
 
+.bottom-row {
+    margin: 2rem;
+}
+
 #button-row {
     /* border: 1px solid fuchsia; */
     max-height: 8rem;
 }
 
+
+.button-card{
+    display: flex;
+    flex-direction: row;
+    /* min-width: 10rem; */
+    padding: 0.75rem;
+}
 
 .secondary-button-container {
     padding: 1rem;
@@ -139,7 +154,7 @@
 
 .star {
     color: gold;
-    
+    /* margin-right: 1rem; */
 }
 
 .star:hover{
@@ -149,6 +164,7 @@
 
 .save {
     color: indigo;
+    /* margin-left: 1rem; */
 }
 
 .save:hover {

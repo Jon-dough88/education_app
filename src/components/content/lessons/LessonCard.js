@@ -89,7 +89,7 @@ class LessonCard extends Component {
 
                 {/* Left column */}
 
-                <div className="col-md-5" style={{border: "1px solid green"}}>
+                <div className="col-5">
                     <div className="row">
                         <div className="col">
                             <img className="lesson-image" src={this.state.image} alt="Lesson image"></img>
@@ -97,7 +97,7 @@ class LessonCard extends Component {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <h2>{this.state.level}</h2>
+                            <h2 className="lesson-level">{this.state.level}</h2>
                         </div>
                         <div className="col"></div>
                         <div className="col"></div>
@@ -107,7 +107,7 @@ class LessonCard extends Component {
 
                 {/* Right column */}
 
-                <div className="col-md-7" style={{border: "1px solid blue"}}>
+                <div className="col-7">
                     <div className="row" id="lesson-row">
                         <div className="col-3">
                             <div className="card">
@@ -126,16 +126,24 @@ class LessonCard extends Component {
                     </div>
 
                     <div className="row title-row">
-                        <h1>{this.state.title}</h1>
+                        <h1 className="lesson-title">{this.state.title}</h1>
                     </div>
+
                     <div className="row" id="tag-row">
                         {this.state.tags.map((tag) => 
                              <LessonTag tag={tag} />   
                         )}
                         
                     </div>
-                    <div className="row" id="bottom-row">
 
+                    <div className="row bottom-row">
+                        <div className="col-8" style={{border: "purple"}}></div>
+                        <div className="col-4">
+                            <div className="card button-card">
+                                <div className="col-sm-6 col-md-6"><i className="fas fa-star fa-2x star"></i></div>
+                                <div className="col-sm-6 col-md-6"><i className="fas fa-save fa-2x save"></i></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
