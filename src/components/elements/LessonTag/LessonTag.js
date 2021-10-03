@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import './LessonTag.css'
 
 class LessonTag extends Component {
     
@@ -9,8 +10,8 @@ class LessonTag extends Component {
 
     render(){
         return(
-            <div className="card">
-
+            <div className="card lesson-tag">
+                {this.props.tag}   
             </div>
         )
     }

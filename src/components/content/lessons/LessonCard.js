@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './LessonCard.css'
 import PackageBar from '../../elements/Package_bar/PackageBar';
+import LessonTag from '../../elements/LessonTag/LessonTag';
 
 
 
@@ -15,7 +16,7 @@ class LessonCard extends Component {
             image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
             itemType: "lesson",
             title: "Grammar",
-            tags: [],
+            tags: ["Vocabulary 7", "Grammar 3", "Reading2", "Writing 1"],
             package: "basic",
             level: "B2",
             completed: 3
