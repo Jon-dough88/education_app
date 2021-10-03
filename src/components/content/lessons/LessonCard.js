@@ -130,7 +130,7 @@ class LessonCard extends Component {
                     </div>
                     <div className="row" id="tag-row">
                         {this.state.tags.map((tag) => 
-                             <LessonTag tag={this.state.tag} />   
+                             <LessonTag tag={tag} />   
                         )}
                         
                     </div>

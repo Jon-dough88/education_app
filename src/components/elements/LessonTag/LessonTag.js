@@ -11,7 +11,6 @@ class LessonTag extends Component {
     render(){
         return(
             <div className="card lesson-tag">
-                <div className=""></div>
                 {this.props.tag}   
             </div>
         )
