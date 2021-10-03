@@ -62,10 +62,16 @@ class LessonCard extends Component {
         //    </div>
 
         <div className="card">
-            <div>
-                
-            </div>
+            <div className="row">
+                <div className="col-md-5" style={{border: "1px solid green"}}>
+                    <div className="row">
 
+                    </div>
+                </div>
+                <div className="col-md-7" style={{border: "1px solid blue"}}>
+
+                </div>
+            </div>
         </div>
         )
     }
