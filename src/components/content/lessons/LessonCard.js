@@ -16,7 +16,7 @@ class LessonCard extends Component {
             itemType: "lesson",
             title: "Grammar",
             tags: [],
-            package: "free",
+            package: "basic",
             level: "B2",
             completed: 3
     
@@ -85,6 +85,9 @@ class LessonCard extends Component {
 
         <div className="card">
             <div className="row">
+
+                {/* Left column */}
+
                 <div className="col-md-5" style={{border: "1px solid green"}}>
                     <div className="row">
                         <div className="col">
@@ -99,6 +102,10 @@ class LessonCard extends Component {
                         <div className="col"></div>
                     </div>
                 </div>
+
+
+                {/* Right column */}
+
                 <div className="col-md-7" style={{border: "1px solid blue"}}>
                     <div className="row" id="lesson-row">
                         <div className="col-3">
@@ -107,21 +114,21 @@ class LessonCard extends Component {
                             </div>
                         </div>
                         <div className="col-2">
-
+                            <PackageBar text={this.state.package} packageType={this.state.package}/>
                         </div>
-                        <div className="col-6">
-
-                        </div>
-                        <div className="col-1">
-
+                        <div className="col-5" id="separator-top"></div>
+                        <div className="col-1" id="completed-col">
+                            <button className="btn btn-lg">
+                                <h2>{this.state.completed}</h2>
+                            </button>
                         </div>
                     </div>
 
-                    <div className="row" id="title-row">
-
+                    <div className="row title-row">
+                        <h1>{this.state.title}</h1>
                     </div>
                     <div className="row" id="tag-row">
-
+                        
                     </div>
                     <div className="row" id="bottom-row">
 

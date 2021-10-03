@@ -1,6 +1,7 @@
 .card {
     width: auto;
     margin-top: 0.6rem;
+    padding: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -12,12 +13,12 @@
 }
 
 .lesson-image {
+    border: 2px solid black;
     height: 75%;
-    width: 85%;  
+    width: 75%;  
     min-height: 74%;
     min-width: 75%;
-    
-    margin: 3rem auto 0 auto;
+    margin: 3rem auto 1rem auto;
 }
 
 
@@ -33,6 +34,10 @@
     min-width: 45%;
     max-width: 100%;
     margin: 3rem auto;
+}
+
+.title-row {
+    margin-top: 1.5rem;
 }
 
 
