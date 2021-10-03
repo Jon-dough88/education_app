@@ -29,8 +29,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 80%;
-    width: 80%; */
+    min-height: 10rem;
+    min-width: 10rem;
     border: 2px solid black;
     border-radius: 100%;
     overflow: hidden;

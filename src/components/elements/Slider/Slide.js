@@ -4,8 +4,8 @@ import './Slider.css';
 
 class Slide extends Component {
     
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state={
             currentIndex: 0,
