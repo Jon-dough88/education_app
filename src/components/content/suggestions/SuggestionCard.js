@@ -13,7 +13,7 @@ class SuggestionCard extends Component {
                 <div className="row g-0">
                     <div className="col-sm-12">
                         <div className="card-body">
-                           <div className="suggestion-title"><span><h2 className="card-title">Recommended For You</h2></span></div>
+                           <div className="suggestion-title"><span><h1 className="card-title">Recommended For You</h1></span></div>
                            <br></br> 
                            <div className="container">
                                 <div className="row">

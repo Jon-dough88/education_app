@@ -76,7 +76,7 @@ class Slide extends Component {
                     
                 </div>
                 <div className="slide-tag">
-                    <h4>{this.props.subject}</h4>
+                    <h4>{this.props.class}</h4>
                 </div>
             </div>
          );

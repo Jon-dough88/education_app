@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     margin: 2rem 1rem;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     min-height: 12rem;
     min-width: 12rem;
     /* max-height: 80%; */
@@ -47,7 +47,7 @@
 
 .slide-tag {
     border: 1px solid black;
-    border-radius: 3%;
+    border-radius: 4%;
     padding: 0.5rem;
     margin: 1rem;
     background-color: white;
