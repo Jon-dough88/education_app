@@ -25,6 +25,9 @@ class GroupCreator extends Component {
                         <div className="form-group">
                             <button type="submit" className="btn btn-primary btn-lg create-group-btn">Create Group</button>
                         </div>
+                        <a href="/groups">
+                            <h5><strong>Back to the group menu</strong></h5>
+                        </a>
                     </form>
                 </div>
             </div>

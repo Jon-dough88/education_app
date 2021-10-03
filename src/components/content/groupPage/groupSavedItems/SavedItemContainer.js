@@ -8,7 +8,7 @@ class SavedItemContainer extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className="col-md-3 col-sm-2 saved-item-container" id="group-saved-items">
+            <div className="col-md-4 col-sm-3 col-xs-4 saved-item-container" id="group-saved-items">
                 <SavedItem />
             </div>
          );

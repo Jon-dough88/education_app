@@ -26,9 +26,11 @@
 
 } */
 
-.group-history-title {
-    margin: 3rem auto 2rem;
+.title {
+    margin: 3rem auto 3rem;
 }
+
+
 
 .group-page-btn {
     margin: 2rem;
@@ -37,6 +39,11 @@
 
 .group-history {
     margin-bottom: 5rem;
+    
+}
+
+.slider-bar{
+    background-color: rgb(236, 236, 236);
 }
 
 

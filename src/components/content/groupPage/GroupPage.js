@@ -34,28 +34,28 @@ class GroupPage extends Component {
 
                     </div>
                     <div className="row">
-                        <div className="col group-history-title">
-                            <h2>Group History</h2>
+                        <div className="col">
+                            <h2 className="title">Group History</h2>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col group-history" id="group-history">
+                        <div className="col group-history slider-bar" id="group-history">
                             <Slider />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
-                            <h2>Recommended</h2>
+                            <h2 className="title">Recommended</h2>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col" id="group-recommendations">
+                        <div className="col slider-bar" id="group-recommendations">
                             <Slider />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col saved-title">
-                            <h2>Saved</h2>
+                            <h2 className="title">Saved</h2>
                         </div>
                     </div>
                     <div className="row">

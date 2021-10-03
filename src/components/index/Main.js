@@ -11,8 +11,13 @@ class Main extends Component {
         return (
             <div className="jumbotron">
                 <div className="row" id="history">
-                    <div className="col">
+                    <div className="col history-column">
                         <HistoryContainer />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col" id="suggestions">
+                        <SuggestionCard />
                     </div>
                 </div>
                 <div className="row">
@@ -20,7 +25,7 @@ class Main extends Component {
                         <LessonCard />
                         <LessonCard />
                         <LessonCard /> 
-                        <SuggestionCard />
+                        
     
                     </div>
                 </div>

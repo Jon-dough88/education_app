@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import SuggestionTab from './SuggestionTab';
+import Slider from '../../elements/Slider/Slider';
 import './Suggestion.css'
 
 
@@ -16,12 +17,13 @@ class SuggestionCard extends Component {
                            <br></br> 
                            <div className="container">
                                 <div className="row">
+                                    <Slider></Slider>
+                                    {/* <SuggestionTab />
                                     <SuggestionTab />
                                     <SuggestionTab />
                                     <SuggestionTab />
                                     <SuggestionTab />
-                                    <SuggestionTab />
-                                    <SuggestionTab />
+                                    <SuggestionTab /> */}
                                 </div>
                            </div>
                         </div>

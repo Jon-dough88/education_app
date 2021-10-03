@@ -12,17 +12,19 @@ class SignupPage extends Component {
         this.props.userRegistered(values)
     }
 
-    mapDispatchToProps = dispatch => {
-        return {
-            userRegistered: (values) => dispatch(signup(values))
-        }
-    }
+    
 
     
     render() { 
         return <Signup onSubmit={this.submit}/>
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        userRegistered: (values) => dispatch(signup(values))
+    }
+}
  
-export default SignupPage;
+export default connect(null, mapDispatchToProps)(SignupPage);
 

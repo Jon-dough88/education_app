@@ -4,7 +4,7 @@ import Sidebar from '../../elements/sidebar/Sidebar';
 import GroupPage from './GroupPage';
 import Promotional from '../../elements/Promotional/Promotional';
 
-import '../../index/main_desktop/MainPage/MainPage.css'
+import '../../../components/index/main_desktop/MainPage.css';
 
 class MainPage extends Component {
 
@@ -16,7 +16,7 @@ class MainPage extends Component {
                     <div className="col-md-2 main-column" id="slider">
                         <Sidebar />
                     </div>
-                    <div className="col-md-7 main-column" id="content">
+                    <div className="col-md-6 col-lg-5 col-sm-10 main-column" id="content">
                         <GroupPage />
                     </div>
                     <div className="col-md-3 main-column" id="promotional">

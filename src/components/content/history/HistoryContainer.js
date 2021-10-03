@@ -9,6 +9,7 @@ class HistoryContainer extends Component {
     render() {
         return(
              <div className="card history-bar">
+                 <h1>My History</h1>
                 {/* <div className="row history-row">
                     <HistoryTab />
                     <HistoryTab />

@@ -36,6 +36,16 @@ let Signup = props => {
                         <div className="form-group">
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
                             <Field className="form-control form-control-lg"
+                                name="userName"
+                                component="input"
+                                type="text"
+                                placeholder="Username"
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            {/* <label for="lastName" className="form-label">Last Name: </label> */}
+                            <Field className="form-control form-control-lg"
                                 name="email"
                                 component="input"
                                 type="email"

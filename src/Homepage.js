@@ -13,7 +13,8 @@ import AdminPage from '../src/components/content/admin/AdminPage';
 // import GroupMenu from '../src/components/content/dropdown/groups/GroupsMenu';
 import GroupLandingPage from '../src/components/content/dropdown/groups/GroupLandingPage';
 import GroupCreator from './components/content/dropdown/groups/GroupCreator';
-import GroupPage from './components/content/groupPage/GroupPage';
+import GroupMain from '../src/components/content/groupPage/GroupMain';
+// import GroupPage from './components/content/groupPage/GroupPage';
 
 
 class Homepage extends Component {
@@ -69,7 +70,8 @@ class Homepage extends Component {
                         {/* <Route path="/groups" component={GroupMenu}></Route> */}
                         <Route path="/groups" component={GroupLandingPage}></Route>
                         <Route path="/groupCreation" component={GroupCreator}></Route>
-                        <Route path="/groupPage" component={GroupPage}></Route>
+                        {/* <Route path="/groupPage" component={GroupPage}></Route> */}
+                        <Route path="/groupPage" component={GroupMain}></Route>
                     </Switch>
                     
                 </div>
