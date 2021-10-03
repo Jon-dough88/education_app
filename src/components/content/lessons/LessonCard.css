@@ -1,7 +1,7 @@
 .card {
     width: auto;
     margin-top: 0.6rem;
-    /* padding: 1rem; */
+    padding: 0.75rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -22,8 +22,26 @@
 }
 
 .lesson-level {
-    margin-top: 1rem;
+    margin: 1rem;
     color: rgb(18, 18, 156);
+}
+
+.lesson-item-type{
+    max-width: 10rem;
+}
+
+.lesson-package{
+    border: 1px solid red;
+    max-width: 6rem;
+}
+
+.lesson-completed-button{
+    max-width: 2rem;
+}
+
+
+.lesson-top-separator{
+    border: 1px solid green;
 }
 
 .left-row {
@@ -126,7 +144,8 @@
 .button-card{
     display: flex;
     flex-direction: row;
-    /* min-width: 10rem; */
+    align-items: center;
+    max-width: 10rem;
     padding: 0.75rem;
 }
 
@@ -150,11 +169,16 @@
         margin-left: 3rem;
         padding: 0.5rem;
     }
+
+    .lesson-top-separator{  
+        width: 4rem;
+    }
+    
 }
 
 .star {
     color: gold;
-    /* margin-right: 1rem; */
+    margin: 0.5rem;
 }
 
 .star:hover{
@@ -164,7 +188,7 @@
 
 .save {
     color: indigo;
-    /* margin-left: 1rem; */
+    margin: 0.5rem;
 }
 
 .save:hover {
