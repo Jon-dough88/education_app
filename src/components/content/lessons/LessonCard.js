@@ -129,6 +129,9 @@ class LessonCard extends Component {
                         <h1>{this.state.title}</h1>
                     </div>
                     <div className="row" id="tag-row">
+                        {this.state.tags.map((tag) => 
+                             <LessonTag tag={this.state.tag} />   
+                        )}
                         
                     </div>
                     <div className="row" id="bottom-row">
