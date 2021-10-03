@@ -61,8 +61,11 @@ class LessonCard extends Component {
                 
         //    </div>
 
-        <div>
-            
+        <div className="card">
+            <div>
+                
+            </div>
+
         </div>
         )
     }
