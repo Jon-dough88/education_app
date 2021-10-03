@@ -14,6 +14,8 @@ class LessonCard extends Component {
             title: "Grammar",
             tags: [],
             package: "free",
+            level: "B2",
+            completed: 3
     
         }
     }
@@ -83,11 +85,15 @@ class LessonCard extends Component {
                 <div className="col-md-5" style={{border: "1px solid green"}}>
                     <div className="row">
                         <div className="col">
-
+                            <img src={this.state.image} alt="Lesson image"></img>
                         </div>
                     </div>
                     <div className="row">
+                        <div className="col">
 
+                        </div>
+                        <div className="col"></div>
+                        <div className="col"></div>
                     </div>
                 </div>
                 <div className="col-md-7" style={{border: "1px solid blue"}}>
