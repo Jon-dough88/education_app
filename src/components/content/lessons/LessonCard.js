@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
 import './LessonCard.css'
 
+
+
+
+
 class LessonCard extends Component {
+
+    constructor(props){
+        super(props)
+        this.state={
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
+            title: "Grammar",
+            tags: [],
+            package: "free",
+    
+        }
+    }
+    
+
     render() {
         return (
         //    <div className="card">
@@ -64,6 +81,11 @@ class LessonCard extends Component {
         <div className="card">
             <div className="row">
                 <div className="col-md-5" style={{border: "1px solid green"}}>
+                    <div className="row">
+                        <div className="col">
+
+                        </div>
+                    </div>
                     <div className="row">
 
                     </div>
