@@ -4,7 +4,9 @@ import './PackageBar.css';
 class PackageBar extends Component {
     constructor(props) {
         super(props)
-    
+        this.state={
+            packageType: ""
+        }
     }
     
     render() { 

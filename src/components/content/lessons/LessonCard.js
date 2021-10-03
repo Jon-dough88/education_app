@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import './LessonCard.css'
+import PackageBar from '../../elements/Package_bar/PackageBar';
 
 
 
@@ -11,6 +13,7 @@ class LessonCard extends Component {
         super(props)
         this.state={
             image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
+            itemType: "lesson",
             title: "Grammar",
             tags: [],
             package: "free",
@@ -85,19 +88,44 @@ class LessonCard extends Component {
                 <div className="col-md-5" style={{border: "1px solid green"}}>
                     <div className="row">
                         <div className="col">
-                            <img src={this.state.image} alt="Lesson image"></img>
+                            <img className="lesson-image" src={this.state.image} alt="Lesson image"></img>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
-
+                            <h2>{this.state.level}</h2>
                         </div>
                         <div className="col"></div>
                         <div className="col"></div>
                     </div>
                 </div>
                 <div className="col-md-7" style={{border: "1px solid blue"}}>
+                    <div className="row" id="lesson-row">
+                        <div className="col-3">
+                            <div className="card">
+                                <h2>{this.state.itemType}</h2>
+                            </div>
+                        </div>
+                        <div className="col-2">
 
+                        </div>
+                        <div className="col-6">
+
+                        </div>
+                        <div className="col-1">
+
+                        </div>
+                    </div>
+
+                    <div className="row" id="title-row">
+
+                    </div>
+                    <div className="row" id="tag-row">
+
+                    </div>
+                    <div className="row" id="bottom-row">
+
+                    </div>
                 </div>
             </div>
         </div>
