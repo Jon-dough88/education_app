@@ -5,6 +5,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.card:hover{
+    cursor: pointer;
+}
+
 .image{
     min-height: 75%;
     margin: 1rem;
@@ -33,6 +37,10 @@
 .lesson-package{
     /* border: 1px solid red; */
     max-width: 6rem;
+}
+
+.lesson-completed-button{
+    margin-top: 1rem;
 }
 
 
