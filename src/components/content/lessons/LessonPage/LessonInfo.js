@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './LessonInfo.css';
 // import LessonCard from '../LessonCard';
+import PackageBar from '../../../elements/Package_bar/PackageBar';
 
 
 class LessonInfo extends Component {
@@ -18,6 +19,14 @@ class LessonInfo extends Component {
                         </div>
                     </div>
                     <div className="col">
+                        <div className="row right-top-row">
+                            <div className="col">
+                                <h2 className="lesson-title">
+                                    Grammar
+                                </h2>
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
