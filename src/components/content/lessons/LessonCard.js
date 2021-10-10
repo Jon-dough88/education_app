@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import './LessonCard.css'
 import PackageBar from '../../elements/Package_bar/PackageBar';
@@ -28,7 +29,7 @@ class LessonCard extends Component {
     
     lessonCardClickEvent(e) {
         console.log("I've been clicked!")
-        // console.log(e.target)
+        this.props.history.push('/lessonTestPath')
     }
 
 
