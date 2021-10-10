@@ -10,16 +10,16 @@ class Main extends Component {
     constructor(props) {
         super(props)
         this.state={
-            data=[
+            data:[
                 {
-                id: 1,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
-                itemType: "lesson",
-                title: "Grammar",
-                tags: ["Vocabulary 7", "Grammar 3", "Reading2", "Writing 1"],
-                package: "basic",
-                level: "B2",
-                completed: 3
+                    id: 1,
+                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
+                    itemType: "lesson",
+                    title: "Grammar",
+                    tags: ["Vocabulary 7", "Grammar 3", "Reading2", "Writing 1"],
+                    package: "basic",
+                    level: "B2",
+                    completed: 3
                 },
                 {
                     id: 2,
@@ -61,9 +61,23 @@ class Main extends Component {
                 </div>
                 <div className="row">
                     <div className="col" id="main-content">
+                        {/* <LessonCard />
                         <LessonCard />
-                        <LessonCard />
-                        <LessonCard /> 
+                        <LessonCard />  */}
+
+                        {this.state.data.map((lesson, index) => (
+                            <LessonCard 
+                                key={index} 
+                                id={lesson.id} 
+                                image={lesson.image} 
+                                itemType={lesson.itemType} 
+                                title={lesson.title} 
+                                level={lesson.level} 
+                                tags={lesson.tags} 
+                                package={lesson.package}
+                                completed={lesson.completed}
+                            />
+                        ))}
                         
     
                     </div>
