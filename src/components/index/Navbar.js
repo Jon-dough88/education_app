@@ -48,6 +48,11 @@ class Navmenu extends Component {
                                     Admin access
                                 </Nav.Link>
                             </LinkContainer>
+                            <LinkContainer to="/lessonTestPath">
+                                <Nav.Link>
+                                    Lesson Test
+                                </Nav.Link>
+                            </LinkContainer>
                             
                             {/* <LinkContainer to="/upgrade">   
                                 <Nav.Link>

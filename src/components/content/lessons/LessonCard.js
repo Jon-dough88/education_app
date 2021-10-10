@@ -15,22 +15,12 @@ class LessonCard extends Component {
 
     constructor(props){
         super(props)
-        this.state={
-            id: '',
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
-            itemType: "lesson",
-            title: "Grammar",
-            tags: ["Vocabulary 7", "Grammar 3", "Reading2", "Writing 1"],
-            package: "basic",
-            level: "B2",
-            completed: 3
-    
-        }
+       
     }
     
     lessonCardClickEvent(e) {
         console.log("I've been clicked!")
-        // return <Redirect to="/lessonTestPath" />
+        console.log(e.target.id)
     }
 
 
@@ -48,12 +38,12 @@ class LessonCard extends Component {
 
                     <div className="row">
                         <div className="col">
-                            <img className="lesson-image" src={this.state.image} alt="Lesson image"></img>
+                            <img className="lesson-image" src={this.props.image} alt="Lesson image"></img>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
-                            <h2 className="lesson-level">{this.state.level}</h2>
+                            <h2 className="lesson-level">{this.props.level}</h2>
                         </div>
                         <div className="col"></div>
                         <div className="col"></div>
@@ -69,26 +59,26 @@ class LessonCard extends Component {
                     <div className="row" id="lesson-row">
                         <div className="col-4 lesson-item-type">
                             <div className="card">
-                                <h2>{this.state.itemType}</h2>
+                                <h2>{this.props.itemType}</h2>
                             </div>
                         </div>
                         <div className="col-3 lesson-package">
-                            <PackageBar text={this.state.package} packageType={this.state.package}/>
+                            <PackageBar text={this.props.package} packageType={this.props.package}/>
                         </div>
                         <div className="col-5 lesson-top-separator"></div>
                         <div className="col-1" id="completed-col">
                             <button className="btn lesson-completed-button">
-                                <h2>{this.state.completed}</h2>
+                                <h2>{this.props.completed}</h2>
                             </button>
                         </div>
                     </div>
 
                     <div className="row title-row">
-                        <h1 className="lesson-title">{this.state.title}</h1>
+                        <h1 className="lesson-title">{this.props.title}</h1>
                     </div>
 
                     <div className="row tag-row">
-                        {this.state.tags.map((tag) => 
+                        {this.props.tags.map((tag) => 
                              <LessonTag tag={tag} />   
                         )}
                         
