@@ -34,7 +34,7 @@ class LessonCard extends Component {
                     <div>
                         <img className="lesson-image" src={this.props.image} alt="Lesson image"></img>
                     </div>
-                    <div className="level">
+                    <div className="col level">
                         <h2>{this.props.level}</h2>
                     </div>
                 </div>
@@ -42,10 +42,12 @@ class LessonCard extends Component {
                 <div className="col">
                     <div className="row right-top-row">
                         <div className="col">
-                            <h3 className="lesson-title">
-                                {this.props.itemType}
-                            </h3>
-                            
+                            <div className="card lesson-title">
+                                <h3 >
+                                    {this.props.itemType}
+                                </h3>
+                            </div>
+          
                         </div>
                         <div className="col lesson-package">
                             <PackageBar packageType={this.props.package} text={this.props.package} />

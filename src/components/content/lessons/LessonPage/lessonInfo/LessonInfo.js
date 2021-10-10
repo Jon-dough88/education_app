@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 import './LessonInfo.css';
 // import LessonCard from '../LessonCard';
-import PackageBar from '../../../elements/Package_bar/PackageBar';
-import LessonTag from '../../../elements/LessonTag/LessonTag';
 
-import LessonInfoTag from './LessonInfoTag';
+import PackageBar from '../../../../elements/Package_bar/PackageBar';
+import LessonTag from '../../../../elements/LessonTag/LessonTag';
+
+import LessonInfoTag from '../LessonInfoTag/LessonInfoTag';
 
 
 class LessonInfo extends Component {
@@ -15,11 +16,10 @@ class LessonInfo extends Component {
         this.state = {
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
                 title: "P5 Reading Practice",
+                level: "B1",
                 package: "basic",
                 text: "Basic",
                 tags: ["Vocabulary 4","Grammar2", "Reading 2"],
-                
-            
                 info: {
                     intro: 
                         {
@@ -96,8 +96,8 @@ class LessonInfo extends Component {
                 </div>
 
                 <div className="row content-row">
-                    <LessonInfoTag title={this.state.info.intro.title} thumbnail={this.state.info.intro.thumbnail} />
-                    <LessonInfoTag title={this.state.info.vocabulary.title} thumbnail={this.state.info.vocabulary.thumbnail} />  
+                    <LessonInfoTag title={this.state.info.intro.title} thumbnail={this.state.info.intro.thumbnail} level={this.state.level}/>
+                    <LessonInfoTag title={this.state.info.vocabulary.title} thumbnail={this.state.info.vocabulary.thumbnail} level={this.state.level}/>  
                 </div>
             </div>
         )

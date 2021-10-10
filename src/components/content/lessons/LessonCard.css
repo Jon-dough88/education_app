@@ -167,7 +167,7 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
     .secondary-button-container{
         display: flex;
         /* flex-direction: row; */
@@ -181,6 +181,11 @@
 
     .lesson-top-separator{  
         width: 4rem;
+    }
+
+
+    .button-card {
+        margin-top: 4rem;
     }
     
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Sidebar from '../../../elements/sidebar/Sidebar';
-import LessonInfo from './LessonInfo';
+import LessonInfo from './lessonInfo/LessonInfo';
 import Promotional from '../../../elements/Promotional/Promotional';
 
 class LessonPage extends Component {

@@ -1,0 +1,22 @@
+.info-tag {
+    border: 2px solid darkblue;
+    border-radius: 4%;
+    padding: 1rem;
+    margin: 1rem auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-image {
+    /* padding-top: 1rem; */
+    max-height: 70%;
+    max-width: 70%;
+}
+
+.info-container {
+    text-align: left;
+}
+
+.info-row {
+    margin: 0.5rem 0;
+}
