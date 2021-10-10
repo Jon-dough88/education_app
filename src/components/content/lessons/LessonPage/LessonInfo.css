@@ -1,4 +1,9 @@
 .lesson-image {
-    height: 80%;
-    width: 80%;
+    height: 60%;
+    width: 60%;
+}
+
+
+.level {
+    margin: 2rem 0;
 }
