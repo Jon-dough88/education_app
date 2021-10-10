@@ -30,7 +30,7 @@ class LessonInfo extends Component {
                     </div>
 
                     <div className="col">
-                        <div className="row right-top-row">
+                        <div className="row right-first-row">
                             <div className="col">
                                 <h3 className="lesson-title">
                                     Lesson
@@ -46,6 +46,9 @@ class LessonInfo extends Component {
                             <div className="col lesson-title">
                                 <h2>Grammar</h2>
                             </div>
+                        </div>
+                        <div className="row right-lower-middle-row">
+
                         </div>
 
                     </div>

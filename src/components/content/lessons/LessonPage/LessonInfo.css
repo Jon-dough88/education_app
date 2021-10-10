@@ -1,14 +1,19 @@
+.lesson-info-card {
+    height: auto;
+    margin: 2rem;
+}
+
 .lesson-image {
-    height: 60%;
-    width: 60%;
+    max-height: 60%;
+    max-width: 60%;
 }
 
 
 .level {
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 
-.right-top-row {
+.right-first-row {
     border: 1px solid blue;
 }
