@@ -4,8 +4,8 @@
 }
 
 .lesson-image {
-    max-height: 60%;
-    max-width: 60%;
+    max-height: 70%;
+    max-width: 70%;
 }
 
 
@@ -15,9 +15,14 @@
 
 
 .right-top-row {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .right-title-row {
-    
+
+}
+
+.right-tag-row {
+    max-height: 40%;
+    margin-bottom: 5%;
 }

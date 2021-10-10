@@ -58,9 +58,13 @@ class LessonInfo extends Component {
                              <div className="col"></div>
                              {/* <div className="col"></div> */}
                              <div className="col button-col">
-                                <div className="card">
+                                {/* <div className="card">
                                     <i className="fas fa-star fa-2x star"></i>
                                     <i className="fas fa-save fa-2x save"></i>
+                                </div> */}
+                                <div className="card button-card">
+                                    <div className="col-sm-6 col-md-6"><i className="fas fa-star fa-2x star"></i></div>
+                                    <div className="col-sm-6 col-md-6"><i className="fas fa-save fa-2x save"></i></div>
                                 </div>
                             </div>           
                         </div>                    

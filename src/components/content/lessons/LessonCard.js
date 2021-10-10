@@ -28,6 +28,64 @@ class LessonCard extends Component {
         return (
         
 
+        <div className="card lesson-card">
+            <div className="row title-row">
+                <div className="col">
+                    <div>
+                        <img className="lesson-image" src={this.props.image} alt="Lesson image"></img>
+                    </div>
+                    <div className="level">
+                        <h2>{this.props.level}</h2>
+                    </div>
+                </div>
+
+                <div className="col">
+                    <div className="row right-top-row">
+                        <div className="col">
+                            <h3 className="lesson-title">
+                                {this.props.itemType}
+                            </h3>
+                            
+                        </div>
+                        <div className="col lesson-package">
+                            <PackageBar packageType={this.props.package} text={this.props.package} />
+                        </div>
+                        <div className="col">
+                            <button className="btn">
+                                <h3>{this.props.completed}</h3>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="row right-title-row">
+                        <div className="col lesson-title">
+                            <h2>{this.props.title}</h2>
+                        </div>
+                    </div>
+                    <div className="row right-tag-row">
+                        {this.props.tags.map((tag) => (
+                           <LessonTag tag={tag} />     
+                        ))}
+                    </div>
+                    <div className="row right-button-row">
+                         <div className="col"></div>
+                         {/* <div className="col"></div> */}
+                         <div className="col button-col">
+                            
+                            <div className="card button-card">
+                                 <div className="col-sm-6 col-md-6"><i className="fas fa-star fa-2x star"></i></div>
+                                 <div className="col-sm-6 col-md-6"><i className="fas fa-save fa-2x save"></i></div>
+                            </div>
+                        </div>           
+                    </div>                    
+                </div>
+            </div>
+
+            <div className="row content-row">
+
+            </div>
+        </div>   
+
         // <div className="card" onClick={(e) => { this.lessonCardClickEvent(e) }}>
         //     <div className="row">
 
