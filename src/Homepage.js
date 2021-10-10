@@ -15,6 +15,7 @@ import GroupLandingPage from '../src/components/content/dropdown/groups/GroupLan
 import GroupCreator from './components/content/dropdown/groups/GroupCreator';
 import GroupMain from '../src/components/content/groupPage/GroupMain';
 // import GroupPage from './components/content/groupPage/GroupPage';
+import LessonPage from './components/content/lessons/LessonPage/LessonPage';
 
 
 class Homepage extends Component {
@@ -72,6 +73,7 @@ class Homepage extends Component {
                         <Route path="/groupCreation" component={GroupCreator}></Route>
                         {/* <Route path="/groupPage" component={GroupPage}></Route> */}
                         <Route path="/groupPage" component={GroupMain}></Route>
+                        <Route path="/lessonTestPath" component={LessonPage} />
                     </Switch>
                     
                 </div>

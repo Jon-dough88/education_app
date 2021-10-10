@@ -4,7 +4,7 @@ import './LessonCard.css'
 import PackageBar from '../../elements/Package_bar/PackageBar';
 import LessonTag from '../../elements/LessonTag/LessonTag';
 
-import SavedItemContainer from '../groupPage/groupSavedItems/SavedItemContainer';
+// import SavedItemContainer from '../groupPage/groupSavedItems/SavedItemContainer';
 
 
 

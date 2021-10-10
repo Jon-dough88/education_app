@@ -7,7 +7,7 @@ class LessonInfo extends React.Component {
             <div className="jumbotron">
                 <div className="row title-row">
                     <div className="col">
-                        <div>
+                        <div className="lesson-image">
 
                         </div>
                     </div>
