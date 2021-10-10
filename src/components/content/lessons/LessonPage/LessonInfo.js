@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './LessonInfo.css';
 // import LessonCard from '../LessonCard';
 import PackageBar from '../../../elements/Package_bar/PackageBar';
+import LessonTag from '../../../elements/LessonTag/LessonTag';
 
 
 class LessonInfo extends Component {
@@ -12,7 +13,7 @@ class LessonInfo extends Component {
         this.state = {
             packageType: "basic",
             text: "basic",
-            tags: []
+            tags: ["Vocabulary 4","Grammar2", "Reading 2"]
         }
     }
 
@@ -42,15 +43,27 @@ class LessonInfo extends Component {
                             </div>
                             <div className="col"></div>
                         </div>
-                        <div className="row right-second-row">
+
+                        <div className="row right-title-row">
                             <div className="col lesson-title">
                                 <h2>Grammar</h2>
                             </div>
                         </div>
-                        <div className="row right-third-row">
-
+                        <div className="row right-tag-row">
+                            {this.state.tags.map((tag) => (
+                               <LessonTag tag={tag} />     
+                            ))}
                         </div>
-
+                        <div className="row right-button-row">
+                             <div className="col"></div>
+                             {/* <div className="col"></div> */}
+                             <div className="col button-col">
+                                <div className="card">
+                                    <i className="fas fa-star fa-2x star"></i>
+                                    <i className="fas fa-save fa-2x save"></i>
+                                </div>
+                            </div>           
+                        </div>                    
                     </div>
                 </div>
 
