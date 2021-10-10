@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 import './LessonCard.css'
 import PackageBar from '../../elements/Package_bar/PackageBar';
@@ -16,6 +16,7 @@ class LessonCard extends Component {
     constructor(props){
         super(props)
         this.state={
+            id: '',
             image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
             itemType: "lesson",
             title: "Grammar",
@@ -29,7 +30,7 @@ class LessonCard extends Component {
     
     lessonCardClickEvent(e) {
         console.log("I've been clicked!")
-        this.props.history.push('/lessonTestPath')
+        // return <Redirect to="/lessonTestPath" />
     }
 
 

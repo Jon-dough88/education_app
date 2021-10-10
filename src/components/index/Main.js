@@ -6,8 +6,14 @@ import SuggestionCard from '../content/suggestions/SuggestionCard';
 // import Sidebar from '../elements/sidebar/Sidebar';
 
 class Main extends Component { 
-
     
+    constructor(props) {
+        super(props)
+        this.state={
+            
+        }
+    }
+
     render(){
         return (
             <div className="jumbotron">
