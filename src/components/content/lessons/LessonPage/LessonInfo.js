@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './LessonInfo.css';
+
 
 class LessonInfo extends React.Component {
     render() { 
