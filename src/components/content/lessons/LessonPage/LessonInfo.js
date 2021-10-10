@@ -6,9 +6,19 @@ import PackageBar from '../../../elements/Package_bar/PackageBar';
 
 
 class LessonInfo extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            packageType: "basic",
+            text: "basic",
+            tags: []
+        }
+    }
+
     render() { 
         return (
-            <div className="card">
+            <div className="card lesson-info-card">
                 <div className="row title-row">
                     <div className="col">
                         <div className="image">
@@ -18,13 +28,23 @@ class LessonInfo extends Component {
                             <h2>B2</h2>
                         </div>
                     </div>
+
                     <div className="col">
                         <div className="row right-top-row">
                             <div className="col">
-                                <h2 className="lesson-title">
-                                    Grammar
-                                </h2>
-
+                                <h3 className="lesson-title">
+                                    Lesson
+                                </h3>
+                                
+                            </div>
+                            <div className="col">
+                                <PackageBar packageType={this.state.packageType} text={this.state.text} />
+                            </div>
+                            <div className="col"></div>
+                        </div>
+                        <div className="row right-middle-row">
+                            <div className="col lesson-title">
+                                <h2>Grammar</h2>
                             </div>
                         </div>
 
