@@ -18,12 +18,12 @@ class LessonInfo extends Component {
                 package: "basic",
                 text: "Basic",
                 tags: ["Vocabulary 4","Grammar2", "Reading 2"],
-                info: [
+                info: 
                     {
                         title: "Intro",
                         thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/LED_traffic_light.svg/220px-LED_traffic_light.svg.png"
                     }
-                ]
+                
                 
            
         }
