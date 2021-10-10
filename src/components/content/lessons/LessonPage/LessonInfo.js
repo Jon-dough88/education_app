@@ -5,15 +5,27 @@ import './LessonInfo.css';
 import PackageBar from '../../../elements/Package_bar/PackageBar';
 import LessonTag from '../../../elements/LessonTag/LessonTag';
 
+import LessonInfoTag from './LessonInfoTag';
+
 
 class LessonInfo extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            packageType: "basic",
-            text: "basic",
-            tags: ["Vocabulary 4","Grammar2", "Reading 2"]
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1",
+                title: "P5 Reading Practice",
+                package: "basic",
+                text: "Basic",
+                tags: ["Vocabulary 4","Grammar2", "Reading 2"],
+                info: [
+                    {
+                        title: "Intro",
+                        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/LED_traffic_light.svg/220px-LED_traffic_light.svg.png"
+                    }
+                ]
+                
+           
         }
     }
 
@@ -23,7 +35,7 @@ class LessonInfo extends Component {
                 <div className="row title-row">
                     <div className="col">
                         <div className="image">
-                            <img className="lesson-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.nSSaVLnXxl2ivUfvn8I9rQHaEl%26pid%3DApi&f=1" alt="Lesson image"></img>
+                            <img className="lesson-image" src={this.state.image} alt="Lesson image"></img>
                         </div>
                         <div className="level">
                             <h2>B2</h2>
@@ -39,7 +51,7 @@ class LessonInfo extends Component {
                                 
                             </div>
                             <div className="col">
-                                <PackageBar packageType={this.state.packageType} text={this.state.text} />
+                                <PackageBar packageType={this.state.package} text={this.state.text} />
                             </div>
                             <div className="col"></div>
                         </div>
@@ -58,10 +70,7 @@ class LessonInfo extends Component {
                              <div className="col"></div>
                              {/* <div className="col"></div> */}
                              <div className="col button-col">
-                                {/* <div className="card">
-                                    <i className="fas fa-star fa-2x star"></i>
-                                    <i className="fas fa-save fa-2x save"></i>
-                                </div> */}
+                                
                                 <div className="card button-card">
                                     <div className="col-sm-6 col-md-6"><i className="fas fa-star fa-2x star"></i></div>
                                     <div className="col-sm-6 col-md-6"><i className="fas fa-save fa-2x save"></i></div>
@@ -72,7 +81,13 @@ class LessonInfo extends Component {
                 </div>
 
                 <div className="row content-row">
-
+                    <LessonInfoTag title={this.state.info.title} thumbnail={this.state.info.thumbnail} />
+                      {/* {this.state.map((infoTab) => (
+                          <LessonInfoTag 
+                            // image={infoTab.intro.url}
+                            title={infoTab.title}    
+                          />
+                      ))}           */}
                 </div>
             </div>
         )
