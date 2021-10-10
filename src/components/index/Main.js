@@ -7,6 +7,7 @@ import SuggestionCard from '../content/suggestions/SuggestionCard';
 
 class Main extends Component { 
 
+    
     render(){
         return (
             <div className="jumbotron">
