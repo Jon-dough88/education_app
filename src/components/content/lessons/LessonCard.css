@@ -41,7 +41,7 @@
 }
 
 .lesson-completed-button{
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 
@@ -83,7 +83,7 @@
     text-align: center;
     justify-content: center;
     max-height: 5rem;
-    margin: 1.5rem auto 2rem auto;
+    margin: 3rem auto 3rem auto;
 }
 
 .item-type-container {
@@ -191,7 +191,7 @@
 
 
     .button-card {
-        margin-top: 4rem;
+        margin: 4rem 0 1rem 0;
     }
 
     .lesson-image {
@@ -199,9 +199,13 @@
         width: 90%;
     }
 
-    /* .lesson-title {
-        margin-top: 2rem;
-    } */
+    .lesson-level {
+        margin-top: 3.5rem;
+    }
+
+     .lesson-item-type {
+        margin-top: 3rem;
+    } 
     
 }
 

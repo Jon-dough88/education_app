@@ -53,7 +53,7 @@ class LessonCard extends Component {
                             <PackageBar packageType={this.props.package} text={this.props.package} />
                         </div>
                         <div className="col">
-                            <button className="btn">
+                            <button className="btn lesson-completed-button">
                                 <h3>{this.props.completed}</h3>
                             </button>
                         </div>
