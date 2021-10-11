@@ -9,8 +9,8 @@ class BackArrow extends Component {
 
     render() { 
         return (
-            <div onClick={() => {this.goBack()}}>
-                <i className="fas fa-arrow-left fa-2x back-arrow"></i>    
+            <div className="back-arrow" onClick={() => {this.goBack()}}>
+                <i className="fas fa-arrow-left fa-2x "></i>    
             </div>
         )
         
