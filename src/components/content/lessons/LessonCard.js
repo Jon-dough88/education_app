@@ -29,21 +29,21 @@ class LessonCard extends Component {
         
 
         <div className="card lesson-card">
-            <div className="row title-row">
+            <div className="row">
                 <div className="col">
                     <div>
                         <img className="lesson-image" src={this.props.image} alt="Lesson image"></img>
                     </div>
-                    <div className="col level">
-                        <h2>{this.props.level}</h2>
+                    <div className="col">
+                        <h2 className="lesson-level">{this.props.level}</h2>
                     </div>
                 </div>
 
                 <div className="col">
                     <div className="row right-top-row">
                         <div className="col">
-                            <div className="card lesson-title">
-                                <h3 >
+                            <div className="card lesson-item-type">
+                                <h3>
                                     {this.props.itemType}
                                 </h3>
                             </div>
@@ -61,7 +61,7 @@ class LessonCard extends Component {
 
                     <div className="row right-title-row">
                         <div className="col lesson-title">
-                            <h2>{this.props.title}</h2>
+                            <h1>{this.props.title}</h1>
                         </div>
                     </div>
                     <div className="row right-tag-row">
@@ -83,9 +83,9 @@ class LessonCard extends Component {
                 </div>
             </div>
 
-            <div className="row content-row">
+            {/* <div className="row content-row">
 
-            </div>
+            </div> */}
         </div>   
 
         // <div className="card" onClick={(e) => { this.lessonCardClickEvent(e) }}>

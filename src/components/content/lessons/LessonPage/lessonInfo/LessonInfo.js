@@ -96,7 +96,7 @@ class LessonInfo extends Component {
                 </div>
 
                 <div className="row content-row">
-                    <LessonInfoTag title={this.state.info.intro.title} thumbnail={this.state.info.intro.thumbnail} level={this.state.level}/>
+                    <LessonInfoTag title={this.state.info.intro.title} thumbnail={this.state.info.intro.thumbnail}/>
                     <LessonInfoTag title={this.state.info.vocabulary.title} thumbnail={this.state.info.vocabulary.thumbnail} level={this.state.level}/>  
                 </div>
             </div>

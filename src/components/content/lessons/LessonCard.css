@@ -32,6 +32,7 @@
 
 .lesson-item-type{
     max-width: 10rem;
+    /* margin-top: 2rem; */
 }
 
 .lesson-package{
@@ -43,6 +44,11 @@
     margin-top: 1rem;
 }
 
+
+.right-top-row {
+    align-items: center;
+    justify-content: center;
+}
 
 
 /* .lesson-top-separator{
@@ -187,6 +193,15 @@
     .button-card {
         margin-top: 4rem;
     }
+
+    .lesson-image {
+        height: 7rem;
+        width: 90%;
+    }
+
+    /* .lesson-title {
+        margin-top: 2rem;
+    } */
     
 }
 

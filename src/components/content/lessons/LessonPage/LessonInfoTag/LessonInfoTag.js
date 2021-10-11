@@ -21,7 +21,7 @@ class LessonInfoTag extends Component {
                             <h2>{this.props.title}</h2>
                         </div>
                         <div className="row info-row">
-                            <h2>{this.props.level}</h2>
+                            <h4>{this.props.level}</h4>
                         </div>
                     </div>
                 </div>    
