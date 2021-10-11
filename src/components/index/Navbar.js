@@ -7,6 +7,7 @@ import Bell from '../content/notifications/Bell';
 import Dumbbell from '../content/notifications/Dumbbell';
 import Counter from '../content/notifications/Counter';
 import PackageBar from '../elements/Package_bar/PackageBar';
+import BackArrow from '../content/notifications/BackArrow';
 
 class Navmenu extends Component {
     
