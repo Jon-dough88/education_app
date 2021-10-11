@@ -15,11 +15,31 @@
 }
 
 .back-arrow {
-    margin: 0 2% 0 4%;
+    margin: 0 4%;
 }
 
 .dumbbell {
-    margin: 0 2% 0 3%;
+    margin: 0 3% 0 4%;
+}
+
+.bell {
+    margin: 0 4%;
+}
+
+
+@media screen and (max-width: 520px) {
+
+    .back-arrow {
+        margin: 0 3% 0 2%; 
+    }
+
+    .dumbbell {
+        margin: 0 2% 0 3%;
+    }
+
+    .bell {
+        margin: 0 3%
+    }
 }
 
 
