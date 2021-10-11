@@ -1,10 +1,13 @@
 .back-arrow {
-    border: 1px solid yellow;
-    color: white;
-    margin-right: 3rem;
+
+    margin: auto 2rem;
 }
 
-.back-arrow:hover{
+.arrow-icon {
+    color: white;
+}
+
+.arrow-icon:hover{
     text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px rgb(233, 233, 233); 
     cursor: pointer; 
 }
