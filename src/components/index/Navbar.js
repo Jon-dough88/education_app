@@ -26,8 +26,9 @@ class Navmenu extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <BackArrow className="back-arrow" />
                         <Navbar.Brand href="/"><h2 className="onHover">Logo</h2></Navbar.Brand>
+                        <Dumbbell className="dumbbell" />
                         <Bell className="bell" />
-                        <Dumbbell />
+                        
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <LinkContainer to="/">
