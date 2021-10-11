@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-import './Navbar.css';
+
 import Bell from '../content/notifications/Bell';
 import Dumbbell from '../content/notifications/Dumbbell';
 import Counter from '../content/notifications/Counter';
 import PackageBar from '../elements/Package_bar/PackageBar';
 import BackArrow from '../content/notifications/BackArrow';
+
+import './Navbar.css';
 
 class Navmenu extends Component {
     
