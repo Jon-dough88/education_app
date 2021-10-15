@@ -18,6 +18,12 @@
     max-width: 40rem;
 }
 
+.signup-radio {
+    border: 1px solid blue;
+    height: 2rem;
+    width: 2rem;
+}
+
 
 
 .signup-button {
