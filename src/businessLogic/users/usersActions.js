@@ -11,7 +11,7 @@ export const USER_SIGNED_UP = `${usersUrl}/signup`;
 
 export const signup = (signupValues) => async dispatch => {
     console.log(signupValues)
-    const response = await axios.post(`${usersUrl}/signup`, signupValues)
+    const response = await axios.post(`${usersUrl}/signup`, {signupValues})
     if(response.error){
         console.log(response.error)
     }else{
