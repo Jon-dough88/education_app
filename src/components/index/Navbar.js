@@ -19,7 +19,7 @@ class Navmenu extends Component {
         
 
         return ( 
-           <div className="jumbotron" id="navbar">
+           <div className="jumbotron " id="navbar">
               
                 <Navbar bg="primary" expand="md" fixed="top" variant="dark" collapseOnSelect="true"
                 // className={this.state.scrollBackground} onScroll={this.handleScroll}

@@ -60,9 +60,12 @@ class LessonInfo extends Component {
                     <div className="col">
                         <div className="row right-top-row">
                             <div className="col">
-                                <h3 className="lesson-title">
-                                    Lesson
-                                </h3>
+                                <div className="card lesson-title">
+                                    <h3>
+                                        Lesson
+                                    </h3>
+                                </div>
+                                
                                 
                             </div>
                             <div className="col">

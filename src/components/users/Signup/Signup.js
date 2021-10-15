@@ -73,6 +73,12 @@ let Signup = props => {
                             />
                         </div>
 
+                        <div className="form-group">
+                            {/* <label for="lastName" className="form-label">Last Name: </label> */}
+                            <label><Field name="userType" component="input" type="radio" value="teacher"/> Teacher</label>
+                            <label><Field name="userType" component="input" type="radio" value="student"/> Student</label>
+                        </div>
+
                         <button className="btn btn-lg btn-primary signup-button" type="submit" disabled={pristine || submitting}>Sign up!</button>
                         <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
                         <br />   
