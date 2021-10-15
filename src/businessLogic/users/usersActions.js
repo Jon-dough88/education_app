@@ -1,11 +1,14 @@
 import axios from 'axios';
 
 
-const rootUrl = 'http://localhost:4000';
+// const rootUrl = 'http://localhost:4000';
 
-const usersUrl = `${rootUrl}/api/users`
+// const usersUrl = `${rootUrl}/api/users`
 
-export const USER_SIGNED_UP = `${usersUrl}/signup`;
+// export const USER_SIGNED_UP = `${usersUrl}/signup`;
+
+const usersUrl = 'http://localhost:4000/api/users'
+export const USER_SIGNED_UP = 'users/signup'
 
 // Creating a new user/signing up
 
