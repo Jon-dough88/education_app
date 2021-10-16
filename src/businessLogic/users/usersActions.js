@@ -14,12 +14,13 @@ export const USER_SIGNED_UP = 'users/signup'
 
 export const signup = (signupValues) => async dispatch => {
     console.log(signupValues)
-    const response = await axios.post(`${usersUrl}/signup`, signupValues)
-    if(response.error){
-        console.log(response.error)
-    }else{
-        dispatch({type: USER_SIGNED_UP})
-    }
+   await axios.post(`${usersUrl}/signup`, signupValues)
+   .then(response => {
+       console.log(response)
+       dispatch({type: USER_SIGNED_UP, message: "Sign up successful"})
+   })
+   .catch(err => {console.log(err)})
+    
 }
 
 // Fetching an existing user
