@@ -36,11 +36,11 @@ export const login = (loginValues) => async dispatch => {
     await axios.post(`${usersUrl}/login`, loginValues)
     .then(response => {
         console.log(response)
-        dispatch({type: USER_LOGIN, message: `User ${loginValues.userName} successfully logged in`})
+        dispatch({type: USER_LOGIN, payload: response.data, message: `User ${loginValues.userName} successfully logged in`})
     })
     .catch(error => {
         console.log(error)
-        
+
     })
 }
 
