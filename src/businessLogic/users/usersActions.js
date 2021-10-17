@@ -8,7 +8,9 @@ import axios from 'axios';
 // export const USER_SIGNED_UP = `${usersUrl}/signup`;
 
 const usersUrl = 'http://localhost:4000/api/users'
+
 export const USER_SIGNED_UP = 'users/signup'
+
 
 // Creating a new user/signing up
 
@@ -20,11 +22,6 @@ export const signup = (signupValues) => async dispatch => {
        dispatch({type: USER_SIGNED_UP, message: "Sign up successful"})
    })
    .catch(err => {console.log(err)})
-// try {
-//     dispatch({type: USER_SIGNED_UP, message: "User signed up!"})
-// }catch(error){
-//     console.log(error)
-// }
     
 }
 
@@ -34,6 +31,9 @@ export const signup = (signupValues) => async dispatch => {
 
 // Login
 
+export const login = (loginValues) => async dispatch => {
+    console.log(loginValues)
+}
 
 
 // Editing account details
