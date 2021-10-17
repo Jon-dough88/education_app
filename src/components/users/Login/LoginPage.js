@@ -25,4 +25,4 @@ const mapDispatchToProps = dispatch => {
 } 
 
 
-export default LoginPage
+export default connect(null, mapDispatchToProps)(LoginPage)
