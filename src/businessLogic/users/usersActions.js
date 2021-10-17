@@ -7,10 +7,10 @@ import axios from 'axios';
 
 // export const USER_SIGNED_UP = `${usersUrl}/signup`;
 
-const usersUrl = 'http://localhost:4000/api/users'
+const usersUrl = 'http://localhost:4000/api/users';
 
-export const USER_SIGNED_UP = 'users/signup'
-export const USER_LOGIN = 'users/login'
+export const USER_SIGNED_UP = 'users/signup';
+export const USER_LOGIN = 'users/login';
 
 // Creating a new user/signing up
 
@@ -33,6 +33,15 @@ export const signup = (signupValues) => async dispatch => {
 
 export const login = (loginValues) => async dispatch => {
     console.log(loginValues)
+    await axios.post(`${usersUrl}/login`, loginValues)
+    .then(response => {
+        console.log(response)
+        dispatch({type: USER_LOGIN, message: `User ${loginValues.userName} successfully logged in`})
+    })
+    .catch(error => {
+        console.log(error)
+        
+    })
 }
 
 
