@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Login from './Login';
-
 import { connect } from 'react-redux';
+
+import Login from './Login';
+import { login } from '../../../businessLogic/users/usersActions';
 
 
 class LoginPage extends Component {
@@ -15,6 +16,13 @@ class LoginPage extends Component {
         return <Login onSubmit={this.submit}/>
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        userLoggedIn: (values) => {dispatch(login(values))}
+    }
+    
+} 
 
 
 export default LoginPage
