@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
 
+import {fetchUser} from './businessLogic/users/usersActions';
+
 import Navmenu from '../src/components/index/Navbar';
 import Home from './components/index/Home';
 // import  Login  from '../src/components/users/login';
@@ -37,6 +39,7 @@ class Homepage extends Component {
             isMobile: browserStatus
         })
         console.log(`Browser is mobile: ${browserStatus}`)
+        this.props.userIsLoggedIn()
     }
 
     checkBrowser(){
@@ -100,4 +103,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
  
-export default Homepage;
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);

@@ -12,6 +12,8 @@ const usersReducer = (state = initialState, action) => {
          case ACTIONS.USER_LOGIN:
              return {...state, currentUser: action.payload}
         
+         case ACTIONS.FETCH_USER:
+             return { state, currentUser: action.payload}    
 
         default:
             return state

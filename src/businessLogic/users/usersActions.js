@@ -1,4 +1,5 @@
 import axios from 'axios';
+import actions from 'redux-form/lib/actions';
 
 
 // const rootUrl = 'http://localhost:4000';
@@ -11,6 +12,7 @@ const usersUrl = 'http://localhost:4000/api/users';
 
 export const USER_SIGNED_UP = 'users/signup';
 export const USER_LOGIN = 'users/login';
+export const FETCH_USER = 'users/user';
 
 // Creating a new user/signing up
 
@@ -27,6 +29,17 @@ export const signup = (signupValues) => async dispatch => {
 
 // Fetching an existing user
 
+export const fetchUser = () => async dispatch => {
+    await axios.get('/user')
+    .then( response => {
+        dispatch({type: FETCH_USER, payload: response.data})
+    })
+    .catch(err => {
+        console.log(err)
+
+        // Add a dispatch for error messages!
+    })
+}
 
 
 // Login
