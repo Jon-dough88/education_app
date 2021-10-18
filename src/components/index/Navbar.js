@@ -16,7 +16,8 @@ class Navmenu extends Component {
 
     render() {
 
-        
+        const { currentUser } = this.props
+        console.log(currentUser)
 
         return ( 
            <div className="jumbotron " id="navbar">
