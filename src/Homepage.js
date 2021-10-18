@@ -64,9 +64,10 @@ class Homepage extends Component {
                             
                             : <Route path="/" exact component={Main}></Route>
                         }   */}
-                        <Route path="/" exact component={MainPage}></Route>
+                        <Route exact path="/" component={Home}></Route>
                         {/* <Route path="/" exact component={Main}></Route>  */}
                         <Route path="/login" component={LoginPage}></Route>
+                        <Route path="/main" component={MainPage} />
                         <Route path="/signup" component={SignupPage}></Route>
                         <Route path="/admin" component={AdminPage}></Route>
                         {/* <Route path="/groups" component={GroupMenu}></Route> */}
