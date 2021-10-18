@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
+import { connect } from 'react-redux';
 
 import Navmenu from '../src/components/index/Navbar';
 import Home from './components/index/Home';
@@ -50,6 +51,8 @@ class Homepage extends Component {
 
     
 
+    
+
     render() { 
 
         return ( 
@@ -81,6 +84,19 @@ class Homepage extends Component {
                 </div>
             </Router>
          );
+    }
+}
+
+
+const mapStateToProps = state => {
+    return {
+        user: state.currentUser
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        userIsLoggedIn: () => dispatch(fetchUser())
     }
 }
  
