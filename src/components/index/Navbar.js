@@ -16,8 +16,8 @@ class Navmenu extends Component {
 
     render() {
 
-        const { currentUser } = this.props
-        console.log(currentUser)
+        const { user } = this.props
+        console.log(user)
 
         return ( 
            <div className="jumbotron " id="navbar">
@@ -49,6 +49,7 @@ class Navmenu extends Component {
                                     Sign up
                                 </Nav.Link>
                             </LinkContainer>
+                            
                             <LinkContainer to="/admin">
                                 <Nav.Link>
                                     Admin access

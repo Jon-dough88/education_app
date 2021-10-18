@@ -17,6 +17,12 @@ class LoginPage extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        user: state.currentUser
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         userLoggedIn: (values) => {dispatch(login(values))}
@@ -25,4 +31,4 @@ const mapDispatchToProps = dispatch => {
 } 
 
 
-export default connect(null, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
