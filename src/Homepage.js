@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 
 import Navmenu from '../src/components/index/Navbar';
+import Home from './components/index/Home';
 // import  Login  from '../src/components/users/login';
 // import Signup from '../src/components/users/Signup/Signup';
 import LoginPage from './components/users/Login/LoginPage';
