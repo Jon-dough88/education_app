@@ -30,7 +30,7 @@ export const signup = (signupValues) => async dispatch => {
 // Fetching an existing user
 
 export const fetchUser = () => async dispatch => {
-    await axios.get('/user')
+    await axios.get(`${usersUrl}/user`)
     .then( response => {
         dispatch({type: FETCH_USER, payload: response.data})
     })

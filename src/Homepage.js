@@ -58,6 +58,9 @@ class Homepage extends Component {
 
     render() { 
 
+        const { user } = this.props
+        console.log(`Current user: ${user}`)
+
         return ( 
             <Router>
                 <div>
