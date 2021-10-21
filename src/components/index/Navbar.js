@@ -128,6 +128,7 @@ class Navmenu extends Component {
                                 <NavDropdown.Item href="/upgrade">Upgrade to Premium <PackageBar /> </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
+                         
                       </Navbar.Collapse>
                  </Container>
                 </Navbar>

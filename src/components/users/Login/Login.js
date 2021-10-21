@@ -11,6 +11,7 @@ let Login = props => {
         <div className="jumbotron login-container">
             <div className="card" id="login-page">
                 <h1 className="card-title">Login</h1>
+            
                 <div className="card-body">
                     <form className="form-inline justify-content-center" onSubmit={handleSubmit}>
                         <div className="form-group">
