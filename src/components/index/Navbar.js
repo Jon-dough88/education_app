@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { connect } from 'react-redux';
 
 
 import Bell from '../content/notifications/Bell';
@@ -16,7 +17,8 @@ class Navmenu extends Component {
 
     render() {
 
-        
+        const {userName} = this.props
+        console.log(userName)
 
         return ( 
            <div className="jumbotron " id="navbar">
@@ -30,7 +32,11 @@ class Navmenu extends Component {
                         <Navbar.Brand href="/"><h2 className="onHover">Logo</h2></Navbar.Brand>
                         <Dumbbell className="dumbbell" />
                         <Bell className="bell" />
-                        
+                        <div>
+                            Test div for user login 
+                            <br />
+                            {userName}
+                        </div>
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <LinkContainer to="/">
@@ -136,5 +142,12 @@ class Navmenu extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.currentUser
+        // userName: state.userName
+    }
+}
  
-export default Navmenu;
+export default connect(mapStateToProps, null)(Navmenu);
