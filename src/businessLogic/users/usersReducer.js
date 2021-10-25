@@ -12,10 +12,10 @@ const usersReducer = (state = initialState, action) => {
     switch(action.type) {
         
          case ACTIONS.USER_LOGIN:
-             return {...state, currentUser: action.payload.data }
+             return {...state, currentUser: action.payload }
         
          case ACTIONS.FETCH_USER:
-             return { state, currentUser: action.payload}    
+             return { ...state, currentUser: action.payload}    
 
         default:
             return state

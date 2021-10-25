@@ -17,8 +17,8 @@ class Navmenu extends Component {
 
     render() {
 
-        const {userName} = this.props
-        console.log(userName)
+        const {user} = this.props
+        console.log(user)
 
         return ( 
            <div className="jumbotron " id="navbar">
@@ -35,7 +35,7 @@ class Navmenu extends Component {
                         <div>
                             Test div for user login 
                             <br />
-                            {userName}
+                            {user}
                         </div>
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
