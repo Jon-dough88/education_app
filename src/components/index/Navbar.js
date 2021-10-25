@@ -134,8 +134,7 @@ class Navmenu extends Component {
                       </Navbar.Collapse>
                        {userName &&
                             <div>
-                                    <p>Welcome, 
-                                    {userName}!
+                                    <p>Welcome, {userName}!
                                     </p>
                             </div>
                        }

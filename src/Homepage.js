@@ -59,7 +59,7 @@ class Homepage extends Component {
 
     render() { 
 
-        const { userName } = this.props;
+        const { userName, userType } = this.props;
         console.log(`Current user: ${userName}`);
 
         return ( 
@@ -75,6 +75,14 @@ class Homepage extends Component {
                             : <Route path="/" exact component={Main}></Route>
                         }   */}
                         <Route exact path="/" component={Home}></Route>
+                        {userName && userType === "admin" && 
+                            <Redirect from="/login" to="/admin" />
+                        }
+
+                        {userName && userType === "teacher" && 
+                            <Redirect from="/login" to="/main" />
+                        }      
+
                         {/* <Route path="/" exact component={Main}></Route>  */}
                         <Route path="/login" component={LoginPage}></Route>
                         <Route path="/main" component={MainPage} />
