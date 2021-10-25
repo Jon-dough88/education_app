@@ -17,8 +17,8 @@ class Navmenu extends Component {
 
     render() {
 
-        const {user} = this.props
-        console.log(user)
+        const {userName, userType} = this.props
+        console.log(userName)
 
         return ( 
            <div className="jumbotron " id="navbar">
@@ -32,11 +32,7 @@ class Navmenu extends Component {
                         <Navbar.Brand href="/"><h2 className="onHover">Logo</h2></Navbar.Brand>
                         <Dumbbell className="dumbbell" />
                         <Bell className="bell" />
-                        <div>
-                            Test div for user login 
-                            <br />
-                            {user}
-                        </div>
+                        
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <LinkContainer to="/">
@@ -136,6 +132,15 @@ class Navmenu extends Component {
                         </Nav>
                          
                       </Navbar.Collapse>
+                       {userName &&
+                            <div>
+                                    <p>Welcome, 
+                                    {userName}!
+                                    </p>
+                            </div>
+                       }
+                       
+                        
                  </Container>
                 </Navbar>
            </div>     
@@ -143,10 +148,12 @@ class Navmenu extends Component {
     }
 }
 
+
 const mapStateToProps = (state) => {
     return {
-        user: state.users.currentUser
-        // userName: state.userName
+        // user: state.users.currentUser
+        userName: state.users.userName,
+        userType: state.users.userType
     }
 }
  
