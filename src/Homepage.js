@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
 
@@ -58,8 +59,8 @@ class Homepage extends Component {
 
     render() { 
 
-        const { user } = this.props
-        console.log(`Current user: ${user}`)
+        const { userName } = this.props;
+        console.log(`Current user: ${userName}`);
 
         return ( 
             <Router>
@@ -96,7 +97,8 @@ class Homepage extends Component {
 
 const mapStateToProps = state => {
     return {
-        user: state.currentUser
+        userName: state.users.currentUser,
+        userType: state.users.userType
     }
 }
 
