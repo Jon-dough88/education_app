@@ -1,7 +1,7 @@
 import * as ACTIONS from './usersActions';
 
 const initialState = {
-    currentUser: [],
+    currentUser: null,
     userName: null,
     token: null,
     errors: []

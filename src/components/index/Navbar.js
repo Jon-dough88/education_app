@@ -145,7 +145,7 @@ class Navmenu extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.currentUser
+        user: state.users.currentUser
         // userName: state.userName
     }
 }
