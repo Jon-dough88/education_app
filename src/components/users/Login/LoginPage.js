@@ -38,6 +38,7 @@ const mapDispatchToProps = dispatch => {
     
     return {
         // findUser: () => {dispatch(fetchUser())},
+        getRefreshToken: () => {dispatch()},
         verifyToken: (accessToken) => { dispatch(authToken(accessToken))},
         userLoggedIn: (values) => {dispatch(login(values))}
     }
