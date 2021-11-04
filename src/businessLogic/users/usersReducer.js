@@ -17,8 +17,11 @@ const usersReducer = (state = initialState, action) => {
             //  return {...state, currentUser: action.payload }
             return {...state, accessToken: action.payload.accessToken, userName: action.payload.userName, userType: action.payload.userType}
         
-         case ACTIONS.FETCH_USER:
-             return { ...state, currentUser: action.payload}    
+        //  case ACTIONS.FETCH_USER:
+        //      return { ...state, currentUser: action.payload}
+             
+             case ACTIONS.AUTH_USER:
+                return { ...state, accessToken: action.payload} 
 
         default:
             return state

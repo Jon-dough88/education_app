@@ -4,7 +4,8 @@ import { Redirect } from 'react-router';
 import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
 
-import {fetchUser} from './businessLogic/users/usersActions';
+// import {fetchUser} from './businessLogic/users/usersActions';
+import { authToken } from './businessLogic/users/usersActions';
 
 import Navmenu from '../src/components/index/Navbar';
 import Home from './components/index/Home';
@@ -40,7 +41,7 @@ class Homepage extends Component {
             isMobile: browserStatus
         })
         console.log(`Browser is mobile: ${browserStatus}`)
-        this.props.userIsLoggedIn()
+        this.props.verifyToken()
     }
 
     checkBrowser(){
@@ -112,7 +113,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        userIsLoggedIn: () => dispatch(fetchUser())
+        verifyToken: () => dispatch(authToken())
     }
 }
  

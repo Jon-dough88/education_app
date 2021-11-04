@@ -2,17 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Login from './Login';
-import { login, fetchUser } from '../../../businessLogic/users/usersActions';
+import { login, authToken } from '../../../businessLogic/users/usersActions';
 
 
 class LoginPage extends Component {
     
     componentDidMount = () => {
-        this.props.findUser()
+        const { accessToken } = this.props;
+        console.log(accessToken)
+        // console.log(`Logged in user is: ${this.props.user}`)
+        // this.props.findUser()
+        this.props.verifyToken(accessToken)
     }
 
     submit = values => {
-        console.log(values)
+        // console.log(values)
         this.props.userLoggedIn(values)
     }
 
@@ -23,13 +27,17 @@ class LoginPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        user: state.currentUser
+        // user: state.users.currentUser,
+        userName: state.users.userName,
+        accessToken: state.users.accessToken
     }
 }
 
 const mapDispatchToProps = dispatch => {
+    
     return {
-        findUser: () => {dispatch(fetchUser())},
+        // findUser: () => {dispatch(fetchUser())},
+        verifyToken: (accessToken) => { dispatch(authToken(accessToken))},
         userLoggedIn: (values) => {dispatch(login(values))}
     }
     

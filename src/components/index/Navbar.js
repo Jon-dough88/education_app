@@ -17,7 +17,7 @@ class Navmenu extends Component {
 
     render() {
 
-        const {userName, userType} = this.props
+        const { userName } = this.props
         console.log(userName)
 
         return ( 
