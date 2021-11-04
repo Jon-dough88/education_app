@@ -12,6 +12,7 @@ class LoginPage extends Component {
         console.log(accessToken)
         // console.log(`Logged in user is: ${this.props.user}`)
         // this.props.findUser()
+        this.props.getRefreshToken()
         this.props.verifyToken(accessToken)
     }
 
