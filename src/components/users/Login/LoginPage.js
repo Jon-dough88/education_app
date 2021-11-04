@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Login from './Login';
-import { login, authToken } from '../../../businessLogic/users/usersActions';
+import { login, authToken, getRefreshToken } from '../../../businessLogic/users/usersActions';
 
 
 class LoginPage extends Component {
