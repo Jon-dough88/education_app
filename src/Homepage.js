@@ -80,13 +80,26 @@ class Homepage extends Component {
                             <Redirect from="/login" to="/admin" />
                         }
 
+
+                    {!userName || userType === null &&
+                         <Redirect from="/main" to="/login" />
+                    }
+
                         {userName && userType === "teacher" && 
                             <Redirect from="/login" to="/main" />
                         }      
 
                         {/* <Route path="/" exact component={Main}></Route>  */}
+                        
+                       
                         <Route path="/login" component={LoginPage}></Route>
-                        <Route path="/main" component={MainPage} />
+                        
+                        
+                        {userName && 
+                            <Route path="/main" component={MainPage} />
+                        }
+                        
+                       
                         <Route path="/signup" component={SignupPage}></Route>
                         <Route path="/admin" component={AdminPage}></Route>
                         {/* <Route path="/groups" component={GroupMenu}></Route> */}
