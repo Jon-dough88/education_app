@@ -10,9 +10,10 @@ class LoginPage extends Component {
     componentDidMount = () => {
         const { accessToken } = this.props;
         console.log(accessToken)
+        const userName = this.props.userName;
         // console.log(`Logged in user is: ${this.props.user}`)
         // this.props.findUser()
-        this.props.getRefreshToken()
+        this.props.getRefreshToken(userName)
         this.props.verifyToken(accessToken)
     }
 
@@ -23,7 +24,7 @@ class LoginPage extends Component {
 
     render() {
 
-        const {userNama} = this.props;
+        
 
         return <Login onSubmit={this.submit}/>
     }
