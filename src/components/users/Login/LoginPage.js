@@ -22,6 +22,9 @@ class LoginPage extends Component {
     }
 
     render() {
+
+        const {userNama} = this.props;
+
         return <Login onSubmit={this.submit}/>
     }
 }
@@ -38,7 +41,9 @@ const mapDispatchToProps = dispatch => {
     
     return {
         // findUser: () => {dispatch(fetchUser())},
-        getRefreshToken: () => {dispatch()},
+
+        // Change the user identifier to an id rather than a username.
+        getRefreshToken: (userName) => {dispatch(getRefreshToken(userName))},
         verifyToken: (accessToken) => { dispatch(authToken(accessToken))},
         userLoggedIn: (values) => {dispatch(login(values))}
     }
