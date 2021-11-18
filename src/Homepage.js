@@ -37,11 +37,19 @@ class Homepage extends Component {
     componentDidMount(){
         
         let browserStatus = this.checkBrowser()
+
+        let delay = 1000 * 300
+
         this.setState({
             isMobile: browserStatus
         })
         console.log(`Browser is mobile: ${browserStatus}`)
-        this.props.verifyToken()
+        const {userName} = this.props
+        console.log(`The user's username is: ${userName}`)
+        setTimeout(() => {
+            this.props.verifyToken()
+        }, delay)
+        
     }
 
     checkBrowser(){
