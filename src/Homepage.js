@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
 
 // import {fetchUser} from './businessLogic/users/usersActions';
-import { authToken } from './businessLogic/users/usersActions';
+import { authToken, getRefreshToken } from './businessLogic/users/usersActions';
 
 import Navmenu from '../src/components/index/Navbar';
 import Home from './components/index/Home';
@@ -126,7 +126,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        verifyToken: () => dispatch(authToken())
+        verifyToken: () => dispatch(getRefreshToken())
     }
 }
  
