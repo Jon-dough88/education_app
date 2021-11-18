@@ -14,7 +14,7 @@ class LoginPage extends Component {
         console.log(`The user's name is: ${userName}`)
         // this.props.getRefreshToken(userName)
         this.props.getRefreshToken()
-        this.props.verifyToken(accessToken)
+        // this.props.verifyToken(accessToken)
     }
 
     submit = values => {
@@ -43,7 +43,9 @@ const mapDispatchToProps = dispatch => {
     return {
         // findUser: () => {dispatch(fetchUser())},
 
+        
         // Change the user identifier to an id rather than a username.
+
         // getRefreshToken: (userName) => {dispatch(getRefreshToken(userName))},
         getRefreshToken: () => {dispatch(getRefreshToken())},
         // verifyToken: (accessToken) => { dispatch(authToken(accessToken))},
