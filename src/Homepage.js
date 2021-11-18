@@ -46,11 +46,19 @@ class Homepage extends Component {
         console.log(`Browser is mobile: ${browserStatus}`)
         const {userName} = this.props
         console.log(`The user's username is: ${userName}`)
-        setTimeout(() => {
-            this.props.verifyToken()
-        }, delay)
+        
+        if (userName) {
+            setTimeout(() => {
+                this.props.verifyToken()
+            }, delay)
+        }else{
+            console.log("User null.")
+        }
+        
         
     }
+
+
 
     checkBrowser(){
         // window.mobileCheck = function() {

@@ -46,7 +46,7 @@ const mapDispatchToProps = dispatch => {
         // Change the user identifier to an id rather than a username.
         // getRefreshToken: (userName) => {dispatch(getRefreshToken(userName))},
         getRefreshToken: () => {dispatch(getRefreshToken())},
-        verifyToken: (accessToken) => { dispatch(authToken(accessToken))},
+        // verifyToken: (accessToken) => { dispatch(authToken(accessToken))},
         userLoggedIn: (values) => {dispatch(login(values))}
     }
     
