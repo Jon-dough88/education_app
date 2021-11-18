@@ -33,7 +33,7 @@ export const signup = (signupValues) => async dispatch => {
 // Getting a refresh token
 
 export const getRefreshToken = () => async dispatch => {
-    await axios.get(`${usersUrl}/refreshToken`)
+    await axios.post(`${usersUrl}/refreshToken`)
     .then(response => {
         dispatch({type: REFRESH_TOKEN, message: "Refresh token retrieved"})
     })
