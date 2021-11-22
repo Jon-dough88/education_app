@@ -13,10 +13,9 @@ const usersUrl = 'http://localhost:4000/api/users';
 export const USER_SIGNED_UP = 'users/signup';
 export const USER_LOGIN = 'users/login';
 export const AUTH_USER = 'users/authToken'
-
 export const REFRESH_TOKEN = 'users/refreshToken';
-// export const FETCH_USER = 'users/user';
 
+// export const FETCH_USER = 'users/user';
 // Creating a new user/signing up
 
 export const signup = (signupValues) => async dispatch => {
@@ -35,7 +34,7 @@ export const signup = (signupValues) => async dispatch => {
 export const getRefreshToken = (userName) => async dispatch => {
     await axios.post(`${usersUrl}/refreshToken`, userName, {withCredentials: true})
     .then(response => {
-        dispatch({type: REFRESH_TOKEN, message: "Refresh token retrieved"})
+        dispatch({type: REFRESH_TOKEN, payload: response.data, message: "Refresh token retrieved"})
     })
     .catch(err => {console.log(err)})
 }
