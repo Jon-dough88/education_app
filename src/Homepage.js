@@ -38,7 +38,7 @@ class Homepage extends Component {
         
         let browserStatus = this.checkBrowser()
 
-        let delay = 1000 * 300
+        let delay = 1000 * 3000
 
         this.setState({
             isMobile: browserStatus
@@ -49,7 +49,7 @@ class Homepage extends Component {
         
         if (userName) {
             setTimeout(() => {
-                this.props.verifyToken()
+                this.props.verifyToken(userName)
             }, delay)
         }else{
             console.log("User null.")
@@ -135,14 +135,14 @@ class Homepage extends Component {
 
 const mapStateToProps = state => {
     return {
-        userName: state.users.currentUser,
+        userName: state.users.userName,
         userType: state.users.userType
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        verifyToken: () => dispatch(getRefreshToken())
+        verifyToken: (userName) => dispatch(getRefreshToken(userName))
     }
 }
  
