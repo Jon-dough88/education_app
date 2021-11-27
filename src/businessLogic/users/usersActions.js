@@ -12,6 +12,7 @@ import * as MESSAGES from '../errors/errorActions';
 const usersUrl = 'http://localhost:4000/api/users';
 
 export const SIGNUP_SUCCESS = 'users/signup';
+export const SIGNUP_FAILURE = 'users/signupFail'
 export const USER_LOGIN = 'users/login';
 export const AUTH_USER = 'users/authToken'
 export const REFRESH_TOKEN = 'users/refreshToken';
@@ -33,6 +34,9 @@ export const signup = (signupValues) => async dispatch => {
    })
    .catch(err => 
     {console.log(err)
+    dispatch({
+        type: SIGNUP_FAILURE
+    })
     dispatch({
         type: MESSAGES.SET_MESSAGE,
         payload: err.message
