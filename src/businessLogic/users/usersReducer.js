@@ -5,6 +5,7 @@ const initialState = {
     userName: null,
     userType: null,
     accessToken: null,
+    userLoggedIn: false,
     errors: []
 }
 
@@ -12,11 +13,18 @@ const initialState = {
 const usersReducer = (state = initialState, action) => {
     switch(action.type) {
         
+
+         case ACTIONS.SIGNUP_SUCCESS:
+             return { ...state, userLoggedIn: false };
+
+             case ACTIONS.SIGNUP_FAILURE:
+                return { ...state, userLoggedIn: false }
+
          case ACTIONS.LOGIN_SUCCESS:
          case ACTIONS.REFRESH_TOKEN:
             //  console.log(action.payload)
             //  return {...state, currentUser: action.payload }
-            return {...state, accessToken: action.payload.accessToken, userName: action.payload.userName, userType: action.payload.userType}
+            return {...state, accessToken: action.payload.accessToken, userName: action.payload.userName, userType: action.payload.userType, userLoggedIn: true}
         
       
             //  case ACTIONS.AUTH_USER:
