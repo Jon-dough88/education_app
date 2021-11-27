@@ -1,4 +1,4 @@
-import * as ACTIONS from './errorActions';
+import * as ACTIONS from './messageActions';
 
 
 const initialState = {}
