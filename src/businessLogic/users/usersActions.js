@@ -1,6 +1,6 @@
 import axios from 'axios';
 import actions from 'redux-form/lib/actions';
-import * as MESSAGES from '../errors/messageActions';
+import * as MESSAGES from '../messages/messageActions';
 
 
 // const rootUrl = 'http://localhost:4000';
