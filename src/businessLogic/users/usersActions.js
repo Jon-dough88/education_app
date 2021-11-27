@@ -31,7 +31,13 @@ export const signup = (signupValues) => async dispatch => {
        })
 
    })
-   .catch(err => {console.log(err)})
+   .catch(err => 
+    {console.log(err)
+    dispatch({
+        type: MESSAGES.SET_MESSAGE,
+        payload: err.message
+    })
+    })
     
 }
 
