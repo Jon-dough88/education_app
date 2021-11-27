@@ -1,5 +1,6 @@
 import axios from 'axios';
 import actions from 'redux-form/lib/actions';
+import * as MESSAGES from '../errors/errorActions';
 
 
 // const rootUrl = 'http://localhost:4000';
@@ -24,6 +25,10 @@ export const signup = (signupValues) => async dispatch => {
    .then(response => {
        console.log(response)
        dispatch({type: SIGNUP_SUCCESS, message: "Sign up successful"})
+       dispatch({
+           type: MESSAGES.SET_MESSAGE,
+           payload: response.data.message
+       })
 
    })
    .catch(err => {console.log(err)})
