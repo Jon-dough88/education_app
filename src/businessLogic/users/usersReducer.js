@@ -12,7 +12,7 @@ const initialState = {
 const usersReducer = (state = initialState, action) => {
     switch(action.type) {
         
-         case ACTIONS.USER_LOGIN:
+         case ACTIONS.LOGIN_SUCCESS:
          case ACTIONS.REFRESH_TOKEN:
             //  console.log(action.payload)
             //  return {...state, currentUser: action.payload }
