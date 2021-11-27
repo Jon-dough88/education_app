@@ -26,8 +26,8 @@ const usersReducer = (state = initialState, action) => {
             //  return {...state, currentUser: action.payload }
             return {...state, accessToken: action.payload.accessToken, userName: action.payload.userName, userType: action.payload.userType, userLoggedIn: true}
         
-          case LOGIN_FAILURE:
-                
+          case ACTIONS.LOGIN_FAILURE:
+                return {...state, userLoggedIn: false, accessToken: null, userName: null, userType: null}
 
         default:
             return state
