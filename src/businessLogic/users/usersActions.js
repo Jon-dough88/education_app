@@ -13,7 +13,7 @@ const usersUrl = 'http://localhost:4000/api/users';
 
 export const SIGNUP_SUCCESS = 'users/signup';
 export const SIGNUP_FAILURE = 'users/signupFail'
-export const USER_LOGIN = 'users/login';
+export const LOGIN_SUCCESS = 'users/login';
 export const AUTH_USER = 'users/authToken'
 export const REFRESH_TOKEN = 'users/refreshToken';
 
@@ -87,7 +87,7 @@ export const login = (loginValues) => async dispatch => {
     await axios.post(`${usersUrl}/login`, loginValues, {withCredentials: true})
     .then(response => {
         console.log(response.data)
-        dispatch({type: USER_LOGIN, 
+        dispatch({type: LOGIN_SUCCESS, 
             payload: response.data, 
             message: `User ${response.data.userName} successfully logged in`})
     })
