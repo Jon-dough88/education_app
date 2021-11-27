@@ -10,7 +10,7 @@ import actions from 'redux-form/lib/actions';
 
 const usersUrl = 'http://localhost:4000/api/users';
 
-export const USER_SIGNED_UP = 'users/signup';
+export const SIGNUP_SUCCESS = 'users/signup';
 export const USER_LOGIN = 'users/login';
 export const AUTH_USER = 'users/authToken'
 export const REFRESH_TOKEN = 'users/refreshToken';
@@ -23,7 +23,8 @@ export const signup = (signupValues) => async dispatch => {
    await axios.post(`${usersUrl}/signup`, signupValues)
    .then(response => {
        console.log(response)
-       dispatch({type: USER_SIGNED_UP, message: "Sign up successful"})
+       dispatch({type: SIGNUP_SUCCESS, message: "Sign up successful"})
+
    })
    .catch(err => {console.log(err)})
     
