@@ -17,8 +17,8 @@ const usersReducer = (state = initialState, action) => {
          case ACTIONS.SIGNUP_SUCCESS:
              return { ...state, userLoggedIn: false };
 
-             case ACTIONS.SIGNUP_FAILURE:
-                return { ...state, userLoggedIn: false }
+        case ACTIONS.SIGNUP_FAILURE:
+             return { ...state, userLoggedIn: false }
 
          case ACTIONS.LOGIN_SUCCESS:
          case ACTIONS.REFRESH_TOKEN:
@@ -28,6 +28,9 @@ const usersReducer = (state = initialState, action) => {
         
           case ACTIONS.LOGIN_FAILURE:
                 return {...state, userLoggedIn: false, accessToken: null, userName: null, userType: null}
+          
+          case ACTIONS.LOGOUT:
+              return {...state, userLoggedIn: false, accessToken: null } 
 
         default:
             return state

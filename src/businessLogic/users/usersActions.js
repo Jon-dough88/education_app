@@ -15,6 +15,7 @@ export const SIGNUP_SUCCESS = 'users/signup';
 export const SIGNUP_FAILURE = 'users/signupFail'
 export const LOGIN_SUCCESS = 'users/login';
 export const LOGIN_FAILURE = 'users/loginFailure';
+export const LOGOUT = 'users/logout';
 export const AUTH_USER = 'users/authToken'
 export const REFRESH_TOKEN = 'users/refreshToken';
 
