@@ -44,6 +44,7 @@ class Homepage extends Component {
             isMobile: browserStatus
         })
         console.log(`Browser is mobile: ${browserStatus}`)
+        
         const {userName} = this.props
         console.log(`The user's username is: ${userName}`)
         

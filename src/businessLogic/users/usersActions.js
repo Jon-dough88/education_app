@@ -53,15 +53,15 @@ export const getRefreshToken = (userName) => async dispatch => {
 //     })
 // }
 
-export const authToken = (accessToken) => async dispatch => {
-    await axios.post(`${usersUrl}/authToken`, { accessToken })
-    .then(response => {
-        dispatch({type: AUTH_USER, payload: response.data})
-    })
-    .catch(err => {
-        console.log(err)
-    })
-}
+// export const authToken = (accessToken) => async dispatch => {
+//     await axios.post(`${usersUrl}/authToken`, { accessToken })
+//     .then(response => {
+//         dispatch({type: AUTH_USER, payload: response.data})
+//     })
+//     .catch(err => {
+//         console.log(err)
+//     })
+// }
 
 
 // Login
