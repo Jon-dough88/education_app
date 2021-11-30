@@ -4,6 +4,29 @@ import { Field, reduxForm } from 'redux-form';
 
 import './Signup.css';
 
+
+// Redux form field-level validation
+const required = value => value ? undefined : 'Please fill in this field.'
+
+const email = value => value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
+'Invalid email address' : undefined
+
+const maxLength15 = maxLength(15);
+const maxLength = max => value => value && value.length > max ? `The maximum number of characters is ${max}!` : undefined 
+
+const minValue = min => value => value && value.length < min ? `Must be at least ${min} characters!` : undefined
+
+
+const validationField = ({input, label, type, meta: {touched, error, warning}}) => (
+    <div className="validation-field-container">
+        <label>{label}</label>
+        <div className="validation-field">
+            <input {...input} placeholder={label} type={type}></input>
+            {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+        </div>
+    </div>
+)
+
 let Signup = props => {
 
     const { handleSubmit, pristine, reset, submitting } = props
@@ -19,6 +42,7 @@ let Signup = props => {
                             <Field className="form-control form-control-lg"
                                 name="firstName"
                                 component="input"
+                                
                                 type="text"
                                 placeholder="First Name"
                             />
