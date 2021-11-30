@@ -11,17 +11,28 @@ const required = value => value ? undefined : 'Please fill in this field.'
 const email = value => value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
 'Invalid email address' : undefined
 
-const maxLength15 = maxLength(15);
+
 const maxLength = max => value => value && value.length > max ? `The maximum number of characters is ${max}!` : undefined 
+const maxLengthValue = maxLength(18);
+const emailMaxValue = maxLength(25);
 
-const minValue = min => value => value && value.length < min ? `Must be at least ${min} characters!` : undefined
+const minLength = min => value => value && value.length < min ? `Must be at least ${min} characters!` : undefined
+const minLengthValue = minLength(2)
 
+const comparePasswords = (value, allValues) => value !== allValues.password ? 'The passwords don\'t match' : <span><p className="match-message">Password match!</p></span>
 
 const validationField = ({input, label, type, meta: {touched, error, warning}}) => (
+
+
+    
     <div className="validation-field-container">
-        <label>{label}</label>
-        <div className="validation-field">
-            <input {...input} placeholder={label} type={type}></input>
+        {/* <label>{label}</label> */}
+        <div >
+            <input 
+            className="input" {...input} placeholder={label} type={type} 
+            ></input>    
+        </div>
+        <div className="error-container">
             {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
         </div>
     </div>
@@ -31,20 +42,24 @@ let Signup = props => {
 
     const { handleSubmit, pristine, reset, submitting } = props
 
+    // hoverAnimation(){
+        
+    // }
+
     return(
         <div className="jumbotron signup-container">
             <div className="card">
                 <div className="card-body" id="signup-body">
                     <h1 className="card-title signup-title">Signup</h1>
                     <form className="form-inline justify-content-center" id="signup-form" onSubmit={handleSubmit}>
-                        <div className="form-group">
+                        <div className="form-group first-group">
                             {/* <label for="firstName" className="form-label">First Name: </label> */}
-                            <Field className="form-control form-control-lg"
+                            <Field className="form-control form-control-lg" 
                                 name="firstName"
-                                component="input"
-                                
+                                component={validationField}
                                 type="text"
-                                placeholder="First Name"
+                                label="First Name"
+                                validate={[required, maxLengthValue, minLengthValue]}
                             />
                         </div>
 
@@ -52,9 +67,10 @@ let Signup = props => {
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
                             <Field className="form-control form-control-lg"
                                 name="lastName"
-                                component="input"
+                                component={validationField}
                                 type="text"
-                                placeholder="Last Name"
+                                label="Last Name"
+                                validate={[required, maxLengthValue, minLengthValue]}
                             />
                         </div>
 
@@ -62,9 +78,10 @@ let Signup = props => {
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
                             <Field className="form-control form-control-lg"
                                 name="userName"
-                                component="input"
+                                component={validationField}
                                 type="text"
-                                placeholder="Username"
+                                label="Username"
+                                validate={[required, minLengthValue, maxLengthValue]}
                             />
                         </div>
 
@@ -72,9 +89,10 @@ let Signup = props => {
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
                             <Field className="form-control form-control-lg"
                                 name="email"
-                                component="input"
+                                component={validationField}
                                 type="email"
-                                placeholder="Email"
+                                label="Email"
+                                validate={[required, email, emailMaxValue]}
                             />
                         </div>
 
@@ -82,9 +100,11 @@ let Signup = props => {
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
                             <Field className="form-control form-control-lg"
                                 name="password"
-                                component="input"
+                                component={validationField}
                                 type="password"
-                                placeholder="Password"
+                                label="Password"
+                                validate={[required, minLengthValue, maxLengthValue]}
+                                
                             />
                         </div>
 
@@ -92,15 +112,16 @@ let Signup = props => {
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
                             <Field className="form-control form-control-lg"
                                 name="confirmPassword"
-                                component="input"
+                                component={validationField}
                                 type="password"
-                                placeholder="Confirm your password"
+                                label="Confirm your password"
+                                validate={[comparePasswords]}
                             />
                         </div>
 
                         <div className="form-group">
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
-                            <label><Field name="userType" className="form-control signup-radio" component="input" type="radio" value="teacher"/> Teacher</label>
+                            <label><Field name="userType" className="form-control signup-radio" component="input" type="radio" value="teacher" /> Teacher</label>
                             <label><Field name="userType" className="form-control signup-radio" component="input" type="radio" value="student"/> Student</label>
                         </div>
 
