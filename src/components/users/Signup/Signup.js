@@ -52,72 +52,82 @@ let Signup = props => {
                 <div className="card-body" id="signup-body">
                     <h1 className="card-title signup-title">Signup</h1>
                     <form className="form-inline justify-content-center" id="signup-form" onSubmit={handleSubmit}>
-                        <div className="form-group first-group">
-                            {/* <label for="firstName" className="form-label">First Name: </label> */}
-                            <Field className="form-control form-control-lg" 
-                                name="firstName"
-                                component={validationField}
-                                type="text"
-                                label="First Name"
-                                validate={[required, maxLengthValue, minLengthValue]}
-                            />
-                        </div>
+                        <div className="input-container">
+                            <div className="form-container left-form-container">
+                                <div className="form-group first-group">
+                                    {/* <label for="firstName" className="form-label">First Name: </label> */}
+                                    <Field className="form-control form-control-lg" 
+                                        name="firstName"
+                                        component={validationField}
+                                        type="text"
+                                        label="First Name"
+                                        validate={[required, maxLengthValue, minLengthValue]}
+                                    />
+                                </div>
 
-                        <div className="form-group">
-                            {/* <label for="lastName" className="form-label">Last Name: </label> */}
-                            <Field className="form-control form-control-lg"
-                                name="lastName"
-                                component={validationField}
-                                type="text"
-                                label="Last Name"
-                                validate={[required, maxLengthValue, minLengthValue]}
-                            />
-                        </div>
+                                <div className="form-group">
+                                    {/* <label for="lastName" className="form-label">Last Name: </label> */}
+                                    <Field className="form-control form-control-lg"
+                                        name="lastName"
+                                        component={validationField}
+                                        type="text"
+                                        label="Last Name"
+                                        validate={[required, maxLengthValue, minLengthValue]}
+                                    />
+                                </div>
 
-                        <div className="form-group">
-                            {/* <label for="lastName" className="form-label">Last Name: </label> */}
-                            <Field className="form-control form-control-lg"
-                                name="userName"
-                                component={validationField}
-                                type="text"
-                                label="Username"
-                                validate={[required, minLengthValue, maxLengthValue]}
-                            />
-                        </div>
+                                <div className="form-group">
+                                    {/* <label for="lastName" className="form-label">Last Name: </label> */}
+                                    <Field className="form-control form-control-lg"
+                                        name="userName"
+                                        component={validationField}
+                                        type="text"
+                                        label="Username"
+                                        validate={[required, minLengthValue, maxLengthValue]}
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-container right-form-container">
+                                <div className="form-group">
+                                    {/* <label for="lastName" className="form-label">Last Name: </label> */}
+                                    <Field className="form-control form-control-lg"
+                                        name="email"
+                                        component={validationField}
+                                        type="email"
+                                        label="Email"
+                                        validate={[required, email, emailMaxValue]}
+                                    />
+                                </div>
 
-                        <div className="form-group">
-                            {/* <label for="lastName" className="form-label">Last Name: </label> */}
-                            <Field className="form-control form-control-lg"
-                                name="email"
-                                component={validationField}
-                                type="email"
-                                label="Email"
-                                validate={[required, email, emailMaxValue]}
-                            />
-                        </div>
+                                <div className="form-group">
+                                    {/* <label for="lastName" className="form-label">Last Name: </label> */}
+                                    <Field className="form-control form-control-lg"
+                                        name="password"
+                                        component={validationField}
+                                        type="password"
+                                        label="Password"
+                                        validate={[required, minLengthValue, maxLengthValue]}
+                                        
+                                    />
+                                </div>
 
-                        <div className="form-group">
-                            {/* <label for="lastName" className="form-label">Last Name: </label> */}
-                            <Field className="form-control form-control-lg"
-                                name="password"
-                                component={validationField}
-                                type="password"
-                                label="Password"
-                                validate={[required, minLengthValue, maxLengthValue]}
-                                
-                            />
+                                <div className="form-group">
+                                    {/* <label for="lastName" className="form-label">Last Name: </label> */}
+                                    <Field className="form-control form-control-lg"
+                                        name="confirmPassword"
+                                        component={validationField}
+                                        type="password"
+                                        label="Confirm your password"
+                                        validate={[comparePasswords]}
+                                    />
+                                </div>
+                            </div>
                         </div>
+                        
 
-                        <div className="form-group">
-                            {/* <label for="lastName" className="form-label">Last Name: </label> */}
-                            <Field className="form-control form-control-lg"
-                                name="confirmPassword"
-                                component={validationField}
-                                type="password"
-                                label="Confirm your password"
-                                validate={[comparePasswords]}
-                            />
-                        </div>
+                        
+
+                        
 
                         <div className="form-group">
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
@@ -126,7 +136,7 @@ let Signup = props => {
                         </div>
 
                         <button className="btn btn-lg btn-primary signup-button" type="submit" disabled={pristine || submitting}>Sign up!</button>
-                        <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+                        <button className="btn btn-lg btn-warning clear-button" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
                         <br />   
                         <a href="/login"><strong style={{fontSize: "18px"}}>Already a member? Click here!</strong></a>
                     </form>    

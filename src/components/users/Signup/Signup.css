@@ -3,18 +3,34 @@
   /* justify-content: center; */
 }
 
+.form-container {
+  height: 20rem;
+  width: 40rem;
+}
+
+.left-form-container {
+  border: 1px solid blue;
+}
+
+.right-form-container {
+  border: 1px solid green;
+}
+
 .signup-title {
   margin-top: 4rem;
   margin-bottom: 1rem;
 }
 
 .form-group {
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 #signup-form {
   margin: 4rem auto 2rem auto;
-  max-width: 40rem;
+  max-width: 80rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
 }
 
 .signup-radio {
@@ -26,6 +42,10 @@
 
 .signup-radio:hover {
   transform: scale(1.3);
+}
+
+.signup-radio:active {
+  border: 1.5px solid blue;
 }
 
 /* .grow {
@@ -48,9 +68,14 @@
   margin: 2rem;
 }
 
+/* .clear-button {
+  margin-bottom: 2rem;
+} */
+
 .validation-field-container {
   min-height: 4rem;
-  min-width: 30rem;
+  min-width: 16rem;
+  max-width: 30rem;
   margin: 1.5rem auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -64,7 +89,8 @@
 
 .input {
   height: 3rem;
-  min-width: 25rem;
+  min-width: 16rem;
+  max-width: 30rem;
   text-align: left;
   text-indent: 10px;
   border: 1px solid black;
