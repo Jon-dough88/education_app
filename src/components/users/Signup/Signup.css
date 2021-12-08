@@ -1,6 +1,32 @@
 .signup-container {
   align-items: center;
+  justify-content: center;
+}
+
+#signup-form {
+  margin: 4rem auto 2rem auto;
+  max-width: 60rem;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
   /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.input-container {
+  /* border: 1px solid gold; */
+  display: flex;
+  /* flex-direction: row; */
+}
+
+@media screen and (max-width: 950px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  #signup-form {
+    align-items: center;
+  }
 }
 
 .form-container {
@@ -8,13 +34,13 @@
   width: 40rem;
 }
 
-.left-form-container {
+/* .left-form-container {
   border: 1px solid blue;
-}
+} */
 
-.right-form-container {
+/* .right-form-container {
   border: 1px solid green;
-}
+} */
 
 .signup-title {
   margin-top: 4rem;
@@ -25,12 +51,8 @@
   justify-content: center;
 }
 
-#signup-form {
-  margin: 4rem auto 2rem auto;
-  max-width: 80rem;
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
+.role-checkbox-container {
+  margin-top: 2rem;
 }
 
 .signup-radio {
@@ -66,11 +88,13 @@
 
 .signup-button {
   margin: 2rem;
+  max-width: 16rem;
 }
 
-/* .clear-button {
-  margin-bottom: 2rem;
-} */
+.clear-button {
+  /* margin-bottom: 2rem; */
+  max-width: 16rem;
+}
 
 .validation-field-container {
   min-height: 4rem;

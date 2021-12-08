@@ -126,17 +126,20 @@ let Signup = props => {
                         
 
                         
-
+                        
                         
 
-                        <div className="form-group">
+                        <div className="form-group role-checkbox-container">
                             {/* <label for="lastName" className="form-label">Last Name: </label> */}
                             <label><Field name="userType" className="form-control signup-radio" component="input" type="radio" value="teacher" /> Teacher</label>
                             <label><Field name="userType" className="form-control signup-radio" component="input" type="radio" value="student"/> Student</label>
                         </div>
 
-                        <button className="btn btn-lg btn-primary signup-button" type="submit" disabled={pristine || submitting}>Sign up!</button>
-                        <button className="btn btn-lg btn-warning clear-button" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+                        <div className="form-group">
+                            <button className="btn btn-lg btn-primary signup-button" type="submit" disabled={pristine || submitting}>Sign up!</button>
+                            <button className="btn btn-lg btn-warning clear-button" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button> 
+                        </div>
+                       
                         <br />   
                         <a href="/login"><strong style={{fontSize: "18px"}}>Already a member? Click here!</strong></a>
                     </form>    
