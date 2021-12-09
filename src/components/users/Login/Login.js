@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import './Login.css';
-import { required, maxLengthValue, minLengthValue } from '../../../utils/validations';
+import { required, maxLengthValue, minLengthValue, validationField } from '../../../utils/validations';
 
 
 let Login = props => {
@@ -18,9 +18,10 @@ let Login = props => {
                         <div className="form-group">
                             <Field className="form-control form-control-lg"
                                  name="userName"
-                                 component="input"
+                                 component={validationField}
                                  type="text"
-                                 placeholder="User Name"   
+                                 label="User Name"
+                                 validate={ required, minLengthValue, maxLengthValue }   
                             />
                         </div>
 
