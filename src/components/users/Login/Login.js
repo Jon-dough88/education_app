@@ -2,8 +2,23 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import './Login.css';
-import { required, maxLengthValue, minLengthValue, validationField } from '../../../utils/validations';
+import { required, maxLengthValue, minLengthValue } from '../../../utils/validations';
 
+
+const validationField = ({input, label, type, meta: {touched, error, warning}}) => (
+
+    <div className="validation-field-container">
+        {/* <label>{label}</label> */}
+        <div >
+            <input 
+            className="input" {...input} placeholder={label} type={type} 
+            ></input>    
+        </div>
+        <div className="error-container">
+            {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+        </div>
+    </div>
+)
 
 let Login = props => {
     const { handleSubmit, pristine, reset, submitting } = props
@@ -21,7 +36,7 @@ let Login = props => {
                                  component={validationField}
                                  type="text"
                                  label="User Name"
-                                 validate={ required, minLengthValue, maxLengthValue }   
+                                 validate={[required, minLengthValue, maxLengthValue]}   
                             />
                         </div>
 
