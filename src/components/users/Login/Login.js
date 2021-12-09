@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import './Login.css';
-import { required } from '../../../utils/validations';
+import { required, maxLengthValue, minLengthValue } from '../../../utils/validations';
 
 
 let Login = props => {
