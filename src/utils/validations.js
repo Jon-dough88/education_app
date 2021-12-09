@@ -1,1 +1,1 @@
-export default required = value => value ? undefined : 'Please fill in this field.'
+export const required = value => value ? undefined : 'Please fill in this field.'
