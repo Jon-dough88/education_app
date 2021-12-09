@@ -11,6 +11,8 @@ export const emailMaxValue = maxLength(25);
 export const minLength = min => value => value && value.length < min ? `Must be at least ${min} characters!` : undefined
 export const minLengthValue = minLength(2)
 
+
+
 export const comparePasswords = (value, allValues) => value !== allValues.password ? 'The passwords don\'t match' : <span><p className="match-message">Password match!</p></span>
 
 
