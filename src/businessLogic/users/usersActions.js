@@ -23,7 +23,7 @@ export const REFRESH_TOKEN = 'users/refreshToken';
 // Creating a new user/signing up
 
 export const signup = (signupValues) => async dispatch => {
-    // console.log(signupValues)
+    console.log(signupValues)
    await axios.post(`${usersUrl}/signup`, signupValues)
    .then(response => {
        console.log(response)

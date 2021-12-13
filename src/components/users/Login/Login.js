@@ -43,9 +43,10 @@ let Login = props => {
                         <div className="form-group">
                             <Field className="form-control form-control-lg"
                                  name="password"
-                                 component="input"
+                                 component={validationField}
                                  type="password"
-                                 placeholder="Password"   
+                                 label="Password" 
+                                 validate={[required, minLengthValue, maxLengthValue]}    
                             />
                         </div>
 
