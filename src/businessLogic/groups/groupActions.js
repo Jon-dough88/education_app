@@ -10,7 +10,9 @@ export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
 
 // Creating a new group
 
-export const fetchGroups = () => async dispatch => {}
+export const fetchGroups = (userName) => async dispatch => {
+    await axios.get(`${groupUrl}/fetch`)
+}
 
 
 // Editing a group's details (grade, level, )
