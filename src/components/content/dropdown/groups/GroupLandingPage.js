@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Sidebar from '../../../elements/sidebar/Sidebar';
 import GroupsMenu from './GroupsMenu';
 import Promotional from '../../../elements/Promotional/Promotional';
+
+import { getRefreshTokens } from '../../../../businessLogic/users/usersActions';
 
 import './GroupLandingPage.css';
 
@@ -28,5 +31,24 @@ class GroupLandingPage extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        // user: state.users.currentUser,
+        userName: state.users.userName,
+        accessToken: state.users.accessToken
+    }
+}
 
-export default GroupLandingPage
+const mapDispatchToProps = dispatch => {
+    
+    return {
+        
+        getRefreshToken: () => {dispatch(getRefreshToken())},
+        
+        
+    }
+    
+} 
+
+
+export default connect(mapStateToProps, mapDispatchToProps)s(GroupLandingPage)
