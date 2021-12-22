@@ -2,7 +2,7 @@ import * as ACTIONS from './groupActions';
 
 const initialState = {
 
-    groups: [],
+    groups: null,
     fetchInProgress: false,
     groupsFetched: false,
     
@@ -20,10 +20,10 @@ const groupReducer = (state = initialState, action) => {
              return { ...state, fetchInProgress: false, groupsFetched: false }
 
          case ACTIONS.GROUP_FETCH_SUCCESS:
-            return {...state, fetchInProgress: false, groupsFetched: false }
+            return {...state, fetchInProgress: false, groupsFetched: false, groups: action.payload }
         
-          case ACTIONS.LOGOUT:
-              return {...state, userLoggedIn: false, accessToken: null } 
+        //   case ACTIONS.LOGOUT:
+        //       return {...state, userLoggedIn: false, accessToken: null } 
 
         default:
             return state
