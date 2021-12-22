@@ -23,7 +23,7 @@ class GroupLandingPage extends Component {
 
         this.props.getRefreshToken()
     }
-s
+
     render() {
 
         return(
