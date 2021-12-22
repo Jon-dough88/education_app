@@ -5,12 +5,25 @@ import Sidebar from '../../../elements/sidebar/Sidebar';
 import GroupsMenu from './GroupsMenu';
 import Promotional from '../../../elements/Promotional/Promotional';
 
-import { getRefreshTokens } from '../../../../businessLogic/users/usersActions';
+import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 
 import './GroupLandingPage.css';
 
 class GroupLandingPage extends Component {
 
+    constructor(props){
+        super(props)
+        this.state={
+
+        }
+    }
+
+
+    componentDidMount(){
+
+        this.props.getRefreshToken()
+    }
+s
     render() {
 
         return(
@@ -51,4 +64,4 @@ const mapDispatchToProps = dispatch => {
 } 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)s(GroupLandingPage)
+export default connect(mapStateToProps, mapDispatchToProps)(GroupLandingPage)
