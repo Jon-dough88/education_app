@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import GroupItem from './GroupItem';
 import './Groups.css';
 
 
 class GroupMenu extends Component {
+
+    componentDidMount(){
+
+        this.props.getRefreshToken()
+        // s
+    }
 
     render() {
         return (
@@ -26,5 +34,19 @@ class GroupMenu extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        userName: state.users.userName,
+        accessToken: state.users.accessToken
+    }
+}
 
-export default GroupMenu
+const mapDispatchToProps = dispatch => {
+    return{
+        getRefreshToken: dispatch(getRefreshToken())
+
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(GroupMenu)
