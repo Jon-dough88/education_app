@@ -11,7 +11,7 @@ class GroupMenu extends Component {
     componentDidMount(){
 
         this.props.getRefreshToken()
-        // s
+        this.props.getGroups(this.props.userNames)
     }
 
     render() {
@@ -43,8 +43,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        getRefreshToken: dispatch(getRefreshToken())
-
+        getRefreshToken: () => dispatch(getRefreshToken()),
+        getGroups: (userName) => dispatch(fetchGroups(userName))
     }
 }
 
