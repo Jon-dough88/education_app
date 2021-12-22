@@ -10,19 +10,25 @@ export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
 
 
 
-// Creating a new group
+// Fetching all groups taught by a certain teacher
 
 export const fetchGroups = (userName) => async dispatch => {
 
     dispatch({type: GROUP_FETCH_IN_PROGRESS});
-    await axios.get(`${groupUrl}/fetch`)
+
+    await axios.post(`${groupUrl}/fetch`, userName)
     .then(response => {
         dispatch({type: GROUP_FETCH_SUCCESS, payload: response})
     }).catch(err => {
         dispatch({type: GROUP_FETCH_FAILURE})
-        dispatch()
+        dispatch({type: MESSAGES.SET_MESSAGE, payload: response.data.message})
     })
 }
+
+
+// Creating a new group
+
+
 
 
 // Editing a group's details (grade, level, )
