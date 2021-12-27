@@ -20,7 +20,7 @@ const groupReducer = (state = initialState, action) => {
              return { ...state, fetchInProgress: false, groupsFetched: false }
 
          case ACTIONS.GROUP_FETCH_SUCCESS:
-            return {...state, fetchInProgress: false, groupsFetched: false, groups: action.payload }
+            return {...state, fetchInProgress: false, groupsFetched: true, groups: action.payload }
         
         //   case ACTIONS.LOGOUT:
         //       return {...state, userLoggedIn: false, accessToken: null } 
