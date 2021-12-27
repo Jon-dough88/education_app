@@ -18,7 +18,7 @@ class GroupMenu extends Component {
     render() {
 
         const groups = this.props.groups
-        
+
         return (
 
             <div className="container jumbotron group-menu">
@@ -31,8 +31,17 @@ class GroupMenu extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <GroupItem />
-                    <GroupItem />
+
+                    {groups === null
+                    ? <div className="col">
+                        <div className="alert alert-danger">No groups found!</div>
+                      </div>
+                    : groups.map((group) => (
+                        <GroupItem key={group._id} name={group.groupName} students={group.students}/>
+                    ))
+                    }
+                    {/* <GroupItem />
+                    <GroupItem /> */}
                 </div>  
             </div>
         )
