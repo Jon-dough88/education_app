@@ -16,7 +16,11 @@ class GroupMenu extends Component {
     }
 
     render() {
+
+        const groups = this.props.groups
+        
         return (
+
             <div className="container jumbotron group-menu">
                 <div className="row group-title-row">
                     <div className="col-md-7 col-sm-5">
@@ -38,7 +42,8 @@ class GroupMenu extends Component {
 const mapStateToProps = state => {
     return {
         userName: state.users.userName,
-        accessToken: state.users.accessToken
+        accessToken: state.users.accessToken,
+        groups: state.groups.groups
     }
 }
 
