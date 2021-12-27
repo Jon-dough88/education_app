@@ -53,6 +53,7 @@ class GroupMenu extends Component {
 const mapStateToProps = state => {
     return {
         userName: state.users.userName,
+        _id: state.users._id,
         accessToken: state.users.accessToken,
         groups: state.groups.groups
     }
