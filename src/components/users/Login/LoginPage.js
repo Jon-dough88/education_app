@@ -11,7 +11,9 @@ class LoginPage extends Component {
         const { accessToken } = this.props;
         console.log(accessToken)
         const userName = this.props.userName;
-        console.log(`The user's name is: ${userName}`)
+        const userId = this.props.userId;
+        console.log(`The user's name is: ${userName}`);
+        console.log(`The user's ID is: ${userId}`)
         // this.props.getRefreshToken(userName)
         this.props.getRefreshToken()
         // this.props.verifyToken(accessToken)
@@ -34,6 +36,7 @@ const mapStateToProps = state => {
     return {
         // user: state.users.currentUser,
         userName: state.users.userName,
+        userId: state.users.userId,
         accessToken: state.users.accessToken
     }
 }
