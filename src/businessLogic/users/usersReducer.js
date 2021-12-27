@@ -3,6 +3,7 @@ import * as ACTIONS from './usersActions';
 const initialState = {
     currentUser: [],
     userName: null,
+    userId: null,
     userType: null,
     accessToken: null,
     userLoggedIn: false,

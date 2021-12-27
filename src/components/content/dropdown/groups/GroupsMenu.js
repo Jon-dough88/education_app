@@ -13,11 +13,13 @@ class GroupMenu extends Component {
 
         this.props.getRefreshToken()
         this.props.getGroups(this.props.userName);
+        console.log(this.props.userName)
     }
 
     render() {
 
-        const groups = this.props.groups
+        const {groups} = this.props
+        const {userName} = this.props;
 
         return (
 
@@ -37,7 +39,7 @@ class GroupMenu extends Component {
                         <div className="alert alert-danger">No groups found!</div>
                       </div>
                     : groups.map((group) => (
-                        <GroupItem key={group._id} name={group.groupName} students={group.students}/>
+                        <GroupItem key={group._id} group={group} />
                     ))
                     }
                     {/* <GroupItem />

@@ -21,7 +21,7 @@ export const fetchGroups = (userName) => async dispatch => {
 
         await axios.post(`${groupUrl}/fetch`, userName).then(response => {
             dispatch({type: GROUP_FETCH_SUCCESS, payload: response.data.groups})
-        console.log(response.data.groups)
+        console.log(response.data)
         }).catch(err => {
             dispatch({type: GROUP_FETCH_FAILURE})
             dispatch({type: MESSAGES.SET_MESSAGE, payload: err})
