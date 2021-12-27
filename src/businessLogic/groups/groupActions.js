@@ -14,15 +14,23 @@ export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
 
 export const fetchGroups = (userName) => async dispatch => {
 
-    dispatch({type: GROUP_FETCH_IN_PROGRESS});
+    try{
+        console.log(`The username is: ${userName}`)
 
-    await axios.post(`${groupUrl}/fetch`, userName)
-    .then(response => {
-        dispatch({type: GROUP_FETCH_SUCCESS, payload: response})
-    }).catch(err => {
-        dispatch({type: GROUP_FETCH_FAILURE})
-        dispatch({type: MESSAGES.SET_MESSAGE, payload: response.data.message})
-    })
+            dispatch({type: GROUP_FETCH_IN_PROGRESS});
+
+        await axios.post(`${groupUrl}/fetch`, userName).then(response => {
+            dispatch({type: GROUP_FETCH_SUCCESS, payload: response.data})
+        console.log(response.data.groups)
+        }).catch(err => {
+            dispatch({type: GROUP_FETCH_FAILURE})
+            dispatch({type: MESSAGES.SET_MESSAGE, payload: err})
+        })
+    }catch(error){
+        console.log(error)
+    }
+
+    
 }
 
 
