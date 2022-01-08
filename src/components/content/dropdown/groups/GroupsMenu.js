@@ -13,13 +13,17 @@ class GroupMenu extends Component {
 
         this.props.getRefreshToken()
         this.props.getGroups(this.props.userName);
-        console.log(this.props.userName)
+        console.log(`User name: ${this.props.userName}`)
     }
 
     render() {
 
         const {groups} = this.props
         const {userName} = this.props;
+        const {userId} = this.props;
+
+        console.log(`Current user of the group menu is ${userName}.`)
+        console.log(userId)
 
         return (
 
@@ -62,7 +66,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         getRefreshToken: () => dispatch(getRefreshToken()),
-        getGroups: (userName) => dispatch(fetchGroups(userName))
+        getGroups: (userId) => dispatch(fetchGroups(userId))
     }
 }
 

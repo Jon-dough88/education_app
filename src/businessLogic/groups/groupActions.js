@@ -4,6 +4,7 @@ import * as MESSAGES from '../messages/messageActions';
 
 const groupUrl = 'http://localhost:4000/api/groups';
 
+
 export const GROUP_FETCH_IN_PROGRESS = 'groups/fetchInProgress';
 export const GROUP_FETCH_SUCCESS = 'groups/fetchSuccess';
 export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
