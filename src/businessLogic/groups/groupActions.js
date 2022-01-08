@@ -13,14 +13,14 @@ export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
 
 // Fetching all groups taught by a certain teacher
 
-export const fetchGroups = (userName) => async dispatch => {
+export const fetchGroups = (userId) => async dispatch => {
 
     try{
-        console.log(`The username is: ${userName}`)
+        console.log(`The username is: ${userId}`)
 
             dispatch({type: GROUP_FETCH_IN_PROGRESS});
 
-        await axios.post(`${groupUrl}/fetch`, userName).then(response => {
+        await axios.post(`${groupUrl}/fetch`, userId).then(response => {
             dispatch({type: GROUP_FETCH_SUCCESS, payload: response.data.groups})
         console.log(response.data)
         }).catch(err => {
