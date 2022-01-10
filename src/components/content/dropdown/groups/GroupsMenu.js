@@ -12,7 +12,7 @@ class GroupMenu extends Component {
     componentDidMount(){
 
         this.props.getRefreshToken()
-        this.props.getGroups(this.props.userName);
+        this.props.getGroups(this.props.userId);
         console.log(`User name: ${this.props.userName}`)
     }
 

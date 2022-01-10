@@ -16,7 +16,7 @@ export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
 export const fetchGroups = (userId) => async dispatch => {
 
     try{
-        console.log(`The username is: ${userId}`)
+        console.log(`The user id at groupActions is: ${userId}`)
 
             dispatch({type: GROUP_FETCH_IN_PROGRESS});
 
