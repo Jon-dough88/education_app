@@ -15,12 +15,15 @@ export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
 
 export const fetchGroups = (userId) => async dispatch => {
 
+    // console.log(`The user id at groupActions is: ${userId}`)
+    console.log(userId)
+
     try{
-        console.log(`The user id at groupActions is: ${userId}`)
+        
 
             dispatch({type: GROUP_FETCH_IN_PROGRESS});
 
-        await axios.post(`${groupUrl}/fetch`, userId).then(response => {
+        await axios.post(`${groupUrl}/fetch/:${userId}`).then(response => {
             dispatch({type: GROUP_FETCH_SUCCESS, payload: response.data.groups})
         console.log(response.data)
         }).catch(err => {
