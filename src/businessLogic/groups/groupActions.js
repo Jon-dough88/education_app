@@ -23,7 +23,7 @@ export const fetchGroups = (userId) => async dispatch => {
 
             dispatch({type: GROUP_FETCH_IN_PROGRESS});
 
-        await axios.post(`${groupUrl}/fetchAll/:${userId}`).then(response => {
+        await axios.post(`${groupUrl}/fetchAll`, userId).then(response => {
             dispatch({type: GROUP_FETCH_SUCCESS, payload: response.data.groups})
         console.log(response.data)
         }).catch(err => {

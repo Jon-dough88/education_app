@@ -2,7 +2,7 @@ import * as ACTIONS from './groupActions';
 
 const initialState = {
     userName: null,
-    userId: null,
+    // userId: null,
     groups: null,
     fetchInProgress: false,
     groupsFetched: false,
