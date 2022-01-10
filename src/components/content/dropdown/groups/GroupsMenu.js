@@ -19,9 +19,11 @@ class GroupMenu extends Component {
 
     render() {
 
-        const {groups} = this.props
+        const {groups} = this.props;
+        
         const {userName} = this.props;
         const {userId} = this.props;
+        console.log(`${userName}'s groups are: ${groups}`);
 
         console.log(`Current user of the group menu is ${userName}.`)
         console.log(userId)
@@ -40,16 +42,16 @@ class GroupMenu extends Component {
                 </div>
                 <div className="row">
 
-                    {groups === null
+                    {/* {groups === null
                     ? <div className="col">
                         <div className="alert alert-danger">No groups found!</div>
                       </div>
                     : groups.map((group) => (
                         <GroupItem key={group._id} group={group} />
                     ))
-                    }
-                    {/* <GroupItem />
-                    <GroupItem /> */}
+                    } */}
+                    <GroupItem />
+                    <GroupItem />
                 </div>  
             </div>
         )
