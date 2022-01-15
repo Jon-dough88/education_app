@@ -52,7 +52,7 @@ export const signup = (signupValues) => async dispatch => {
 // Fetching existing user data through the refreshToken
 
 export const getUser = () => async dispatch => {
-    await axios.get(`${usersUrl}/getUser`).then(response => {
+    await axios.get(`${usersUrl}/fetchUser`).then(response => {
         dispatch({type: USER_FETCHED, payload: response.data})
     }).catch(err => {
         console.log(err)
