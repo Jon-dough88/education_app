@@ -22,7 +22,7 @@ class GroupItem extends Component {
                                 
                             </div>
                             <div className="col-md-4 col-sm-4">
-                                <h2>Student number</h2>
+                                <h2>{this.props.group.students.length}</h2>
                             </div>
                         </div>
                     </a>
