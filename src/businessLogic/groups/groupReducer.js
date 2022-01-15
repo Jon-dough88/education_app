@@ -3,7 +3,7 @@ import * as ACTIONS from './groupActions';
 const initialState = {
     userName: null,
     // userId: null,
-    groups: [],
+    groups: null,
     fetchInProgress: false,
     groupsFetched: false,
     
@@ -16,7 +16,7 @@ const groupReducer = (state = initialState, action) => {
         
          case ACTIONS.GROUP_FETCH_IN_PROGRESS:
              return { ...state, fetchInProgress: true, groupsFetched: false };
-
+         
         case ACTIONS.GROUP_FETCH_FAILURE:
              return { ...state, fetchInProgress: false, groupsFetched: false }
 

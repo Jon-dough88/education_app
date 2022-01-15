@@ -9,16 +9,24 @@ import './Groups.css';
 
 class GroupMenu extends Component {
 
+    // constructor(props){
+    //     super(props)
+
+    //     this.retrieveGroups = this.retrieveGroups.bind(this)
+    // }
+
     componentDidMount(){
         console.log(`The user's id is ${this.props.userId}`)
-
+        this.props.getGroups(this.props.userId);
         this.props.getRefreshToken()
-        this.retreieveGroups()
+        // this.retreieveGroups()
+        
         console.log(`User name: ${this.props.userName}`)
     }
 
     retrieveGroups(){
-        
+        const {userId} = this.props;    
+        this.props.getGroups(userId);
     }
 
     render() {
@@ -31,7 +39,7 @@ class GroupMenu extends Component {
 
         console.log(`Current user of the group menu is ${userName}.`)
         console.log(userId)
-        this.props.getGroups(userId);
+        // this.props.getGroups(userId);
 
         return (
 
