@@ -17,17 +17,18 @@ class GroupMenu extends Component {
 
     componentDidMount(){
         console.log(`The user's id is ${this.props.userId}`)
-        this.props.getGroups(this.props.userId);
+        
         this.props.getRefreshToken()
+        this.props.getGroups(this.props.userId);
         // this.retreieveGroups()
         
         console.log(`User name: ${this.props.userName}`)
     }
 
-    retrieveGroups(){
-        const {userId} = this.props;    
-        this.props.getGroups(userId);
-    }
+    // retrieveGroups(){
+    //     const {userId} = this.props;    
+    //     this.props.getGroups(userId);
+    // }
 
     render() {
 
@@ -54,16 +55,16 @@ class GroupMenu extends Component {
                 </div>
                 <div className="row">
 
-                    {/* {groups === null
+                    {groups === null
                     ? <div className="col">
                         <div className="alert alert-danger">No groups found!</div>
                       </div>
                     : groups.map((group) => (
                         <GroupItem key={group._id} group={group} />
                     ))
-                    } */}
-                    <GroupItem />
-                    <GroupItem />
+                    }
+                    {/* <GroupItem />
+                    <GroupItem /> */}
                 </div>  
             </div>
         )

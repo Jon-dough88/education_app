@@ -16,7 +16,7 @@ class GroupItem extends Component {
                     <a className="card-body group-item-card" href="/groupPage">
                         <div className="row">
                             <div className="col-md-5 col-sm-5">
-                                <h2>{this.props.groupName}</h2>
+                                <h2>{this.props.group.groupName}</h2>
                             </div>
                             <div className="col-md-2 col-sm-1 group-separator">
                                 
