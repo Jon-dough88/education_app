@@ -13,8 +13,12 @@ class GroupMenu extends Component {
         console.log(`The user's id is ${this.props.userId}`)
 
         this.props.getRefreshToken()
-        // this.props.getGroups(this.props.userId);
+        this.retreieveGroups()
         console.log(`User name: ${this.props.userName}`)
+    }
+
+    retrieveGroups(){
+        
     }
 
     render() {
