@@ -16,6 +16,7 @@ export const SIGNUP_FAILURE = 'users/signupFail'
 export const LOGIN_SUCCESS = 'users/login';
 export const LOGIN_FAILURE = 'users/loginFailure';
 export const LOGOUT = 'users/logout';
+export const USER_FETCHED = 'users/fetchUser';
 export const AUTH_USER = 'users/authToken'
 export const REFRESH_TOKEN = 'users/refreshToken';
 
@@ -45,6 +46,17 @@ export const signup = (signupValues) => async dispatch => {
     })
     })
     
+}
+
+
+// Fetching existing user data through the refreshToken
+
+export const getUser = () => async dispatch => {
+    await axios.get(`${usersUrl}/getUser`).then(response => {
+        dispatch({type: USER_FETCHED, payload: response.data})
+    }).catch(err => {
+        console.log(err)
+    })
 }
 
 // Getting a refresh token
