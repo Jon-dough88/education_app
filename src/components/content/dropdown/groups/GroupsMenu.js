@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
+// import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
 import GroupItem from './GroupItem';
 import './Groups.css';
@@ -16,9 +16,11 @@ class GroupMenu extends Component {
     // }
 
     componentDidMount(){
-        console.log(`The user's id is ${this.props.userId}`)
         
-        this.props.getRefreshToken(this.props.userName)
+        console.log(`The user's name is ${this.props.userName}. The user's id is ${this.props.userId}`)
+        
+        // this.props.getRefreshToken()
+        this.props.fetchUser()
         this.props.getGroups(this.props.userId);
         // this.retreieveGroups()
         
@@ -82,7 +84,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        getRefreshToken: (userName) => dispatch(getRefreshToken(userName)),
+        // getRefreshToken: () => dispatch(getRefreshToken()),
+        fetchUser: () => dispatch(getUser()),
         getGroups: (userId) => dispatch(fetchGroups(userId))
     }
 }
