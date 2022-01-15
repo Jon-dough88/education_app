@@ -23,6 +23,7 @@ const usersReducer = (state = initialState, action) => {
 
          case ACTIONS.LOGIN_SUCCESS:
          case ACTIONS.REFRESH_TOKEN:
+         case ACTIONS.USER_FETCHED:
             //  console.log(action.payload)
             //  return {...state, currentUser: action.payload }
             return {...state,  userLoggedIn: true, accessToken: action.payload.accessToken, userName: action.payload.userName, userId: action.payload.userId, userType: action.payload.userType}

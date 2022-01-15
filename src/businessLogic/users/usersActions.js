@@ -53,6 +53,7 @@ export const signup = (signupValues) => async dispatch => {
 
 export const getUser = () => async dispatch => {
     await axios.get(`${usersUrl}/fetchUser`).then(response => {
+        console.log(response)
         dispatch({type: USER_FETCHED, payload: response.data})
     }).catch(err => {
         console.log(err)
