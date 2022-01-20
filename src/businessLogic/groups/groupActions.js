@@ -40,6 +40,11 @@ export const fetchGroups = (userId) => async dispatch => {
 }
 
 
+// Linking to group page
+
+
+
+
 // Creating a new group
 
 
