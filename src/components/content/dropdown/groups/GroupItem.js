@@ -7,13 +7,18 @@ class GroupItem extends Component {
     toGroupMenu() {
         return <Redirect to="/groupPage"></Redirect>
     }
+
+    groupCardClicked(e) {
+        console.log(e)
+    }
    
     render() {
 
         return (
             <div className="col-md-8 col-sm-12 group-item">
-                <div className="card"  >
-                    <a className="card-body group-item-card" href="/groupPage">
+                <div className="card" onClick={(event) => {this.groupCardClicked(event)}} >
+                    {/* <a className="card-body group-item-card" href="/groupPage"> */}
+                    <div className="card-body group-item-card" href="/groupPage">
                         <div className="row">
                             <div className="col-md-5 col-sm-5">
                                 <h2>{this.props.group.groupName}</h2>
@@ -25,7 +30,8 @@ class GroupItem extends Component {
                                 <h2>{this.props.group.students.length}</h2>
                             </div>
                         </div>
-                    </a>
+                    {/* </a> */}
+                    </div>
                     
                 </div>
                 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
+import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import { getUser } from '../../../../businessLogic/users/usersActions';
 import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
 import GroupItem from './GroupItem';
@@ -20,11 +20,11 @@ class GroupMenu extends Component {
 
     componentDidMount(){
 
-        
+        // this.props.fetchUser()
         console.log(`The user's name is ${this.props.userName}. The user's id is ${this.props.userId}`)
         
-        // this.props.getRefreshToken()
-        this.props.fetchUser()
+        this.props.getRefreshToken()
+        
         this.props.getGroups(this.props.userId);
         
         // this.retreieveGroups()
@@ -43,8 +43,8 @@ class GroupMenu extends Component {
         
         const {userName} = this.props;
         const {userId} = this.props;
-        console.log(`${userName}'s groups are: ${groups}`);
 
+        console.log(`${userName}'s groups are: ${groups}`);
         console.log(`Current user of the group menu is ${userName}.`)
         console.log(userId)
 
@@ -57,7 +57,7 @@ class GroupMenu extends Component {
                 <div className="row group-title-row">
                     <div className="col-md-7 col-sm-5">
                         <h1 className="group-menu-title">My Groups</h1>
-                        <h2>{userId}</h2>
+                        {/* <h2>{userId}</h2> */}
                     </div>
                     <div className="col-md-4 col-sm-6">
                         <a href="/groupCreation"><i class="fas fa-plus-circle fa-3x add-button"></i></a> 
@@ -92,8 +92,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        // getRefreshToken: () => dispatch(getRefreshToken()),
-        fetchUser: () => dispatch(getUser()),
+        getRefreshToken: () => dispatch(getRefreshToken()),
+        // fetchUser: () => dispatch(getUser()),
         getGroups: (userId) => dispatch(fetchGroups(userId))
     }
 }
