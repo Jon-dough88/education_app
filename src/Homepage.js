@@ -47,7 +47,8 @@ class Homepage extends Component {
         console.log(`Browser is mobile: ${browserStatus}`)
         
         const {userName, userId} = this.props
-        console.log(`The user's username is: ${userName}`)
+        console.log(`The user's username is: ${userName}`);
+        console.log(`The user's ID at Homepage is: ${userId}`)
         
         if (userName) {
             setTimeout(() => {

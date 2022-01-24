@@ -11,7 +11,7 @@ class GroupItem extends Component {
 
     groupCardClicked(_id) {
         console.log(_id)
-        this.props.openGroupPage()
+        this.props.openGroupPage(_id)
     }
    
     render() {
@@ -44,6 +44,13 @@ class GroupItem extends Component {
         )
     }
 
+}
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        openGroupPage: (_id) => { dispatch(getGroupPage(_id))}
+    }
 }
 
 export default GroupItem

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { get } from 'mongoose';
 
 import * as MESSAGES from '../messages/messageActions';
 
@@ -42,7 +43,23 @@ export const fetchGroups = (userId) => async dispatch => {
 
 // Linking to group page
 
+export const getGroupPage = (groupId) => async dispatch => {
+    
+    dispatch({type: GROUP_PAGE_FETCH_ONGOING})
 
+    try {
+
+       await axios.get(`${groupUrl}/groupPages/${groupId}`).then(response => {
+            dispatch({type: GROUP_PAGE_FETCH_DONE, payload: response.data})
+       }).catch(err => {
+            console.log(`Error at groupActions: ${err}`)
+            dispatch({type: GROUP_PAGE_FETCH_FAILED, payload: err})
+       }) 
+
+    } catch (error) {
+        
+    }
+}
 
 
 // Creating a new group
