@@ -6,22 +6,20 @@ import GroupsMenu from './GroupsMenu';
 import Promotional from '../../../elements/Promotional/Promotional';
 
 import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
+import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
 
 import './GroupLandingPage.css';
 
+
+
 class GroupLandingPage extends Component {
 
-    constructor(props){
-        super(props)
-        this.state={
-
-        }
-    }
 
 
     componentDidMount(){
 
-        this.props.getRefreshToken()
+        this.props.getRefreshToken();
+        this.props.getGroups(this.props.userId);
     }
 
     render() {
@@ -48,7 +46,9 @@ const mapStateToProps = state => {
     return {
         // user: state.users.currentUser,
         userName: state.users.userName,
-        accessToken: state.users.accessToken
+        userId: state.users.userId,
+        accessToken: state.users.accessToken,
+        groups: state.groups.groups
     }
 }
 
@@ -57,7 +57,7 @@ const mapDispatchToProps = dispatch => {
     return {
         
         getRefreshToken: () => {dispatch(getRefreshToken())},
-        
+        getGroups: (userId) => { dispatch(fetchGroups(userId)) }
         
     }
     
