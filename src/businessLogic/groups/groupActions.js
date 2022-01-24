@@ -9,6 +9,9 @@ const groupUrl = 'http://localhost:4000/api/groups';
 export const GROUP_FETCH_IN_PROGRESS = 'groups/fetchInProgress';
 export const GROUP_FETCH_SUCCESS = 'groups/fetchSuccess';
 export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
+export const GROUP_PAGE_FETCH_ONGOING = 'groups/groupPages/inProgress';
+export const GROUP_PAGE_FETCH_DONE = 'groups/groupPages/success';
+export const GROUP_PAGE_FETCH_FAILED = 'groups/groupPages/failure';
 
 
 
