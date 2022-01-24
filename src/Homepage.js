@@ -146,7 +146,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        verifyToken: (userName) => dispatch(getRefreshToken(userName))
+        verifyToken: (userName) => dispatch(getRefreshToken(userName)),
+        getGroups: (userId) => {dispatch(fetchGroups(userId))}
     }
 }
  
