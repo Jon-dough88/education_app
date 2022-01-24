@@ -25,7 +25,7 @@ class GroupMenu extends Component {
         
         // this.props.getRefreshToken()
         
-        this.props.getGroups(this.props.userId);
+        // this.props.getGroups(this.props.userId);
         
         // this.retreieveGroups()
         
