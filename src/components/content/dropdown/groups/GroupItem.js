@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 
+import { getGroupPage } from '../../../../businessLogic/groups/groupActions';
+
 
 class GroupItem extends Component {
    
