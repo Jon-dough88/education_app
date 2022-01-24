@@ -140,7 +140,8 @@ const mapStateToProps = state => {
     return {
         userName: state.users.userName,
         userType: state.users.userType,
-        userId: state.users.userId
+        userId: state.users.userId,
+        groups: state.groups.groups
     }
 }
 
