@@ -55,4 +55,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default GroupItem
+export default connect(null, mapDispatchToProps)(GroupItem);
