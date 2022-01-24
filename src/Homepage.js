@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 // import {fetchUser} from './businessLogic/users/usersActions';
 import { authToken, getRefreshToken } from './businessLogic/users/usersActions';
+import { fetchGroups } from './businessLogic/groups/groupActions';
 
 import Navmenu from '../src/components/index/Navbar';
 import Home from './components/index/Home';
@@ -45,12 +46,13 @@ class Homepage extends Component {
         })
         console.log(`Browser is mobile: ${browserStatus}`)
         
-        const {userName} = this.props
+        const {userName, userId} = this.props
         console.log(`The user's username is: ${userName}`)
         
         if (userName) {
             setTimeout(() => {
                 this.props.verifyToken(userName)
+                this.props.getGroups(this.props.userId);
             }, delay)
         }else{
             console.log("User null.")
@@ -137,7 +139,8 @@ class Homepage extends Component {
 const mapStateToProps = state => {
     return {
         userName: state.users.userName,
-        userType: state.users.userType
+        userType: state.users.userType,
+        userId: state.users.userId
     }
 }
 

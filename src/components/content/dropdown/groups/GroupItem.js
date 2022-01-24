@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Redirect, Link } from 'react-router-dom';
 
 
 class GroupItem extends Component {
@@ -8,20 +9,24 @@ class GroupItem extends Component {
         return <Redirect to="/groupPage"></Redirect>
     }
 
-    groupCardClicked(e) {
-        console.log(e)
+    groupCardClicked(_id) {
+        console.log(_id)
+        this.props.openGroupPage()
     }
    
     render() {
+        const { _id } = this.props.group;
+        console.log(_id);
 
         return (
             <div className="col-md-8 col-sm-12 group-item">
-                <div className="card" onClick={(event) => {this.groupCardClicked(event)}} >
+                <div className="card" onClick={(_id) => {this.groupCardClicked(_id)}} >
                     {/* <a className="card-body group-item-card" href="/groupPage"> */}
-                    <div className="card-body group-item-card" href="/groupPage">
+                    <div className="card-body group-item-card">
                         <div className="row">
                             <div className="col-md-5 col-sm-5">
                                 <h2>{this.props.group.groupName}</h2>
+                               
                             </div>
                             <div className="col-md-2 col-sm-1 group-separator">
                                 
