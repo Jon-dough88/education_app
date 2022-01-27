@@ -10,22 +10,16 @@ import './Groups.css';
 
 class GroupMenu extends Component {
 
-    // constructor(props){
-    //     super(props)
-
-    //     this.state= {
-    //         userId: this.props.userId
-    //     }
-    // }
+ 
 
     componentDidMount(){
-
+        this.props.getGroups(this.props.userId);
         // this.props.fetchUser()
         console.log(`The user's name is ${this.props.userName}. The user's id is ${this.props.userId}`)
         
         this.props.getRefreshToken()
         
-        this.props.getGroups(this.props.userId);
+        
         
         // this.retreieveGroups()
         

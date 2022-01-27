@@ -80,8 +80,8 @@ class Homepage extends Component {
 
     render() { 
 
-        const { userName, userType } = this.props;
-        console.log(`Current user: ${userName}`);
+        const { userName, userType, userId } = this.props;
+        console.log(`Current user: ${userName}. The user ID is ${userId}`);
 
         return ( 
             <Router>
