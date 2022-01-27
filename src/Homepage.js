@@ -53,7 +53,7 @@ class Homepage extends Component {
         if (userName) {
             setTimeout(() => {
                 this.props.verifyToken(userName)
-                this.props.getGroups(this.props.userId);
+                this.props.getGroups(userId);
             }, delay)
         }else{
             console.log("User null.")

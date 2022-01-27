@@ -27,8 +27,8 @@ export const fetchGroups = (userId) => async dispatch => {
 
             dispatch({type: GROUP_FETCH_IN_PROGRESS});
 
-            // await axios.post(`${groupUrl}/fetchAll`, userId).then(response => {
-        await axios.post(`${groupUrl}/fetchAll/${userId}`).then(response => {
+        await axios.post(`${groupUrl}/fetchAll`, userId).then(response => {
+        // await axios.post(`${groupUrl}/fetchAll/${userId}`).then(response => {
             dispatch({type: GROUP_FETCH_SUCCESS, payload: response.data.groups})
 
             console.log(response.data.groups)
@@ -53,10 +53,10 @@ export const getGroupPage = (groupId) => async dispatch => {
 
     try {
 
-       await axios.post(`${groupUrl}/groupPages/${groupId}`, groupId).then(response => {
+       await axios.post( `${groupUrl}/groupPages/`, groupId ).then(response => {
             dispatch({type: GROUP_PAGE_FETCH_DONE, payload: response.data})
        }).catch(err => {
-            console.log(`Error at groupActions: ${err}`)
+            console.log(err);
             dispatch({type: GROUP_PAGE_FETCH_FAILED, payload: err})
        }) 
 
