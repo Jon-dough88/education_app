@@ -14,8 +14,9 @@ class GroupMenu extends Component {
 
     componentDidMount(){
 
-        this.props.getRefreshToken()
+        // this.props.getRefreshToken()
         const { userName, userId } = this.props;
+        console.log(`The user's name is ${userName}. The user's id is ${userId}`)
         this.props.getGroups(userId);
 
         // if (userId){
@@ -24,7 +25,7 @@ class GroupMenu extends Component {
         //     this.props.getRefreshToken()
         // }
         // this.props.fetchUser()
-        console.log(`The user's name is ${userName}. The user's id is ${userId}`)
+        
         
         // this.props.getRefreshToken()
         
@@ -60,7 +61,7 @@ class GroupMenu extends Component {
                 <div className="row group-title-row">
                     <div className="col-md-7 col-sm-5">
                         <h1 className="group-menu-title">My Groups</h1>
-                        <h2>{userId}</h2>
+                        {/* <h2>{userId}</h2> */}
                     </div>
                     <div className="col-md-4 col-sm-6">
                         <a href="/groupCreation"><i class="fas fa-plus-circle fa-3x add-button"></i></a> 

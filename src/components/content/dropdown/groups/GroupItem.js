@@ -17,18 +17,18 @@ class GroupItem extends Component {
     }
    
     render() {
-        const { _id } = this.props.group;
+        const _id = this.props.group._id;
         console.log(_id);
 
         return (
             <div className="col-md-8 col-sm-12 group-item">
-                <div className="card" onClick={(_id) => {this.groupCardClicked(_id)}} >
+                <div className="card" onClick={() => {this.groupCardClicked(_id)}} >
                     {/* <a className="card-body group-item-card" href="/groupPage"> */}
                     <div className="card-body group-item-card">
                         <div className="row">
                             <div className="col-md-5 col-sm-5">
                                 <h2>{this.props.group.groupName}</h2>
-                               
+                                {/* <h4>{this.props.group._id}</h4> */}
                             </div>
                             <div className="col-md-2 col-sm-1 group-separator">
                                 

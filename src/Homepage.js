@@ -47,13 +47,13 @@ class Homepage extends Component {
         console.log(`Browser is mobile: ${browserStatus}`)
         
         const {userName, userId} = this.props
-        console.log(`The user's username is: ${userName}`);
-        console.log(`The user's ID at Homepage is: ${userId}`)
+        // console.log(`The user's username is: ${userName}`);
+        // console.log(`The user's ID at Homepage is: ${userId}`)
         
         if (userName) {
             setTimeout(() => {
                 this.props.verifyToken(userName)
-                this.props.getGroups(userId);
+                // this.props.getGroups(userId);
             }, delay)
         }else{
             console.log("User null.")
