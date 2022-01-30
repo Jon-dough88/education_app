@@ -14,10 +14,10 @@ class GroupMenu extends Component {
 
     componentDidMount(){
 
-        // this.props.getRefreshToken()
+        this.props.getRefreshToken()
         const { userName, userId } = this.props;
-        console.log(`The user's name is ${userName}. The user's id is ${userId}`)
-        this.props.getGroups(userId);
+        console.log(`The user's name is ${this.props.userName}. The user's id is ${this.props.userId}`)
+        this.props.getGroups(this.props.userId);
 
         // if (userId){
         //     this.props.getGroups(userId);
