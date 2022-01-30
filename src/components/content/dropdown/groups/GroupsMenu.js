@@ -15,7 +15,7 @@ class GroupMenu extends Component {
     componentDidMount(){
 
         this.props.getRefreshToken()
-        const { userName, userId } = this.props;
+        // const { userName, userId } = this.props;
         console.log(`The user's name is ${this.props.userName}. The user's id is ${this.props.userId}`)
         this.props.getGroups(this.props.userId);
 
@@ -48,9 +48,10 @@ class GroupMenu extends Component {
         const {userName} = this.props;
         const {userId} = this.props;
 
+        console.log(`Current user of the group menu is ${userName}.ID: ${userId}`)
         console.log(`${userName}'s groups are: ${groups}`);
-        console.log(`Current user of the group menu is ${userName}.`)
-        console.log(userId)
+
+        // console.log(userId)
 
  
         // this.props.getGroups(userId);
