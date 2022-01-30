@@ -15,7 +15,6 @@ import './GroupLandingPage.css';
 class GroupLandingPage extends Component {
 
 
-
     componentDidMount(){
         const { userId } = this.props;
         console.log(userId);
