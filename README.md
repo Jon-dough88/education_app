@@ -1,70 +1,221 @@
-# Getting Started with Create React App
+Welcome to the Education App reference guide!
+=============================================
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This guide's main purpose is to familiarize you with the app's basic functions
+and its API. As the app is still in development, some features and endpoints 
+may be added or changed as time goes by, so bear with us.
 
-## Available Scripts
 
-In the project directory, you can run:
+First off - what, in the world, is an API?
+==========================================
 
-### `npm start`
+(Those who already know the answer may skip ahead to the API documentation section)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+An API is an acronym for Application Interface Program, which is essentially
+a way for programs to "communicate" with one another, send and receive data,
+authorize users, etc. As with most APIs, ours allows for four basic methods of data manipulation:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+GET - Retrieving resources 
 
-### `npm test`
+POST - Inputting data to change existing data (e.g., submitting form data)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+PUT - Changing part or all of existing data on the app (e.g., changing a user's account settings).
 
-### `npm run build`
+DELETE - As the name suggests, this involves removing data and will require authoriaztion.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Authentication
+===============
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Our application uses a JWT authentication system using both an authentication token
+stored in memory and a refresh token generated on every page refresh. For details regarding
+use of the above, please consult the "Getting a Refresh Token" section in the API Documentation below.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+API Documentation
+=================
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The Education App allows teachers and students to interact in a social-media like environment,
+sharing resources such as lessons and exercises and receiving updates in groups. The data managed by our 
+API is accordingly divided into three main sections: Users, groups and content management.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Each subsection will detail the method, error handling endpoints and other necessary data for 
+interacting with the API.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Users
+======
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Functions relating to users include logging in and out, signing up, editing account details, 
+changing account settings and upgrading an account to Premium.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Signing Up:
+-----------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This is done using the endpoint '/users/signup'. 
 
-### Making a Progressive Web App
+Method: POST (using signup values)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Errors: Handled using the endpoint /signupFail
 
-### Advanced Configuration
+Payload: A message for successful user signup (currently in DevTools, to be implemented as a 
+          visible message in the future).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+An Example of the Code for Signup:
+----------------------------------
 
-### `npm run build` fails to minify
+export const signup = (signupValues) => async dispatch => {
+    console.log(signupValues)
+   await axios.post(`${usersUrl}/signup`, signupValues)
+   .then(response => {
+       console.log(response)
+       dispatch({type: SIGNUP_SUCCESS, message: "Sign up successful"})
+       dispatch({
+           type: MESSAGES.SET_MESSAGE,
+           payload: response.data.message
+       })
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   })
+   .catch(err => 
+    {console.log(err)
+    dispatch({
+        type: SIGNUP_FAILURE
+    })
+    dispatch({
+        type: MESSAGES.SET_MESSAGE,
+        payload: err.message
+    })
+    })
+    
+}
+
+
+
+
+Logging In
+----------
+
+This is done using the endpoint '/users/login'.
+
+Method: POST
+
+Errors: Handled through the endpoint '/users/loginFailure'.
+
+Payload: The user's credentials, as stored on a JWT token (saved in memory). 
+
+
+An Example of the Code Used for Logging In:
+------------------------------------------
+
+export const login = (loginValues) => async dispatch => {
+    console.log(loginValues)
+    await axios.post(`${usersUrl}/login`, loginValues, {withCredentials: true})
+    .then(response => {
+        console.log(response.data)
+        dispatch({type: LOGIN_SUCCESS, 
+            payload: response.data, 
+            message: `User ${response.data.userName} successfully logged in`})
+    })
+    .catch(error => {
+        console.log(error)
+
+    })
+}
+
+
+
+Getting a Refresh Token:
+------------------------
+
+In order to retrieve a refresh token, users must have a valid access token
+(generated on login).
+
+The endpoint for generating the refresh token is '/users/refreshToken'.
+
+Method: POST
+
+Payload: Username 
+
+
+An Example of the Code Used for Getting a Refresh Token: 
+-------------------------------------------------------
+
+export const getRefreshToken = (userName) => async dispatch => {
+    await axios.post(`${usersUrl}/refreshToken`, userName, {withCredentials: true})
+    .then(response => {
+        dispatch({type: REFRESH_TOKEN, payload: response.data, message: "Refresh token retrieved"})
+    })
+    .catch(err => {console.log(err)})
+}
+
+
+Editing Account Details
+=======================
+(TBA)
+
+Changing Account Settings
+=========================
+(TBA)
+
+Logging Out
+===========
+(TBA)
+
+
+
+Groups
+======
+
+Fetching Groups
+---------------
+
+Fetching groups is done using the endpoint '/groups/fetchAll/:userId',
+with the ID being inserted as a path variable. This is done in order to provide
+teachers with access to their groups alone.
+
+
+Method: POST
+
+Errors: Handled using the '/groups/fetchFailure' endpoint.
+
+Payload: response.data.groups (delivered as an array of objects).
+
+
+An example of a response: 
+------------------------
+
+
+ _id: 81b398h0yfal6183a,
+  groups: [
+    {
+      _id: 61c9d6dc1a13575b6b8ff0ad,
+      groupName: 'Potatoes',
+      className: 'C1',
+      groupActive: true,
+      students: [Array]
+    }
+  ]
+  
+  
+  Linking to a Group Page
+  -----------------------
+  
+  This is done via clicking on a group tab, allowing users (in this case - teachers and admins)
+  to access the group content specific to their group.
+  
+  The endpoint for linking to group pages is '/groups/groupPages'.
+  
+  Method: POST
+  
+  Payload: The groupId object
+  
+  
+
+Content
+=======
+(TBA)
