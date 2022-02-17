@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
+import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import { getUser } from '../../../../businessLogic/users/usersActions';
 import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
 import GroupItem from './GroupItem';
@@ -11,24 +11,21 @@ import './Groups.css';
 class GroupMenu extends Component {
 
  
-    componentWillMount(){
-        this.props.fetchUser()
-    }
+ 
 
 
     componentDidMount(){
 
         this.props.getRefreshToken()
+       this.props.userId === null && this.props.fetchUser()
+
+        // this.props.getRefreshToken()
         // const { userName, userId } = this.props;
         console.log(`The user's name is ${this.props.userName}. The user's id is ${this.props.userId}`)
         this.props.getGroups(this.props.userId);
 
-        // if (userId){
-        //     this.props.getGroups(userId);
-        // }else {
-        //     this.props.getRefreshToken()
-        // }
-        // this.props.fetchUser()
+       
+       
         
         
         // this.props.getRefreshToken()
@@ -101,7 +98,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        // getRefreshToken: () => dispatch(getRefreshToken()),
+        getRefreshToken: () => dispatch(getRefreshToken()),
         fetchUser: () => dispatch(getUser()),
         getGroups: (userId) => dispatch(fetchGroups(userId))
     }
