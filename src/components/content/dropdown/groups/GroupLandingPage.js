@@ -21,6 +21,9 @@ class GroupLandingPage extends Component {
 
         this.props.getRefreshToken();
         this.props.getGroups(this.props.userId);
+
+
+        console.log(this.props.groups)
     }
 
     render() {

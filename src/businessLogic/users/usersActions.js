@@ -20,7 +20,9 @@ export const USER_FETCHED = 'users/fetchUser';
 export const AUTH_USER = 'users/authToken'
 export const REFRESH_TOKEN = 'users/refreshToken';
 
-// export const FETCH_USER = 'users/user';
+
+
+
 // Creating a new user/signing up
 
 export const signup = (signupValues) => async dispatch => {
@@ -60,6 +62,7 @@ export const getUser = () => async dispatch => {
     })
 }
 
+
 // Getting a refresh token
 
 export const getRefreshToken = (userName) => async dispatch => {
@@ -70,29 +73,6 @@ export const getRefreshToken = (userName) => async dispatch => {
     .catch(err => {console.log(err)})
 }
 
-// Fetching an existing user
-
-// export const fetchUser = () => async dispatch => {
-//     await axios.get(`${usersUrl}/user`)
-//     .then( response => {
-//         dispatch({type: FETCH_USER, payload: response.data})
-//     })
-//     .catch(err => {
-//         console.log(err)
-
-//         // Add a dispatch for error messages!
-//     })
-// }
-
-// export const authToken = (accessToken) => async dispatch => {
-//     await axios.post(`${usersUrl}/authToken`, { accessToken })
-//     .then(response => {
-//         dispatch({type: AUTH_USER, payload: response.data})
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     })
-// }
 
 
 // Login
