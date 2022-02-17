@@ -1,7 +1,7 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
-import { autoRehydrate } from 'redux-persist';
+
 
 
 import usersReducer from '../users/usersReducer';
@@ -16,7 +16,7 @@ const appStore = createStore(combineReducers({
     messages: messageReducer,
     form: formReducer
     
-}), applyMiddleware(thunk, autoRehydrate()))
+}), applyMiddleware(thunk))
 
 
 export default appStore
