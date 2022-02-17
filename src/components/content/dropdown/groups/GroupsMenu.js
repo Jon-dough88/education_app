@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
+// import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import { getUser } from '../../../../businessLogic/users/usersActions';
 import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
 import GroupItem from './GroupItem';
