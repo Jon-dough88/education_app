@@ -1,6 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
+import { autoRehydrate } from 'redux-persist';
+
 
 import usersReducer from '../users/usersReducer';
 import contentReducer from '../content/contentReducer';
