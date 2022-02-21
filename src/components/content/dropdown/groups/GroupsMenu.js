@@ -19,7 +19,6 @@ class GroupMenu extends Component {
         this.props.getRefreshToken()
        this.props.userId === null && this.props.fetchUser()
 
-        // this.props.getRefreshToken()
         // const { userName, userId } = this.props;
         console.log(`The user's name is ${this.props.userName}. The user's id is ${this.props.userId}`)
         this.props.getGroups(this.props.userId);
