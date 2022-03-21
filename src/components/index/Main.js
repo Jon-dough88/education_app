@@ -9,7 +9,13 @@ import SuggestionCard from '../content/suggestions/SuggestionCard';
 
 class Main extends Component { 
     
-    
+    componentDidMount() {
+        const { userId } = this.props;
+        console.log(userId);
+
+        const { groups } = this.props;
+        console.log(groups)
+    }
 
     constructor(props) {
         super(props)
@@ -101,7 +107,8 @@ class Main extends Component {
 const mapStateToProps = state => {
     return {
         userName: state.users.userName,
-        groups: state.groups.groups
+        userId: state.users.userId,
+        groups: state.users.groups
 
     }
 }

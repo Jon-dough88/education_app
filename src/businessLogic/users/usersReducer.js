@@ -7,7 +7,7 @@ const initialState = {
     userType: null,
     accessToken: null,
     userLoggedIn: false,
-    
+    groups: null,
     errors: []
 }
 

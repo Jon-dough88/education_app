@@ -19,8 +19,8 @@ class GroupLandingPage extends Component {
         const { userId } = this.props;
         console.log(`The user ID at GroupLandingPage is: ${userId}`);
 
-        this.props.getRefreshToken();
-        this.props.getGroups(this.props.userId);
+        // this.props.getRefreshToken();
+        // this.props.getGroups(this.props.userId);
 
 
         console.log(this.props.groups)
