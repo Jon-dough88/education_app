@@ -52,7 +52,7 @@ const mapStateToProps = state => {
         userName: state.users.userName,
         userId: state.users.userId,
         accessToken: state.users.accessToken,
-        groups: state.groups.groups
+        groups: state.users.groups
     }
 }
 
