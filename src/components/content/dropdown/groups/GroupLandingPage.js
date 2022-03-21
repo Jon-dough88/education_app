@@ -16,8 +16,11 @@ class GroupLandingPage extends Component {
 
 
     componentDidMount(){
-        const { userId } = this.props;
-        console.log(`The user ID at GroupLandingPage is: ${userId}`);
+
+        this.props.getUser()
+
+        // const { userId } = this.props;
+        // console.log(`The user ID at GroupLandingPage is: ${userId}`);
 
         // this.props.getRefreshToken();
         // this.props.getGroups(this.props.userId);
@@ -60,8 +63,9 @@ const mapDispatchToProps = dispatch => {
     
     return {
         
-        getRefreshToken: () => {dispatch(getRefreshToken())},
-        getGroups: (userId) => { dispatch(fetchGroups(userId)) }
+        getUser: () => {dispatch(fetchUser())}
+        // getRefreshToken: () => {dispatch(getRefreshToken())},
+        // getGroups: (userId) => { dispatch(fetchGroups(userId)) }
         
     }
     
