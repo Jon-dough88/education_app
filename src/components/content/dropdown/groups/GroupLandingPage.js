@@ -7,6 +7,7 @@ import Promotional from '../../../elements/Promotional/Promotional';
 
 import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
+import { fetchUser } from '../../../../businessLogic/users/usersActions';
 
 import './GroupLandingPage.css';
 
