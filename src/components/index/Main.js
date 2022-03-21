@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import LessonCard from '../content/lessons/LessonCard';
 import HistoryContainer from '../content/history/HistoryContainer';
 import SuggestionCard from '../content/suggestions/SuggestionCard';
 // import Sidebar from '../elements/sidebar/Sidebar';
 
+
 class Main extends Component { 
     
+    
+
     constructor(props) {
         super(props)
         this.state={
@@ -94,4 +98,13 @@ class Main extends Component {
 
 }
 
-export default Main
+const mapStateToProps = state => {
+    return {
+        userName: state.users.userName,
+        groups: state.groups.groups
+
+    }
+}
+
+
+export default connect(mapStateToProps, null)(Main);
