@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
-import { getUser } from '../../../../businessLogic/users/usersActions';
+import { fetchUser } from '../../../../businessLogic/users/usersActions';
 import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
 import GroupItem from './GroupItem';
 import './Groups.css';
@@ -93,7 +93,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         getRefreshToken: () => dispatch(getRefreshToken()),
-        fetchUser: () => dispatch(getUser()),
+        getUser: () => dispatch(fetchUser()),
         getGroups: (userId) => dispatch(fetchGroups(userId))
     }
 }
