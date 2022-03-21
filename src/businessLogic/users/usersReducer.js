@@ -7,6 +7,7 @@ const initialState = {
     userType: null,
     accessToken: null,
     userLoggedIn: false,
+    
     errors: []
 }
 
@@ -26,7 +27,7 @@ const usersReducer = (state = initialState, action) => {
          case ACTIONS.USER_FETCHED:
             //  console.log(action.payload)
             //  return {...state, currentUser: action.payload }
-            return {...state,  userLoggedIn: true, accessToken: action.payload.accessToken, userName: action.payload.userName, userId: action.payload.userId, userType: action.payload.userType}
+            return {...state,  userLoggedIn: true, accessToken: action.payload.accessToken, userName: action.payload.userName, userId: action.payload.userId, userType: action.payload.userType, groups: action.payload.groups}
         
           case ACTIONS.LOGIN_FAILURE:
                 return {...state, userLoggedIn: false, accessToken: null, userName: null, userType: null}
