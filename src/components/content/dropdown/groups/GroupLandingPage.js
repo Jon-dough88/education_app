@@ -18,19 +18,23 @@ class GroupLandingPage extends Component {
 
     componentDidMount(){
 
-        this.props.getUser()
+       
+        // this.props.getRefreshToken();
+
+        // this.props.getUser()
 
         // const { userId } = this.props;
         // console.log(`The user ID at GroupLandingPage is: ${userId}`);
 
-        // this.props.getRefreshToken();
         // this.props.getGroups(this.props.userId);
 
 
-        console.log(this.props.groups)
+        // console.log(this.props.groups)
     }
 
     render() {
+
+        
 
         return(
             <div className="jumbotron main-page">
@@ -64,8 +68,8 @@ const mapDispatchToProps = dispatch => {
     
     return {
         
-        getUser: () => {dispatch(fetchUser())}
-        // getRefreshToken: () => {dispatch(getRefreshToken())},
+        getUser: () => {dispatch(fetchUser())},
+        getRefreshToken: () => {dispatch(getRefreshToken())},
         // getGroups: (userId) => { dispatch(fetchGroups(userId)) }
         
     }
