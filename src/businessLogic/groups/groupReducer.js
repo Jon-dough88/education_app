@@ -32,7 +32,10 @@ const groupReducer = (state = initialState, action) => {
         //       return {...state, userLoggedIn: false, accessToken: null } 
 
         case ACTIONS.GROUP_NAME_EXISTS:
-            return { ...state, }
+            return { ...state, groupNameExists: true }
+
+        case ACTIONS.GROUP_NAME_NOT_FOUND:
+            return { ...state, groupNameExists: false }
 
         default:
             return state
