@@ -12,6 +12,7 @@ export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
 export const GROUP_PAGE_FETCH_ONGOING = 'groups/groupPages/inProgress';
 export const GROUP_PAGE_FETCH_DONE = 'groups/groupPages/success';
 export const GROUP_PAGE_FETCH_FAILED = 'groups/groupPages/failure';
+export const GROUP_NAME_EXISTS = 'groups/findGroup/exists'
 
 
 
@@ -65,6 +66,28 @@ export const getGroupPage = (groupId) => async dispatch => {
     }
 }
 
+
+// Checking whether a group name already exists
+
+export const findGroupName = (userId) => async dispatch => {
+
+    try {
+    
+        await axios.get(`${groupUrl}/findGroup/:${userId}`)
+        .then(response => dispatch({type: GROUP_NAME_EXISTS, payload: response.data}))
+        
+        .catch(err => {
+            console.log(err)
+            dispatch
+        })
+
+
+    } catch (error) {
+        
+        console.log(error)
+
+    }
+}
 
 // Creating a new group
 

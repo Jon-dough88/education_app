@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchUser } from '../../../../businessLogic/users/usersActions';
 import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
-
+import { findGroupName } from '../../../../businessLogic/groups/groupActions';
  
 
 import './Groups.css'
