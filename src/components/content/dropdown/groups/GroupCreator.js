@@ -2,7 +2,25 @@ import React, { Component } from 'react';
 import './Groups.css'
 
 class GroupCreator extends Component {
-    state = {  }
+
+    constructor(){
+        super()
+        this.state = {
+            groupName: ''  
+        }
+    }
+
+    handleKeyPress(e) {
+        let keyPress = e.target.value;
+        // console.log(`Key pressed: ${keyPress}`);
+
+        this.setState({
+            groupName: keyPress
+        })
+
+        console.log(`Group name is: ${this.state.groupName}`);
+    }
+
     render() { 
         return ( 
             <div className="card group-creation-menu">
@@ -10,7 +28,8 @@ class GroupCreator extends Component {
                     <form className="form-inline justify-content-center" id="group-creation-form">
                         <div className="form-group groups-formGroup">
                             <label for="group-name">Group name: </label>
-                            <input type="text" className="form-control groups-input" id="group-name" aria-describedby="group-name"></input>
+                            <input type="text" name="groupName" className="form-control groups-input" id="group-name" aria-describedby="group-name" onChange={(e)=> { this.handleKeyPress(e) }}></input>
+
                         </div>
                         <div className="form-group groups-formGroup">
                             <label for="student-search">Add a student (click on the searchbar to choose): </label>
