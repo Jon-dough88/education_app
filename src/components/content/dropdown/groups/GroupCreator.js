@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import './Groups.css'
 
 class GroupCreator extends Component {
@@ -53,5 +55,15 @@ class GroupCreator extends Component {
          );
     }
 }
+
+
+const mapStateToProps = state => {
+
+}
+
+const mapDispatchToProps = dispatch => {
+
+}
+
  
-export default GroupCreator;
+export default connect(mapStateToProps, mapDispatchToProps)(GroupCreator);
