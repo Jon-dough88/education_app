@@ -69,11 +69,11 @@ export const getGroupPage = (groupId) => async dispatch => {
 
 // Checking whether a group name already exists
 
-export const findGroupName = (userId) => async dispatch => {
+export const findGroupName = (userId, groupName) => async dispatch => {
 
     try {
     
-        await axios.post(`${groupUrl}/findGroup`, )
+        await axios.post(`${groupUrl}/findGroup`, {userId, groupName})
         .then(response => dispatch({type: GROUP_NAME_EXISTS, payload: response.data}))
         
         .catch(err => {
