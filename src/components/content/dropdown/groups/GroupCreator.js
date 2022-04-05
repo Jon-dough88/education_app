@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchUser } from '../../../../businessLogic/users/usersActions';
+import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 
 import './Groups.css'
 
@@ -17,7 +18,10 @@ class GroupCreator extends Component {
 
     componentDidMount(){
 
-        this.props.getUser();
+        // this.props.getUser();
+        this.props.newRefreshToken();
+        
+        console.log(`Username is: ${this.props.userName}`)
     }
 
     handleKeyPress(e) {
@@ -75,8 +79,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getUser: () => dispatch(fetchUser())
-        
+        // getUser: () => dispatch(fetchUser()),
+        newRefreshToken: () => dispatch(getRefreshToken())
+
     }
 }
 
