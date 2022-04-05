@@ -20,6 +20,8 @@ class GroupCreator extends Component {
             groupName: keyPress
         })
 
+        this.props.checkForGroup();
+
         console.log(`Group name is: ${this.state.groupName}`);
     }
 
@@ -58,11 +60,15 @@ class GroupCreator extends Component {
 
 
 const mapStateToProps = state => {
-
+    return {
+        userName: state.users.userName
+    }
 }
 
 const mapDispatchToProps = dispatch => {
+    return {
 
+    }
 }
 
  
