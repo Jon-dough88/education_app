@@ -24,6 +24,7 @@ class GroupCreator extends Component {
         console.log(`Username is: ${this.props.userName}`)
     }
 
+
     handleKeyPress(e) {
         let keyPress = e.target.value;
         // console.log(`Key pressed: ${keyPress}`);
@@ -42,6 +43,7 @@ class GroupCreator extends Component {
             <div className="card group-creation-menu">
                 <div className="card-body">
                     <form className="form-inline justify-content-center" id="group-creation-form">
+                        {/* <div><h1>{this.props.userName}'s Groups</h1></div> */}
                         <div className="form-group groups-formGroup">
                             <label for="group-name">Group name: </label>
                             <input type="text" name="groupName" className="form-control groups-input" id="group-name" aria-describedby="group-name" onChange={(e)=> { this.handleKeyPress(e) }}></input>
@@ -73,15 +75,16 @@ class GroupCreator extends Component {
 
 const mapStateToProps = state => {
     return {
-        userName: state.users.userName
+        userName: state.users.userName,
+        userId: state.users.userId
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         // getUser: () => dispatch(fetchUser()),
-        newRefreshToken: () => dispatch(getRefreshToken())
-
+        newRefreshToken: () => dispatch(getRefreshToken()),
+        checkForGroup: () => dispatch(findGroupName())
     }
 }
 
