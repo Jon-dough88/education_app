@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { fetchUser } from '../../../../businessLogic/users/usersActions';
+
 import './Groups.css'
 
 class GroupCreator extends Component {
@@ -10,6 +12,12 @@ class GroupCreator extends Component {
         this.state = {
             groupName: ''  
         }
+    }
+
+
+    componentDidMount(){
+
+        this.props.getUser();
     }
 
     handleKeyPress(e) {
@@ -67,9 +75,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        getUser: () => dispatch(fetchUser())
+        
     }
 }
+
 
  
 export default connect(mapStateToProps, mapDispatchToProps)(GroupCreator);
