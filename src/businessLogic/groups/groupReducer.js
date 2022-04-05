@@ -8,8 +8,8 @@ const initialState = {
     groupsFetched: false,
     pageLoadInProgress: false,
     groupPageFetched: false,
-    groupPage: null
-    
+    groupPage: null,
+    groupNameExists: false
 }
 
 
@@ -30,6 +30,9 @@ const groupReducer = (state = initialState, action) => {
             return {...state, pageLoadInProgress: true, groupPageFetched: false, groupPage: action.payload }  
         //   case ACTIONS.LOGOUT:
         //       return {...state, userLoggedIn: false, accessToken: null } 
+
+        case ACTIONS.GROUP_NAME_EXISTS:
+            return { ...state, }
 
         default:
             return state

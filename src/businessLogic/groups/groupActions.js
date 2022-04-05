@@ -78,7 +78,7 @@ export const findGroupName = (userId) => async dispatch => {
         
         .catch(err => {
             console.log(err)
-            dispatch({})
+            dispatch({type: GROUP_NAME_NOT_FOUND, payload: err})
         })
 
 
