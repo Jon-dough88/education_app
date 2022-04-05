@@ -35,12 +35,16 @@ class GroupCreator extends Component {
             groupName: keyPress
         })
 
-        this.props.checkForGroup();
+        this.props.checkForGroup(this.props.userId);
 
         console.log(`Group name is: ${this.state.groupName}`);
     }
 
     render() { 
+
+        const {userId} = this.props;
+        console.log(`The user's ID is: ${userId}`);
+
         return ( 
             <div className="card group-creation-menu">
                 <div className="card-body">
@@ -86,7 +90,7 @@ const mapDispatchToProps = dispatch => {
     return {
         // getUser: () => dispatch(fetchUser()),
         newRefreshToken: () => dispatch(getRefreshToken()),
-        checkForGroup: () => dispatch(findGroupName())
+        checkForGroup: (userId) => dispatch(findGroupName(userId))
     }
 }
 
