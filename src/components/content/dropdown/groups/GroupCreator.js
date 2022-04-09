@@ -28,16 +28,18 @@ class GroupCreator extends Component {
 
 
     handleKeyPress(e) {
-        let keyPress = e.target.value;
-        // console.log(`Key pressed: ${keyPress}`);
+        // let searchValue = e.target.value;
+        // console.log(`Search value: ${searchValue}`);
 
         this.setState({
-            groupName: keyPress
+            groupName: e.target.value
         })
+
+        console.log(`Group name is: ${this.state.groupName}`);
 
         this.props.checkForGroup(this.props.userId, this.state.groupName);
 
-        console.log(`Group name is: ${this.state.groupName}`);
+        
     }
 
     render() { 
