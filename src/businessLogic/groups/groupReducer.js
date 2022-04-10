@@ -31,11 +31,11 @@ const groupReducer = (state = initialState, action) => {
         //   case ACTIONS.LOGOUT:
         //       return {...state, userLoggedIn: false, accessToken: null } 
 
-        case ACTIONS.GROUP_NAME_EXISTS:
-            return { ...state, groupNameExists: true }
+        case ACTIONS.GROUP_NAME_CHECK:
+            return { ...state, groupNameExists: action.payload }
 
-        case ACTIONS.GROUP_NAME_NOT_FOUND:
-            return { ...state, groupNameExists: false }
+        // case ACTIONS.GROUP_NAME_NOT_FOUND:
+        //     return { ...state, groupNameExists: false }
 
         default:
             return state

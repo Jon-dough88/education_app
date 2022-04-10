@@ -14,6 +14,7 @@ export const GROUP_PAGE_FETCH_DONE = 'groups/groupPages/success';
 export const GROUP_PAGE_FETCH_FAILED = 'groups/groupPages/failure';
 // export const GROUP_NAME_EXISTS = 'groups/findGroup/exists';
 // export const GROUP_NAME_NOT_FOUND = 'groups/findGroup/notFound';
+export const GROUP_NAME_CHECK = 'groups/findGroup';
 
 
 // Fetching all groups taught by a certain teacher
@@ -74,11 +75,11 @@ export const findGroupName = (userId, groupName) => async dispatch => {
     try {
     
         await axios.post(`${groupUrl}/findGroup`, {userId, groupName})
-        .then(response => dispatch({type: GROUP_NAME_EXISTS, payload: response.data}))
+        .then(response => dispatch({type: GROUP_NAME_CHECK, payload: response.data}))
         
         .catch(err => {
             console.log(err)
-            dispatch({type: GROUP_NAME_NOT_FOUND, payload: err})
+            // dispatch({type: GROUP_NAME_NOT_FOUND, payload: err})
         })
 
 
