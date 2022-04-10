@@ -32,10 +32,10 @@ class GroupCreator extends Component {
         console.log(`Search value: ${searchValue}`);
 
         // this.setState({
-        //     groupName: e.target.value
+        //     groupName: searchValue
         // })
 
-        console.log(`Group name is: ${this.state.groupName}`);
+        // console.log(`Group name is: ${this.state.groupName}`);
 
         this.props.checkForGroup(this.props.userId, searchValue);
 
