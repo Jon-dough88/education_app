@@ -59,7 +59,9 @@ class GroupCreator extends Component {
                             <label for="group-name">Group name: </label>
                             <input type="text" name="groupName" className="form-control groups-input" id="group-name" aria-describedby="group-name" onChange={(e)=> { this.handleKeyPress(e) }}></input>
                             {groupNameExists === true && 
-                            <div className="alert alert-danger"></div>
+                            <div className="alert alert-danger">
+
+                            </div>
                             }
                         </div>
                         <div className="form-group groups-formGroup">
@@ -90,7 +92,8 @@ const mapStateToProps = state => {
     return {
         userName: state.users.userName,
         userId: state.users.userId,
-        groupNameExists: state.groups.groupNameExists
+        groupNameExists: state.groups.groupNameExists,
+        message
     }
 }
 
