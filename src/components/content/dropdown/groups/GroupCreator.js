@@ -47,6 +47,9 @@ class GroupCreator extends Component {
         const {userId} = this.props;
         console.log(`The user's ID is: ${userId}`);
 
+        const {groupNameExists} = this.props;
+        console.log(`The group's name already exists: ${groupNameExists}`);
+
         return ( 
             <div className="card group-creation-menu">
                 <div className="card-body">
@@ -55,7 +58,9 @@ class GroupCreator extends Component {
                         <div className="form-group groups-formGroup">
                             <label for="group-name">Group name: </label>
                             <input type="text" name="groupName" className="form-control groups-input" id="group-name" aria-describedby="group-name" onChange={(e)=> { this.handleKeyPress(e) }}></input>
-
+                            {groupNameExists === true && 
+                            <div className="alert alert-danger"></div>
+                            }
                         </div>
                         <div className="form-group groups-formGroup">
                             <label for="student-search">Add a student (click on the searchbar to choose): </label>
@@ -84,7 +89,8 @@ class GroupCreator extends Component {
 const mapStateToProps = state => {
     return {
         userName: state.users.userName,
-        userId: state.users.userId
+        userId: state.users.userId,
+        groupNameExists: state.groups.groupNameExists
     }
 }
 

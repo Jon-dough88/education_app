@@ -75,7 +75,7 @@ export const findGroupName = (userId, groupName) => async dispatch => {
     try {
     
         await axios.post(`${groupUrl}/findGroup`, {userId, groupName})
-        .then(response => dispatch({type: GROUP_NAME_CHECK, payload: response.data.success}))
+        .then(response => dispatch({type: GROUP_NAME_CHECK, payload: response.data}))
         
         .catch(err => {
             console.log(err)
