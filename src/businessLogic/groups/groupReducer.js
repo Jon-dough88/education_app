@@ -45,7 +45,10 @@ const groupReducer = (state = initialState, action) => {
             return { ...state, studentListFetched: false }
 
         case ACTIONS.STUDENT_LIST_FETCHED:
-            return { ...state, studentListFetched: true, studentList: action.payload }
+            return { ...state, studentListFetched: true, studentList: action.payload.students }
+        
+        case ACTIONS.STUDENT_LIST_FETCHED:
+            return { ...state, studentListFetched: false, errors: action.payload.errors}
 
         default:
             return state
