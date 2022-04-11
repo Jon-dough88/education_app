@@ -101,6 +101,9 @@ export const findGroupName = (userId, groupName) => async dispatch => {
 
 // Searching for a student's name
 
+export const fetchStudentList = (userId) => async dispatch => {
+    
+}
 
 
 // Adding a student
