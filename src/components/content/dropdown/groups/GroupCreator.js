@@ -45,8 +45,10 @@ class GroupCreator extends Component {
     }
 
     handleStudentList(e) {
-        let clickedInput = e.target.value;
-        console.log(clickedInput);
+        const {userId} = this.props;
+        console.log(userId);
+        // console.log("Input clicked!");
+        this.props.getStudentList()
     }
 
 
@@ -110,7 +112,8 @@ const mapDispatchToProps = dispatch => {
     return {
         // getUser: () => dispatch(fetchUser()),
         newRefreshToken: () => dispatch(getRefreshToken()),
-        checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName))
+        checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName)),
+        getStudentList: (userId) => dispatch(fetchStudentList(userId))
     }
 }
 
