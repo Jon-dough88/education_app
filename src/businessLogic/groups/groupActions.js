@@ -15,7 +15,9 @@ export const GROUP_PAGE_FETCH_FAILED = 'groups/groupPages/failure';
 // export const GROUP_NAME_EXISTS = 'groups/findGroup/exists';
 // export const GROUP_NAME_NOT_FOUND = 'groups/findGroup/notFound';
 export const GROUP_NAME_CHECK = 'groups/findGroup';
-export const STUDENT_LIST_FETCHED = 'groups/fetchStudentList';
+export const STUDENT_LIST_FETCHING = 'groups/fetchStudentList/inProgress';
+export const STUDENT_LIST_FETCHED = 'groups/fetchStudentList/success';
+export const STUDENT_LIST_FETCH_FAILED = 'groups/fetchStudentList/failure'
 
 
 // Fetching all groups taught by a certain teacher
