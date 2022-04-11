@@ -9,7 +9,8 @@ const initialState = {
     pageLoadInProgress: false,
     groupPageFetched: false,
     groupPage: null,
-    groupNameExists: false
+    groupNameExists: false,
+    message: []
 }
 
 
@@ -32,7 +33,7 @@ const groupReducer = (state = initialState, action) => {
         //       return {...state, userLoggedIn: false, accessToken: null } 
 
         case ACTIONS.GROUP_NAME_CHECK:
-            return { ...state, groupNameExists: action.payload }
+            return { ...state, groupNameExists: action.payload.success, message: action.payload.message }
 
         // case ACTIONS.GROUP_NAME_NOT_FOUND:
         //     return { ...state, groupNameExists: false }

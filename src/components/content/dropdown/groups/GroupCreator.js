@@ -13,7 +13,9 @@ class GroupCreator extends Component {
     constructor(){
         super()
         this.state = {
-            groupName: ''  
+            groupName: '',
+            students: [],
+            level: ''  
         }
     }
 
@@ -58,15 +60,16 @@ class GroupCreator extends Component {
                         <div className="form-group groups-formGroup">
                             <label for="group-name">Group name: </label>
                             <input type="text" name="groupName" className="form-control groups-input" id="group-name" aria-describedby="group-name" onChange={(e)=> { this.handleKeyPress(e) }}></input>
+                            
                             {groupNameExists === true && 
-                            <div className="alert alert-danger">
-
+                            <div className="alert alert-danger groupExists">
+                                {this.props.message}
                             </div>
                             }
                         </div>
                         <div className="form-group groups-formGroup">
                             <label for="student-search">Add a student (click on the searchbar to choose): </label>
-                            <input type="search" id="student-search" className="form-control groups-input"></input>
+                            <input type="search" id="student-search" className="form-control groups-input" onClick={(e) => {this.handleStudentList(e)}}></input>
                             <button className="btn btn-primary btn-lg">Add</button>
                         </div>
                         <div className="form-group">
@@ -93,7 +96,7 @@ const mapStateToProps = state => {
         userName: state.users.userName,
         userId: state.users.userId,
         groupNameExists: state.groups.groupNameExists,
-        message
+        message: state.groups.message
     }
 }
 
