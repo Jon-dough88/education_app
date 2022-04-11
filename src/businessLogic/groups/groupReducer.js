@@ -41,6 +41,12 @@ const groupReducer = (state = initialState, action) => {
         // case ACTIONS.GROUP_NAME_NOT_FOUND:
         //     return { ...state, groupNameExists: false }
 
+        case ACTIONS.STUDENT_LIST_FETCHING:
+            return { ...state, studentListFetched: false }
+
+        case ACTIONS.STUDENT_LIST_FETCHED:
+            return { ...state, studentListFetched: true, studentList: action.payload }
+
         default:
             return state
     }
