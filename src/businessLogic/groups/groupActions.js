@@ -106,10 +106,13 @@ export const findGroupName = (userId, groupName) => async dispatch => {
 
 export const fetchStudentList = (userId) => async dispatch => {
 
+    dispatch({type: STUDENT_LIST_FETCHING})
+
     try {
         
         await axios.post(`${groupUrl}/fetchStudentList`, {userId})
         .then(response => dispatch({type: STUDENT_LIST_FETCHED, payload: response.data}))
+        .catch(err => dispatch({type: STUDENT_LIST_FETCH_FAILED, error: err}))
 
     } catch (error) {
         console.log(error)
