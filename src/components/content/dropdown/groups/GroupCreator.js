@@ -44,6 +44,12 @@ class GroupCreator extends Component {
         
     }
 
+    handleStudentList(e) {
+        let clickedInput = e.target.value;
+        console.log(clickedInput);
+    }
+
+
     render() { 
 
         const {userId} = this.props;
@@ -69,7 +75,7 @@ class GroupCreator extends Component {
                         </div>
                         <div className="form-group groups-formGroup">
                             <label for="student-search">Add a student (click on the searchbar to choose): </label>
-                            <input type="search" id="student-search" className="form-control groups-input" onClick={(e) => {this.handleStudentList(e)}}></input>
+                            <input type="search" id="student-search" className="form-control groups-input" onFocus={(e) => {this.handleStudentList(e)}}></input>
                             <button className="btn btn-primary btn-lg">Add</button>
                         </div>
                         <div className="form-group">
