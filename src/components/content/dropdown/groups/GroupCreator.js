@@ -49,7 +49,7 @@ class GroupCreator extends Component {
         const {userId} = this.props;
         console.log(userId);
         // console.log("Input clicked!");
-        this.props.getStudentList()
+        this.props.getStudentList(userId)
     }
 
 
