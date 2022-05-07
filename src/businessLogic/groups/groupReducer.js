@@ -11,7 +11,7 @@ const initialState = {
     groupPage: null,
     groupNameExists: false,
     message: [],
-    studentList: [],
+    studentList: null,
     studentListFetched: false,
     errors: []
 }

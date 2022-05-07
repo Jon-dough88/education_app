@@ -104,7 +104,7 @@ export const findGroupName = (userId, groupName) => async dispatch => {
 
 // Searching for a student's name
 
-export const fetchStudentList = (userId) => async dispatch => {
+export const fetchStudentList = (userId, userName) => async dispatch => {
 
     console.log(`ID at groupActions: ${userId}`)
 
@@ -112,7 +112,7 @@ export const fetchStudentList = (userId) => async dispatch => {
 
     try {
         
-        await axios.post(`${groupUrl}/fetchStudentList`, {userId})
+        await axios.post(`${groupUrl}/fetchStudentList`, {userId, userName})
         .then(response => dispatch({type: STUDENT_LIST_FETCHED, payload: response.data}))
         .catch(err => dispatch({type: STUDENT_LIST_FETCH_FAILED, error: err}))
 
