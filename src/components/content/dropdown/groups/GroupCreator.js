@@ -114,7 +114,7 @@ const mapDispatchToProps = dispatch => {
         // getUser: () => dispatch(fetchUser()),
         newRefreshToken: () => dispatch(getRefreshToken()),
         checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName)),
-        getStudentList: (userId) => dispatch(fetchStudentList(userId))
+        getStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName))
     }
 }
 
