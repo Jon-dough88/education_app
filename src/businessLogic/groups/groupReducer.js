@@ -11,7 +11,7 @@ const initialState = {
     groupPage: null,
     groupNameExists: false,
     message: [],
-    studentList: null,
+    studentList: [],
     studentListFetched: false,
     errors: []
 }
@@ -45,7 +45,7 @@ const groupReducer = (state = initialState, action) => {
             return { ...state, studentListFetched: false }
 
         case ACTIONS.STUDENT_LIST_FETCHED:
-            return { ...state, studentListFetched: true, studentList: action.payload._id }
+            return { ...state, studentListFetched: true, studentList: action.payload.students }
         
         case ACTIONS.STUDENT_LIST_FETCHED:
             return { ...state, studentListFetched: false, errors: action.payload.errors}

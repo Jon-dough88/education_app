@@ -5,6 +5,7 @@ import { fetchUser } from '../../../../businessLogic/users/usersActions';
 import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import { findGroupName } from '../../../../businessLogic/groups/groupActions';
 import { fetchStudentList } from '../../../../businessLogic/groups/groupActions';
+import StudentListItem from './StudentListItem';
  
 
 import './Groups.css'
@@ -100,7 +101,8 @@ class GroupCreator extends Component {
                                 )} */}
 
                                 {studentList.map((student) => (
-                                    <div className="student_list_item" key={student.student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
+                                    // <div className="student_list_item" key={student.student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
+                                    <StudentListItem key={student.student_id} student={student} />
                                 ))}
 
                                 {/* {studentList.forEach(students => {
