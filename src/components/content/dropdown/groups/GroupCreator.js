@@ -105,7 +105,8 @@ const mapStateToProps = state => {
         userName: state.users.userName,
         userId: state.users.userId,
         groupNameExists: state.groups.groupNameExists,
-        message: state.groups.message
+        message: state.groups.message,
+        studentList: state.groups.studentList
     }
 }
 
