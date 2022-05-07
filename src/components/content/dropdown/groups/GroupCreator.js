@@ -100,9 +100,11 @@ class GroupCreator extends Component {
                                 <div className="student_list_item" key={student[`${key}`].student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
                                 )} */}
 
-                                {studentList.map((student) => (
+                                {studentList[0].map((student) => (
+
                                     // <div className="student_list_item" key={student.student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
                                     <StudentListItem key={student.student_id} student={student} />
+                                    
                                 ))}
 
                                 {/* {studentList.forEach(students => {

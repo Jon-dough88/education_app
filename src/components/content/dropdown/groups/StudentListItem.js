@@ -7,12 +7,17 @@ class StudentListItem extends Component {
 
     constructor(props) {
         super(props);
+
     }
-    state = {  }
+
+    
     render() { 
         return ( 
-            <div className="btn">
-                    
+            <div className="btn btn-success" id={this.props.student.student_id}>
+                <p>Student name: {this.props.student.studentName}</p>
+                {/* <br></br>
+                <p>Student id: {this.props.student.student_id}</p> */}
+            
             </div>
          );
     }
