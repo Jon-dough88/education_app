@@ -62,7 +62,8 @@ class GroupCreator extends Component {
         console.log(`The group's name already exists: ${groupNameExists}`);
 
         const {studentList} = this.props;
-        console.log(`Student list: ${studentList}`);
+        console.log(studentList);
+        
 
         return ( 
             <div className="card group-creation-menu">
@@ -81,8 +82,36 @@ class GroupCreator extends Component {
                         </div>
                         <div className="form-group groups-formGroup">
                             <label for="student-search">Add a student (click on the searchbar to choose): </label>
+                            
                             <input type="search" id="student-search" className="form-control groups-input" onFocus={(e) => {this.handleStudentList(e)}}></input>
+                            
+                            
+                           
+                            
                             <button className="btn btn-primary btn-lg">Add</button>
+                            {/* <div className="dropdown">
+                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">{studentList.map((student) => <a className="dropdown-item" key={student._id}>{student.studentName}</a>)}</div>
+                            </div> */}
+                            
+                            <div className="student_list_container">
+                                
+                                {/* {studentList.map((student, key) => 
+                                <div className="student_list_item" key={student[`${key}`].student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
+                                )} */}
+
+                                {studentList.map((student) => (
+                                    <div className="student_list_item" key={student.student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
+                                ))}
+
+                                {/* {studentList.forEach(students => {
+                                    for(let student in students){
+                                        console.log(students[student])
+                                        return <div className="student_list_item" key={student}>Student name: {students[student]}</div>
+                                    }
+                                })} */}
+
+                            </div>
+                            {/* <div>{studentList}</div> */}
                         </div>
                         <div className="form-group">
                             <button className="btn-lg level-btn" >3p</button>
