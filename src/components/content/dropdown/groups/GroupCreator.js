@@ -61,6 +61,9 @@ class GroupCreator extends Component {
         const {groupNameExists} = this.props;
         console.log(`The group's name already exists: ${groupNameExists}`);
 
+        const {studentList} = this.props;
+        console.log(`Student list: ${studentList}`);
+
         return ( 
             <div className="card group-creation-menu">
                 <div className="card-body">
