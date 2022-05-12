@@ -109,6 +109,8 @@ class GroupCreator extends Component {
                                     
                                 ))}
 
+                                {/* {console.log(studentList.map((student) => ({student: student})))} */}
+
                                 {/* {studentList.forEach(students => {
                                     for(let student in students){
                                         console.log(students[student])
