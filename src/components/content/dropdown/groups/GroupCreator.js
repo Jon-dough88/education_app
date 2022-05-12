@@ -63,6 +63,8 @@ class GroupCreator extends Component {
         console.log(`The group's name already exists: ${groupNameExists}`);
 
         const {studentList} = this.props;
+        const updatedList = studentList[0];
+        // const {updatedList} = studentList[0]
         console.log(studentList);
         
 
@@ -100,7 +102,7 @@ class GroupCreator extends Component {
                                 <div className="student_list_item" key={student[`${key}`].student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
                                 )} */}
 
-                                {studentList[0].map((student) => (
+                                {studentList.map(student => (
 
                                     // <div className="student_list_item" key={student.student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
                                     <StudentListItem key={student.student_id} student={student} />
