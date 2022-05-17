@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Field, reduxForm} from 'redux-form';
 
 import { fetchUser } from '../../../../businessLogic/users/usersActions';
 import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
@@ -92,34 +93,20 @@ class GroupCreator extends Component {
                            
                             
                             <button className="btn btn-primary btn-lg">Add</button>
-                            {/* <div className="dropdown">
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">{studentList.map((student) => <a className="dropdown-item" key={student._id}>{student.studentName}</a>)}</div>
-                            </div> */}
-                            
-                            <div className="student_list_container">
+                         
+                            {/* <div className="student_list_container">
                                 
-                                {/* {studentList.map((student, key) => 
-                                <div className="student_list_item" key={student[`${key}`].student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
-                                )} */}
 
                                 {studentList.map(student => (
 
-                                    // <div className="student_list_item" key={student.student_id}><p>{`${student[`${key}`].studentName}`}</p></div>
                                     <StudentListItem key={student.student_id} student={student} />
                                     
                                 ))}
 
-                                {/* {console.log(studentList.map((student) => ({student: student})))} */}
+                           
 
-                                {/* {studentList.forEach(students => {
-                                    for(let student in students){
-                                        console.log(students[student])
-                                        return <div className="student_list_item" key={student}>Student name: {students[student]}</div>
-                                    }
-                                })} */}
-
-                            </div>
-                            {/* <div>{studentList}</div> */}
+                            </div> */}
+                      
                         </div>
                         <div className="form-group">
                             <button className="btn-lg level-btn" >3p</button>
