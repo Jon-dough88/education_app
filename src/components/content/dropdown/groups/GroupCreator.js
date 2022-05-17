@@ -84,60 +84,84 @@ class GroupCreator extends Component {
             </div>
         )
 
-        return ( 
-            <div className="card group-creation-menu">
-                <div className="card-body">
-                    <form className="form-inline justify-content-center" id="group-creation-form">
-                        {/* <div><h1>{this.props.userName}'s Groups</h1></div> */}
-                        <div className="form-group groups-formGroup">
-                            <label for="group-name">Group name: </label>
-                            <input type="text" name="groupName" className="form-control groups-input" id="group-name" aria-describedby="group-name" onChange={(e)=> { this.handleKeyPress(e) }}></input>
-                            
-                            {groupNameExists === true && 
-                            <div className="alert alert-danger groupExists">
-                                {this.props.message}
-                            </div>
-                            }
+        let groupCreationForm = props => {
+            
+            const { handleSubmit, pristine, reset, submitting } = props
+
+            return (
+                <div className="jumbotron group-creation-menu">
+                    <form className="form-inline justify-content-center" onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <Field className="form-control form-control-lg" 
+                                name="groupName"
+                                component={validationField}
+                                type="input"
+                                label="Group name"
+                                validate={[required]}
+                            />
                         </div>
-                        <div className="form-group groups-formGroup">
-                            <label for="student-search">Add a student (click on the searchbar to choose): </label>
+
+
+                    </form>
+
+                </div>    
+            )
+        }
+
+        // return ( 
+        //     <div className="card group-creation-menu">
+        //         <div className="card-body">
+        //             <form className="form-inline justify-content-center" id="group-creation-form">
+        //                 {/* <div><h1>{this.props.userName}'s Groups</h1></div> */}
+        //                 <div className="form-group groups-formGroup">
+        //                     <label for="group-name">Group name: </label>
+        //                     <input type="text" name="groupName" className="form-control groups-input" id="group-name" aria-describedby="group-name" onChange={(e)=> { this.handleKeyPress(e) }}></input>
                             
-                            <input type="search" id="student-search" className="form-control groups-input" onFocus={(e) => {this.handleStudentList(e)}}></input>
+        //                     {groupNameExists === true && 
+        //                     <div className="alert alert-danger groupExists">
+        //                         {this.props.message}
+        //                     </div>
+        //                     }
+        //                 </div>
+        //                 <div className="form-group groups-formGroup">
+        //                     <label for="student-search">Add a student (click on the searchbar to choose): </label>
+                            
+        //                     <input type="search" id="student-search" className="form-control groups-input" onFocus={(e) => {this.handleStudentList(e)}}></input>
                             
                             
                            
                             
-                            <button className="btn btn-primary btn-lg">Add</button>
+        //                     <button className="btn btn-primary btn-lg">Add</button>
                          
-                            {/* <div className="student_list_container">
+        //                     {/* <div className="student_list_container">
                                 
 
-                                {studentList.map(student => (
+        //                         {studentList.map(student => (
 
-                                    <StudentListItem key={student.student_id} student={student} />
+        //                             <StudentListItem key={student.student_id} student={student} />
                                     
-                                ))}
+        //                         ))}
 
                            
 
-                            </div> */}
+        //                     </div> */}
                       
-                        </div>
-                        <div className="form-group">
-                            <button className="btn-lg level-btn" >3p</button>
-                            <button className="btn-lg level-btn" >4p</button>
-                            <button className="btn-lg level-btn" >5p</button>
-                        </div>
-                        <div className="form-group">
-                            <button type="submit" className="btn btn-primary btn-lg create-group-btn">Create Group</button>
-                        </div>
-                        <a href="/groups">
-                            <h5><strong>Back to the group menu</strong></h5>
-                        </a>
-                    </form>
-                </div>
-            </div>
-         );
+        //                 </div>
+        //                 <div className="form-group">
+        //                     <button className="btn-lg level-btn" >3p</button>
+        //                     <button className="btn-lg level-btn" >4p</button>
+        //                     <button className="btn-lg level-btn" >5p</button>
+        //                 </div>
+        //                 <div className="form-group">
+        //                     <button type="submit" className="btn btn-primary btn-lg create-group-btn">Create Group</button>
+        //                 </div>
+        //                 <a href="/groups">
+        //                     <h5><strong>Back to the group menu</strong></h5>
+        //                 </a>
+        //             </form>
+        //         </div>
+        //     </div>
+        //  );
     }
 }
 
