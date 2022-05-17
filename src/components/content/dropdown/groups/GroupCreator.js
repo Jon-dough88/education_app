@@ -83,7 +83,7 @@ class GroupCreator extends Component {
             </div>
         )
 
-        let groupCreationForm = props => {
+        let GroupCreator = props => {
             
             const { handleSubmit, pristine, reset, submitting } = props
 
@@ -167,9 +167,9 @@ class GroupCreator extends Component {
 
 
 
-groupCreationForm = reduxForm({
+GroupCreator = reduxForm({
     form: groupCreation
-})
+})(GroupCreator)
 
  
-export default connect(mapStateToProps, mapDispatchToProps)(GroupCreator);
+export default GroupCreator;

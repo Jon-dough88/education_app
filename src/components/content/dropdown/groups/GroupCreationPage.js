@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
 
-import  { GroupCreator }
+import GroupCreator from './GroupCreator';
 
 class GroupCreationPage extends Component {
 
@@ -10,9 +10,7 @@ submit = values => {
 }
 
 render(){
-    return(
-
-    )
+    return <GroupCreator />
 }
  
 }
