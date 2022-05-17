@@ -185,6 +185,9 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
+groupCreationForm = reduxForm({
+    form: groupCreation
+})
 
  
 export default connect(mapStateToProps, mapDispatchToProps)(GroupCreator);
