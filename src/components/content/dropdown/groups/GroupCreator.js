@@ -39,11 +39,6 @@ class GroupCreator extends Component {
         let searchValue = e.target.value;
         console.log(`Search value: ${searchValue}`);
 
-        // this.setState({
-        //     groupName: searchValue
-        // })
-
-        // console.log(`Group name is: ${this.state.groupName}`);
 
         this.props.checkForGroup(this.props.userId, searchValue);
 
@@ -58,6 +53,8 @@ class GroupCreator extends Component {
     }
 
 
+  
+
     render() { 
 
         const {userId} = this.props;
@@ -71,6 +68,21 @@ class GroupCreator extends Component {
         // const {updatedList} = studentList[0]
         console.log(studentList);
         
+
+        const validationField = ({input, label, type, meta: {touched, error, warning}}) => (
+
+            <div className="validation-field-container">
+                {/* <label>{label}</label> */}
+                <div >
+                    <input 
+                    className="input" {...input} placeholder={label} type={type} 
+                    ></input>    
+                </div>
+                <div className="error-container">
+                    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+                </div>
+            </div>
+        )
 
         return ( 
             <div className="card group-creation-menu">
