@@ -5,12 +5,40 @@ import GroupCreator from './GroupCreator';
 
 class GroupCreationPage extends Component {
 
+
+    componentDidMount(){
+
+        // this.props.getUser();
+        this.props.newRefreshToken();
+        
+        console.log(`Username is: ${this.props.userName}`)
+    }
+
+
+    handleKeyPress(e) {
+        let searchValue = e.target.value;
+        console.log(`Search value: ${searchValue}`);
+
+
+        this.props.checkForGroup(this.props.userId, searchValue);
+
+        
+    }
+
+    handleStudentList(e) {
+        const {userId, userName} = this.props;
+        console.log(`User ID: ${userId}. User name: ${userName}`);
+        // console.log("Input clicked!");
+        this.props.getStudentList(userId, userName)
+    }
+
+
 submit = values => {
 
 }
 
 render(){
-    return <GroupCreator />
+    return <GroupCreator onSubmit={this.submit} />
 }
  
 }
