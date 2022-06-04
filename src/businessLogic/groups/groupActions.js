@@ -95,7 +95,15 @@ export const findGroupName = (userId, groupName) => async dispatch => {
 
 // Creating a new group
 
-
+export const createNewGroup = (values) => async dispatch => {
+    try {
+        if(values){
+            console.log(values)
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 // Editing a group's details (grade, level, )

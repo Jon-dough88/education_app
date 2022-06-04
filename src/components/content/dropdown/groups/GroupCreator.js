@@ -69,16 +69,20 @@ import './Groups.css'
                                 </div>
                                 <div className="form-group">
                                     <div className="groupLevel_container">
-                                        {/* <label> */}
-                                            <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L1" />{' '}
+                                        <label className="groupLevel_label">
+                                            <Field name="groupLevel" 
+                                                    className="groupLevel_btn" 
+                                                    component="input" 
+                                                    type="radio" 
+                                                    value="L1" />{' '}
                                             L1
-                                        {/* </label> */}
-                                        <label>
-                                            <Field name="groupLevel" component="input" type="radio" value="L2" />{' '}
+                                        </label>
+                                        <label className="groupLevel_label">
+                                            <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L2" />{' '}
                                             L2
                                         </label>
-                                        <label>
-                                            <Field name="groupLevel" component="input" type="radio" value="L3" />{' '}
+                                        <label className="groupLevel_label">
+                                            <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L3" />{' '}
                                             L3
                                         </label>
                                         </div>
@@ -160,7 +164,7 @@ import './Groups.css'
 
 
 GroupCreator = reduxForm({
-    form: 'groupCreationPage'
+    form: 'GroupCreator'
 })(GroupCreator)
 
  

@@ -16,12 +16,17 @@
 }
 
 .groupLevel_container {
-    padding: 12px;
+    padding: 1rem;
+    border: 1px solid blue;
 }
 
 .groupLevel_btn{
-    
+    /* margin-right: 5px; */
     border-radius: 25%;
+}
+
+.groupLevel_label {
+    margin-right: 15px;
 }
 
 .student_list_container{

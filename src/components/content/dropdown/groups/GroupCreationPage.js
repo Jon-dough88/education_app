@@ -2,6 +2,7 @@ import React, {Component } from 'react';
 import { connect } from 'react-redux';
 
 import { handleKeyPress } from '../../../../utils/checkGroups';
+import { createNewGroup } from '../../../../businessLogic/groups/groupActions';
 
 import GroupCreator from './GroupCreator';
 
@@ -37,7 +38,9 @@ class GroupCreationPage extends Component {
 
 submit = values => {
     // this.handleStudentList(values);
+    // this.handleKeyPress(values)
     console.log(values)
+    this.props.createGroup(values)
 
 }
 
@@ -65,7 +68,8 @@ const mapDispatchToProps = dispatch => {
         // getUser: () => dispatch(fetchUser()),
         newRefreshToken: () => dispatch(getRefreshToken()),
         checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName)),
-        getStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName))
+        getStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName)),
+        createGroup: (values) => dispatch(createNewGroup(values))
     }
 }
 
