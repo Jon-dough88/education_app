@@ -1,6 +1,8 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
 
+import { handleKeyPress } from '../../../../utils/checkGroups';
+
 import GroupCreator from './GroupCreator';
 
 class GroupCreationPage extends Component {
@@ -34,7 +36,9 @@ class GroupCreationPage extends Component {
 
 
 submit = values => {
-    
+    // this.handleStudentList(values);
+    console.log(values)
+
 }
 
 render(){
