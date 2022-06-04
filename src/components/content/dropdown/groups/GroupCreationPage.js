@@ -34,7 +34,7 @@ class GroupCreationPage extends Component {
 
 
 submit = values => {
-
+    
 }
 
 render(){
