@@ -13,60 +13,22 @@ import { required, maxLengthValue, minLengthValue } from '../../../../utils/vali
 
 import './Groups.css'
 
-class GroupCreator extends Component {
+// class GroupCreator extends Component {
 
-    constructor(){
-        super()
-        this.state = {
-            groupName: '',
-            students: [],
-            level: ''  
-        }
-    }
-
-
-    componentDidMount(){
-
-        // this.props.getUser();
-        this.props.newRefreshToken();
-        
-        console.log(`Username is: ${this.props.userName}`)
-    }
+    // constructor(){
+    //     super()
+    //     this.state = {
+    //         groupName: '',
+    //         students: [],
+    //         level: ''  
+    //     }
+    // }
 
 
-    handleKeyPress(e) {
-        let searchValue = e.target.value;
-        console.log(`Search value: ${searchValue}`);
+    
 
+    // render() { 
 
-        this.props.checkForGroup(this.props.userId, searchValue);
-
-        
-    }
-
-    handleStudentList(e) {
-        const {userId, userName} = this.props;
-        console.log(`User ID: ${userId}. User name: ${userName}`);
-        // console.log("Input clicked!");
-        this.props.getStudentList(userId, userName)
-    }
-
-
-  
-
-    render() { 
-
-        const {userId} = this.props;
-        console.log(`The user's ID is: ${userId}`);
-
-        const {groupNameExists} = this.props;
-        console.log(`The group's name already exists: ${groupNameExists}`);
-
-        const {studentList} = this.props;
-        const updatedList = studentList[0];
-        // const {updatedList} = studentList[0]
-        console.log(studentList);
-        
 
         const validationField = ({input, label, type, meta: {touched, error, warning}}) => (
 
@@ -89,20 +51,50 @@ class GroupCreator extends Component {
 
             return (
                 <div className="jumbotron group-creation-menu">
-                    <form className="form-inline justify-content-center" onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <Field className="form-control form-control-lg" 
-                                name="groupName"
-                                component={validationField}
-                                type="input"
-                                label="Group name"
-                                validate={[required]}
-                            />
+                    <div className="row">
+                        <div className="col col-lg-12 col-sm-6">
+                            <h1>Group Creation Menu</h1>
                         </div>
+                        <div className="col col-lg-12 col-sm-6">
+                            <form className="form-inline justify-content-center" onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <Field className="form-control form-control-lg" 
+                                    name="groupName"
+                                    component={validationField}
+                                    type="input"
+                                    label="Group name"
+                                    validate={[required]}
+                                    // onChange={(e)=> { this.handleKeyPress(e) }}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <div className="groupLevel_container">
+                                        {/* <label> */}
+                                            <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L1" />{' '}
+                                            L1
+                                        {/* </label> */}
+                                        <label>
+                                            <Field name="groupLevel" component="input" type="radio" value="L2" />{' '}
+                                            L2
+                                        </label>
+                                        <label>
+                                            <Field name="groupLevel" component="input" type="radio" value="L3" />{' '}
+                                            L3
+                                        </label>
+                                        </div>
+                                    </div>
+                                <div>
+                                <button className="btn btn-lg btn-primary createGroup-btn" type="submit" disabled={pristine || submitting}>Create</button>
+                    
+                                <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>   
+                             </div>
 
 
-                    </form>
+                            </form>
 
+                        </div>
+                    </div>
+                    
                 </div>    
             )
         }
@@ -161,14 +153,14 @@ class GroupCreator extends Component {
         //         </div>
         //     </div>
         //  );
-    }
-}
+    // }
+// }
 
 
 
 
 GroupCreator = reduxForm({
-    form: groupCreation
+    form: 'groupCreationPage'
 })(GroupCreator)
 
  

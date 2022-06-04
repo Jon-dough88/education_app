@@ -15,6 +15,14 @@
     align-items: center;
 }
 
+.groupLevel_container {
+    padding: 12px;
+}
+
+.groupLevel_btn{
+    
+    border-radius: 25%;
+}
 
 .student_list_container{
     display: flex;
@@ -31,6 +39,10 @@
     height: 2rem;
     width: 19rem;
 
+}
+
+.createGroup-btn{
+    margin: 2rem;
 }
 
 
