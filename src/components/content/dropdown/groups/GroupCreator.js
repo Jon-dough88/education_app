@@ -6,6 +6,7 @@ import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
 import { findGroupName } from '../../../../businessLogic/groups/groupActions';
 import { fetchStudentList } from '../../../../businessLogic/groups/groupActions';
 import StudentListItem from './StudentListItem';
+// import { handleSubmit } from './GroupCreationPage';
 
 import { required, maxLengthValue, minLengthValue } from '../../../../utils/validations';
 
@@ -31,98 +32,101 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
 )
 
 
-let GroupCreator = props => {
-    const { handleSubmit } = props
+// let GroupCreator = props => {
+//     const { onSubmit } = props
 
-    return (
-        <form onSubmit = { handleSubmit }>
-            <div className="form-group">
-                <Field 
-                    className="form-control form-control-lg"
-                    name="groupName"
-                    component={validationField}
-                    type="input"
-                    label="Group name"
-                    validate={[ required ]}
-                />
+//     return (
+//         <form onSubmit = { onSubmit }>
+//             <div className="form-group">
+//                 <Field 
+//                     className="form-control form-control-lg"
+//                     name="groupName"
+//                     component={validationField}
+//                     type="input"
+//                     label="Group name"
+//                     validate={[ required ]}
+//                 />
 
-            </div>
-            <button className="btn btn-lg btn-primary" type="submit">Create group</button>
-        </form>
-    )
-}
+//             </div>
+//             <button className="btn btn-lg btn-primary" type="submit">Create group</button>
+//         </form>
+//     )
+// }
 
-GroupCreator = reduxForm({
-    form: 'groupCreator'
-})(GroupCreator)
+// // const { handleSubmit } = this.props
 
-export default GroupCreator
+// GroupCreator = reduxForm({
+//     form: 'groupCreator',
+//     // handleSubmit
+// })(GroupCreator)
 
-//         let GroupCreator = props => {
+// export default GroupCreator
+
+        let GroupCreator = props => {
             
-//             const { handleSubmit, pristine, reset, submitting } = props
+            const { handleSubmit, pristine, reset, submitting } = props
 
-//             return (
-//                 <div className="jumbotron group-creation-menu">
-//                     <div className="row">
-//                         <div className="col col-lg-12 col-sm-6">
-//                             <h1>Group Creation Menu</h1>
-//                         </div>
-//                         <div className="col col-lg-12 col-sm-6">
-//                             <form className="form-inline justify-content-center" onSubmit={ handleSubmit }>
-//                                 <div className="form-group">
-//                                     <Field className="form-control form-control-lg" 
-//                                     name="groupName"
-//                                     component={validationField}
-//                                     type="text"
-//                                     label="Group name"
-//                                     validate={[required]}
-//                                     // onChange={(e)=> { this.handleKeyPress(e) }}
-//                                     />
-//                                 </div>
-//                                 <div className="form-group">
-//                                     <div className="groupLevel_container">
-//                                         <label className="groupLevel_label">
-//                                             <Field name="groupLevel" 
-//                                                     className="groupLevel_btn" 
-//                                                     component="input" 
-//                                                     type="radio" 
-//                                                     value="L1" />{' '}
-//                                             L1
-//                                         </label>
-//                                         <label className="groupLevel_label">
-//                                             <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L2" />{' '}
-//                                             L2
-//                                         </label>
-//                                         <label className="groupLevel_label">
-//                                             <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L3" />{' '}
-//                                             L3
-//                                         </label>
-//                                         </div>
-//                                     </div>
-//                                 <div>
-//                                 <button className="btn btn-lg btn-primary createGroup-btn" type="submit" disabled={pristine || submitting}>Create</button>
+            return (
+                <div className="jumbotron group-creation-menu">
+                    <div className="row">
+                        <div className="col col-lg-12 col-sm-6">
+                            <h1>Group Creation Menu</h1>
+                        </div>
+                        <div className="col col-lg-12 col-sm-6">
+                            <form className="form-inline justify-content-center" onSubmit={ handleSubmit }>
+                                <div className="form-group">
+                                    <Field className="form-control form-control-lg" 
+                                    name="groupName"
+                                    component={validationField}
+                                    type="text"
+                                    label="Group name"
+                                    validate={[required]}
+                                    // onChange={(e)=> { this.handleKeyPress(e) }}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <div className="groupLevel_container">
+                                        <label className="groupLevel_label">
+                                            <Field name="groupLevel" 
+                                                    className="groupLevel_btn" 
+                                                    component="input" 
+                                                    type="radio" 
+                                                    value="L1" />{' '}
+                                            L1
+                                        </label>
+                                        <label className="groupLevel_label">
+                                            <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L2" />{' '}
+                                            L2
+                                        </label>
+                                        <label className="groupLevel_label">
+                                            <Field name="groupLevel" className="groupLevel_btn" component="input" type="radio" value="L3" />{' '}
+                                            L3
+                                        </label>
+                                        </div>
+                                    </div>
+                                <div>
+                                <button className="btn btn-lg btn-primary createGroup-btn" type="submit" disabled={pristine || submitting}>Create</button>
                     
-//                                 <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>   
-//                              </div>
+                                <button className="btn btn-lg btn-warning" type="button" disabled={pristine || submitting} onClick={reset}>Clear</button>   
+                             </div>
 
 
-//                             </form>
+                            </form>
 
-//                         </div>
-//                     </div>
+                        </div>
+                    </div>
                     
-//                 </div>    
-//             )
-//         }
+                </div>    
+            )
+        }
 
         
 
 
 
-// GroupCreator = reduxForm({
-//     form: 'GroupCreator'
-// })(GroupCreator)
+GroupCreator = reduxForm({
+    form: 'GroupCreator'
+})(GroupCreator)
 
  
-// export default GroupCreator;
+export default GroupCreator;
