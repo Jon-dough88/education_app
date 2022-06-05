@@ -47,7 +47,7 @@ let GroupCreator = props => {
                 />
 
             </div>
-
+            <button className="btn btn-lg btn-primary" type="submit">Create group</button>
         </form>
     )
 }
