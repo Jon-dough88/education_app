@@ -4,6 +4,8 @@ const initialState = {
     userName: null,
     // userId: null,
     groups: null,
+    creationInProgress: false,
+    groupCreated: false,
     fetchInProgress: false,
     groupsFetched: false,
     pageLoadInProgress: false,
@@ -20,6 +22,9 @@ const initialState = {
 const groupReducer = (state = initialState, action) => {
     
     switch(action.type) {
+
+        case ACTIONS.GROUP_CREATION_IN_PROGRESS: 
+            return { ...state, }
         
          case ACTIONS.GROUP_FETCH_IN_PROGRESS:
              return { ...state, fetchInProgress: true, groupsFetched: false };
