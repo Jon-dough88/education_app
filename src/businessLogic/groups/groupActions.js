@@ -99,8 +99,17 @@ export const findGroupName = (userId, groupName) => async dispatch => {
 // Creating a new group
 
 export const createNewGroup = (values) => async dispatch => {
+    
+    dispatch({ type: GROUP_CREATION_IN_PROGRESS })
+    console.log(values)
+
     try {
-        console.log(values)
+        
+        
+        await axios.post(`${groupUrl}/createGroup`, values)
+        .then(response => dispatch({ type: GROUP_CREATION_SUCCESS, payload: response.data }))
+        .catch(err => dispatch({ type: GROUP_CREATION_FAILURE, payload: err}))
+
 
     } catch (error) {
         console.log(error)
