@@ -24,7 +24,13 @@ const groupReducer = (state = initialState, action) => {
     switch(action.type) {
 
         case ACTIONS.GROUP_CREATION_IN_PROGRESS: 
-            return { ...state, }
+            return { ...state, creationInProgress: true, groupCreated: false };
+
+        case ACTIONS.GROUP_CREATION_SUCCESS: 
+            return {...state, creationInProgress: true, groupCreated: true };
+
+        case ACTIONS.GROUP_CREATION_FAILURE:
+            return { ...state, creationInProgress: false, groupCreated: false };
         
          case ACTIONS.GROUP_FETCH_IN_PROGRESS:
              return { ...state, fetchInProgress: true, groupsFetched: false };
