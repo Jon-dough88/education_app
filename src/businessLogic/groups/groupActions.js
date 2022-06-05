@@ -6,6 +6,9 @@ import * as MESSAGES from '../messages/messageActions';
 const groupUrl = 'http://localhost:4000/api/groups';
 
 
+export const GROUP_CREATION_IN_PROGRESS = 'groups/creationInProgress';
+export const GROUP_CREATION_SUCCESS = 'groups/creationSuccess';
+export const GROUP_CREATION_FAILURE = 'groups/creationFailed';
 export const GROUP_FETCH_IN_PROGRESS = 'groups/fetchInProgress';
 export const GROUP_FETCH_SUCCESS = 'groups/fetchSuccess';
 export const GROUP_FETCH_FAILURE = 'groups/fetchFailure';
@@ -97,9 +100,8 @@ export const findGroupName = (userId, groupName) => async dispatch => {
 
 export const createNewGroup = (values) => async dispatch => {
     try {
-        if(values){
-            console.log(values)
-        }
+        console.log(values)
+
     } catch (error) {
         console.log(error)
     }
