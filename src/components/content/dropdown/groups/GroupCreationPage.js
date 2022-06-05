@@ -45,9 +45,7 @@ submit = values => {
 }
 
 render(){
-    return <GroupCreator onSubmit={this.submit} 
-    // onChange={(e)=> { this.handleKeyPress(e) }} 
-    />
+    return <GroupCreator onSubmit={this.submit}  />
 }
  
 }
