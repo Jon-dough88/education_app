@@ -78,7 +78,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                                     <Field className="form-control form-control-lg" 
                                     name="groupName"
                                     component={validationField}
-                                    type="text"
+                                    type="input"
                                     label="Group name"
                                     validate={[required]}
                                     // onChange={(e)=> { this.handleKeyPress(e) }}
