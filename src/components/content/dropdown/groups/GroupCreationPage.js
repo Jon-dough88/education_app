@@ -53,11 +53,12 @@ class GroupCreationPage extends Component {
     }
 
 
-submit = (values) => {
+submit = (e, values) => {
+    e.preventDefault()
     // this.handleStudentList(values);
     // this.handleKeyPress(values)
     console.log(values)
-    // this.props.createGroup(values)
+    this.props.createGroup(values)
 
 }
 

@@ -64,7 +64,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
 
         let GroupCreator = props => {
             
-            const { handleSubmit, pristine, reset, submitting } = props
+            const { onSubmit, pristine, reset, submitting } = props
 
             return (
                 <div className="jumbotron group-creation-menu">
@@ -73,7 +73,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                             <h1>Group Creation Menu</h1>
                         </div>
                         <div className="col col-lg-12 col-sm-6">
-                            <form className="form-inline justify-content-center" onSubmit={ handleSubmit }>
+                            <form className="form-inline justify-content-center" onSubmit={ onSubmit }>
                                 <div className="form-group">
                                     <Field className="form-control form-control-lg" 
                                     name="groupName"
@@ -103,7 +103,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                                             L3
                                         </label>
                                         </div>
-                                    </div>
+                                </div>
                                 <div>
                                 <button className="btn btn-lg btn-primary createGroup-btn" type="submit" disabled={pristine || submitting}>Create</button>
                     
@@ -125,7 +125,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
 
 
 GroupCreator = reduxForm({
-    form: 'GroupCreator'
+    form: 'groupCreator'
 })(GroupCreator)
 
  
