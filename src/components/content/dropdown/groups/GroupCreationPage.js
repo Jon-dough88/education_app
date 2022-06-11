@@ -63,7 +63,7 @@ submit = values => {
 }
 
 render(){
-    return <GroupCreator handleSubmit={this.submit}  />
+    return <GroupCreator onSubmit={submit}  />
 }
  
 }
