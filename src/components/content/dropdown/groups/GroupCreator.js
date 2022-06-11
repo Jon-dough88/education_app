@@ -84,7 +84,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                                     type="text"
                                     label="Group name"
                                     validate={[required]}
-                                    onChange={(e) => {onChange(e)}}
+                                    onChange={onChange}
                                     />
                                 </div>
                                 <div className="form-group">
