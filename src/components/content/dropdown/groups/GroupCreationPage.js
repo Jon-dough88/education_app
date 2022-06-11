@@ -64,7 +64,7 @@ submit = values => {
     // this.handleStudentList(values);
     // this.handleKeyPress(values)
     console.log(values)
-    this.props.createGroup(values)
+    // this.props.createGroup(values)
 
 }
 
