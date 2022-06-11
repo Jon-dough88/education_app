@@ -35,19 +35,21 @@ class GroupCreationPage extends Component {
         // this.props.getUser();
         this.props.newRefreshToken();
         
+        
         console.log(`Username is: ${this.props.userName}`)
     }
 
 
-    handleKeyPress(e) {
-        let searchValue = e.value;
-        console.log(`Search value: ${searchValue}`);
+    // handleKeyPress(e) {
+    //     // e.preventDefault()
+    //     let searchValue = e.target.value;
+    //     console.log(`Search value: ${searchValue}`);
 
 
-        // this.props.checkForGroup(this.props.userId, searchValue);
+    //     // this.props.checkForGroup(this.props.userId, searchValue);
 
         
-    }
+    // }
 
     handleStudentList(e) {
         const {userId, userName} = this.props;
@@ -60,15 +62,20 @@ class GroupCreationPage extends Component {
 
 
 submit = values => {
-    // e.preventDefault()
+    const {userId} = this.props;
+        console.log(userId)
     // this.handleStudentList(values);
     // this.handleKeyPress(values)
     console.log(values)
-    // this.props.createGroup(values)
+    this.props.createGroup(values)
 
 }
 
 render(){
+
+    const {userId} = this.props;
+        console.log(userId)
+
     return <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} />
 }
  
