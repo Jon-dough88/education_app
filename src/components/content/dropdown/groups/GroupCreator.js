@@ -123,10 +123,6 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
             )
         }
 
-    
-const onSubmit = (values, dispatch) => {
-    
-}
 
         
 
@@ -134,7 +130,7 @@ const onSubmit = (values, dispatch) => {
 
 export default reduxForm({
     form: 'groupCreator',
-    // onSubmit
+    // submit
 })(GroupCreator)
 
  

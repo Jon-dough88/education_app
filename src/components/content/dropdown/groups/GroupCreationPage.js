@@ -53,6 +53,8 @@ class GroupCreationPage extends Component {
     }
 
 
+
+
 submit = values => {
     // e.preventDefault()
     // this.handleStudentList(values);
@@ -63,7 +65,7 @@ submit = values => {
 }
 
 render(){
-    return <GroupCreator onSubmit={submit}  />
+    return <GroupCreator onSubmit={this.submit}  />
 }
  
 }

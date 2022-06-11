@@ -19,6 +19,7 @@ import MainPage from './components/index/main_desktop/MainPage';
 import AdminPage from '../src/components/content/admin/AdminPage';
 // import GroupMenu from '../src/components/content/dropdown/groups/GroupsMenu';
 import GroupLandingPage from '../src/components/content/dropdown/groups/GroupLandingPage';
+import GroupCreationPage from './components/content/dropdown/groups/GroupCreationPage';
 import GroupCreator from './components/content/dropdown/groups/GroupCreator';
 import GroupMain from '../src/components/content/groupPage/GroupMain';
 // import GroupPage from './components/content/groupPage/GroupPage';
