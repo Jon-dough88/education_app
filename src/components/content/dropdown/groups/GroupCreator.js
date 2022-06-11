@@ -74,7 +74,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                             <h1>Group Creation Menu</h1>
                         </div>
                         <div className="col col-lg-12 col-sm-6">
-                            <form className="form-inline justify-content-center" onSubmit={ props.handleSubmit }>
+                            <form className="form-inline justify-content-center" onSubmit={ handleSubmit }>
                             {/* <form className="form-inline justify-content-center" onSubmit={ onSubmit }> */}
 
                                 <div className="form-group">
@@ -122,6 +122,9 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                 </div>    
             )
         }
+
+    
+// const onSubmit = (values, dispatch)
 
         
 
