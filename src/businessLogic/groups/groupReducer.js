@@ -27,7 +27,7 @@ const groupReducer = (state = initialState, action) => {
             return { ...state, creationInProgress: true, groupCreated: false };
 
         case ACTIONS.GROUP_CREATION_SUCCESS: 
-            return {...state, creationInProgress: true, groupCreated: true };
+            return {...state, creationInProgress: true, groupCreated: true, groups: action.payload.groupData };
 
         case ACTIONS.GROUP_CREATION_FAILURE:
             return { ...state, creationInProgress: false, groupCreated: false };
