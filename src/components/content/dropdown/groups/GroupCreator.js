@@ -1,10 +1,10 @@
 import React from 'react';
 import { Field, reduxForm} from 'redux-form';
 
-import { fetchUser } from '../../../../businessLogic/users/usersActions';
-import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
-import { findGroupName } from '../../../../businessLogic/groups/groupActions';
-import { fetchStudentList } from '../../../../businessLogic/groups/groupActions';
+// import { fetchUser } from '../../../../businessLogic/users/usersActions';
+// import { getRefreshToken } from '../../../../businessLogic/users/usersActions';
+// import { findGroupName } from '../../../../businessLogic/groups/groupActions';
+// import { fetchStudentList } from '../../../../businessLogic/groups/groupActions';
 import StudentListItem from './StudentListItem';
 // import { handleSubmit } from './GroupCreationPage';
 
@@ -84,7 +84,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                                     type="text"
                                     label="Group name"
                                     validate={[required]}
-                                    // onChange={(e)=> { this.handleKeyPress(e) }}
+                                    onChange={(e)=> { this.handleKeyPress(e) }}
                                     />
                                 </div>
                                 <div className="form-group">
