@@ -64,7 +64,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
 
         let GroupCreator = props => {
             
-            const { handleSubmit, pristine, reset, submitting } = props
+            const { handleSubmit, onChange, pristine, reset, submitting } = props
             // const { onSubmit, pristine, reset, submitting } = props
 
             return (
@@ -84,7 +84,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                                     type="text"
                                     label="Group name"
                                     validate={[required]}
-                                    onChange={(e)=> { this.handleKeyPress(e) }}
+                                    onChange={(e) => {onChange(e)}}
                                     />
                                 </div>
                                 <div className="form-group">

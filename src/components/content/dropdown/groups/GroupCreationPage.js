@@ -44,7 +44,7 @@ class GroupCreationPage extends Component {
         console.log(`Search value: ${searchValue}`);
 
 
-        this.props.checkForGroup(this.props.userId, searchValue);
+        // this.props.checkForGroup(this.props.userId, searchValue);
 
         
     }
@@ -69,7 +69,7 @@ submit = values => {
 }
 
 render(){
-    return <GroupCreator onSubmit={this.submit}  />
+    return <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} />
 }
  
 }
