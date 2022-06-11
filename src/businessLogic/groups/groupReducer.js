@@ -3,7 +3,7 @@ import * as ACTIONS from './groupActions';
 const initialState = {
     userName: null,
     // userId: null,
-    groups: null,
+    groups: [],
     creationInProgress: false,
     groupCreated: false,
     fetchInProgress: false,
@@ -27,7 +27,7 @@ const groupReducer = (state = initialState, action) => {
             return { ...state, creationInProgress: true, groupCreated: false };
 
         case ACTIONS.GROUP_CREATION_SUCCESS: 
-            return {...state, creationInProgress: true, groupCreated: true, groups: action.payload.groupData };
+            return {...state, creationInProgress: false, groupCreated: true, groups: action.payload.groupData, message: action.payload.message };
 
         case ACTIONS.GROUP_CREATION_FAILURE:
             return { ...state, creationInProgress: false, groupCreated: false };
