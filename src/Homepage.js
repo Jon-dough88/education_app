@@ -125,7 +125,7 @@ class Homepage extends Component {
                         <Route path="/admin" component={AdminPage}></Route>
                         {/* <Route path="/groups" component={GroupMenu}></Route> */}
                         <Route path="/groups" component={GroupLandingPage}></Route>
-                        <Route path="/groupCreation" component={GroupCreator}></Route>
+                        <Route path="/groupCreation" component={GroupCreationPage}></Route>
                         {/* <Route path="/groupPage" component={GroupPage}></Route> */}
                         <Route path="/groupPage" component={GroupMain}></Route>
                         <Route path="/lessonTestPath" component={LessonPage} />
