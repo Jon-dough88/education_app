@@ -40,7 +40,7 @@ class GroupCreationPage extends Component {
 
 
     handleKeyPress(e) {
-        let searchValue = e.target.value;
+        let searchValue = e.value;
         console.log(`Search value: ${searchValue}`);
 
 
