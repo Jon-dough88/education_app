@@ -101,7 +101,7 @@ export const findGroupName = (userId, groupName) => async dispatch => {
 export const createNewGroup = (values, userId) => async dispatch => {
     
     dispatch({ type: GROUP_CREATION_IN_PROGRESS })
-    console.log(`The values at groupActions are: ${values}`)
+    console.log(`The values at groupActions are: ${values}. User ID: ${userId}`)
     
 
     try {
