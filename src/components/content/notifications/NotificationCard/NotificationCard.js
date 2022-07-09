@@ -12,7 +12,7 @@ class NotificationCard extends Component {
             <div className="row">
                     <div className="col col-md-12">
                         <div className="notification-card">
-                             <h3>Card content</h3>
+                             <h3 className="notification-text">Card content</h3>
                         </div>
                     </div>
             </div>

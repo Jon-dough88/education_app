@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import '../NotificationCard/NotificationCard';
+import NotificationCard from '../NotificationCard/NotificationCard';
+
+import './NotificationPage.css';
 
 
 class NotificationPage extends Component {
@@ -9,14 +12,8 @@ class NotificationPage extends Component {
 
     render() { 
         return (
-            <div className="jumbotron container">
-                {/* <div className="row">
-                    <div className="col col-md-12">
-                        <div className="card">
-
-                        </div>
-                    </div>
-                </div> */}
+            <div className="jumbotron container notification-page">
+               <NotificationCard />
             </div>
         );
     }
