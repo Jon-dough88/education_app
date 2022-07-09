@@ -1,0 +1,5 @@
+.notification-card {
+    min-height: 4rem;
+    max-width: 100%;
+    border-radius: 10%;
+}

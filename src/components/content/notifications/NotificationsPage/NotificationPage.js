@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../NotificationCard/NotificationCard';
+
 
 class NotificationPage extends Component {
 
