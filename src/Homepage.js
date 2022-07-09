@@ -24,6 +24,7 @@ import GroupCreator from './components/content/dropdown/groups/GroupCreator';
 import GroupMain from '../src/components/content/groupPage/GroupMain';
 // import GroupPage from './components/content/groupPage/GroupPage';
 import LessonPage from './components/content/lessons/LessonPage/LessonPage';
+import NotificationPage from './components/content/notifications/NotificationsPage/NotificationPage';
 
 
 class Homepage extends Component {
