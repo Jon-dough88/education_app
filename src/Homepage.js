@@ -130,6 +130,7 @@ class Homepage extends Component {
                         {/* <Route path="/groupPage" component={GroupPage}></Route> */}
                         <Route path="/groupPage" component={GroupMain}></Route>
                         <Route path="/lessonTestPath" component={LessonPage} />
+                        <Route path="/notifications" component={NotificationPage} />
                     </Switch>
                     
                 </div>
