@@ -107,7 +107,7 @@ export const createNewGroup = (values, userId) => async dispatch => {
     try {
         
         
-        await axios.post(`${groupUrl}/createGroup`, values, userId)
+        await axios.post(`${groupUrl}/createGroup`, {values, userId})
         .then(response => dispatch({ type: GROUP_CREATION_SUCCESS, payload: response.data }))
         .catch(err => dispatch({ type: GROUP_CREATION_FAILURE, payload: err}))
 
