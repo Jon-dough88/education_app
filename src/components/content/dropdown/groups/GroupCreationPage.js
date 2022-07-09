@@ -67,7 +67,7 @@ submit = values => {
     // this.handleStudentList(values);
     // this.handleKeyPress(values)
     console.log(values)
-    this.props.createGroup(values)
+    this.props.createGroup(values, userId)
 
 }
 
@@ -100,6 +100,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
+
+    console.log()
     return {
         // getUser: () => dispatch(fetchUser()),
         newRefreshToken: () => dispatch(getRefreshToken()),
