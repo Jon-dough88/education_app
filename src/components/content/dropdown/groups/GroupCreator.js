@@ -28,6 +28,7 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                 <div className="error-container">
                     {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
                 </div>
+                
             </div>
 )
 
@@ -64,15 +65,19 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
 
         let GroupCreator = props => {
             
-            const { handleSubmit, onChange, pristine, reset, submitting } = props
+            const { handleSubmit, onChange, pristine, reset, submitting, message } = props
             // const { onSubmit, pristine, reset, submitting } = props
 
             return (
-                <div className="jumbotron group-creation-menu">
+                // message != null 
+                //     ? <div><h1>{message}</h1></div>
+                //     : 
+                    <div className="jumbotron group-creation-menu">
                     <div className="row">
                         <div className="col col-lg-12 col-sm-6">
                             <h1>Group Creation Menu</h1>
                         </div>
+                        
                         <div className="col col-lg-12 col-sm-6">
                             <form className="form-inline justify-content-center" onSubmit={ handleSubmit }>
                             {/* <form className="form-inline justify-content-center" onSubmit={ onSubmit }> */}
@@ -119,7 +124,9 @@ const validationField = ({input, label, type, meta: {touched, error, warning}}) 
                         </div>
                     </div>
                     
-                </div>    
+                </div>  
+                
+                  
             )
         }
 

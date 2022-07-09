@@ -73,10 +73,16 @@ submit = values => {
 
 render(){
 
-    const {userId} = this.props;
-        console.log(userId)
+    const {userId, groups, message} = this.props;
+        // console.log(userId)
+        console.log(message)
+        console.log(`New group data: ${groups}`);
 
-    return <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} />
+
+
+    
+
+    return <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} message={message}/>
 }
  
 }
@@ -87,6 +93,7 @@ const mapStateToProps = state => {
         userName: state.users.userName,
         userId: state.users.userId,
         groupNameExists: state.groups.groupNameExists,
+        groups: state.groups.groups,
         message: state.groups.message,
         studentList: state.groups.studentList
     }
@@ -98,7 +105,7 @@ const mapDispatchToProps = dispatch => {
         newRefreshToken: () => dispatch(getRefreshToken()),
         checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName)),
         getStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName)),
-        createGroup: (values) => dispatch(createNewGroup(values))
+        createGroup: (values, userId) => dispatch(createNewGroup(values, userId))
     }
 }
 
