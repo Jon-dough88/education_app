@@ -108,6 +108,7 @@ const mapDispatchToProps = dispatch => {
         checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName)),
         getStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName)),
         createGroup: (values, userId) => dispatch(createNewGroup(values, userId))
+        
     }
 }
 
