@@ -67,6 +67,9 @@ submit = values => {
     // this.handleStudentList(values);
     // this.handleKeyPress(values)
     console.log(values)
+    // const sentValues = {};
+    // sentValues.push({values, userId});
+    // console.log(`Sent values are: ${sentValues}`)
     this.props.createGroup(values, userId)
 
 }
@@ -94,6 +97,8 @@ const mapStateToProps = state => {
         userId: state.users.userId,
         groupNameExists: state.groups.groupNameExists,
         groups: state.groups.groups,
+        groupCreated: state.groups.groupCreated,
+        groupCreationInProgress: state.groups.groupCreationInProgress,
         message: state.groups.message,
         studentList: state.groups.studentList
     }
@@ -108,7 +113,7 @@ const mapDispatchToProps = dispatch => {
         checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName)),
         getStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName)),
         createGroup: (values, userId) => dispatch(createNewGroup(values, userId))
-        
+
     }
 }
 

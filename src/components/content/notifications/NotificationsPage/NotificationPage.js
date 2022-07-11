@@ -14,7 +14,8 @@ class NotificationPage extends Component {
         return (
             <div className="jumbotron container notification-page">
                <NotificationCard />
-               <NotificationCard />
+          
+
 
             </div>
         );
