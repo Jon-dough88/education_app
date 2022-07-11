@@ -76,16 +76,20 @@ submit = values => {
 
 render(){
 
-    const {userId, groups, message} = this.props;
+    const {userId, groups, message, groupCreated, groupCreationInProgress} = this.props;
         // console.log(userId)
         console.log(message)
         console.log(`New group data: ${groups}`);
 
-
+    {groupCreated == true && greapCreationInProgress == false
+     ? <div><h1>{message}</h1></div>
+     : <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} message={message}/>
+    
+    }
 
     
 
-    return <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} message={message}/>
+    
 }
  
 }
