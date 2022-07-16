@@ -27,14 +27,14 @@ class GroupItem extends Component {
                     <div className="card-body group-item-card">
                         <div className="row">
                             <div className="col-md-5 col-sm-5">
-                                <h2>{this.props.group.groupName}</h2>
+                                <h1><strong>{this.props.group.groupName}</strong></h1>
                                 {/* <h4>{this.props.group._id}</h4> */}
                             </div>
-                            <div className="col-md-2 col-sm-1 group-separator">
+                            <div className="col-md-1 col-sm-1 group-separator">
                                 
                             </div>
-                            <div className="col-md-4 col-sm-4">
-                                <h2>{this.props.group.students.length}</h2>
+                            <div className="col-md-6 col-sm-4">
+                                <h2>Student no. : {this.props.group.students.length}</h2>
                             </div>
                         </div>
                     {/* </a> */}

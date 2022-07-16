@@ -41,14 +41,14 @@ class GroupCreationPage extends Component {
 
 
     // handleKeyPress(e) {
-    //     // e.preventDefault()
+    //     e.preventDefault()
     //     let searchValue = e.target.value;
-    //     console.log(`Search value: ${searchValue}`);
-
-
-    //     // this.props.checkForGroup(this.props.userId, searchValue);
+    //     console.log(`Search value: ${searchValue}.`);
 
         
+
+    //     this.props.checkForGroup(this.props.userId, searchValue);
+ 
     // }
 
     handleStudentList(e) {
@@ -81,13 +81,15 @@ render(){
         console.log(message)
         console.log(`New group data: ${groups}`);
 
-    {groupCreated == true && greapCreationInProgress == false
-     ? <div><h1>{message}</h1></div>
-     : <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} message={message}/>
+    // {groupCreated == true && groupCreationInProgress == false
+    //  ? <div><h1>{message}</h1></div>
+    //  : <GroupCreator onSubmit={this.submit} onChange={this.handleKeyPress} message={message}/>
     
-    }
+    // }
 
-    
+    return <GroupCreator onSubmit={this.submit} 
+    // onChange={(e) => {this.handleKeyPress (e)}} 
+    message={message}/>
 
     
 }
@@ -114,7 +116,7 @@ const mapDispatchToProps = dispatch => {
     return {
         // getUser: () => dispatch(fetchUser()),
         newRefreshToken: () => dispatch(getRefreshToken()),
-        checkForGroup: (userId, groupName) => dispatch(findGroupName(userId, groupName)),
+        checkForGroup: (userId, searchValue) => dispatch(findGroupName(userId, searchValue)),
         getStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName)),
         createGroup: (values, userId) => dispatch(createNewGroup(values, userId))
 
