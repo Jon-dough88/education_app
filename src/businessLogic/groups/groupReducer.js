@@ -42,7 +42,7 @@ const groupReducer = (state = initialState, action) => {
             return {...state, fetchInProgress: false, groupsFetched: true, groups: action.payload, userName: action.payload.userName, userId: action.payload.userId }
         
         case ACTIONS.GROUP_PAGE_FETCH_ONGOING:
-            return {...state, groupPageLoadInProgress: true, groupPageFetched: false, groupPage: action.payload } 
+            return {...state, groupPageLoadInProgress: true, groupPageFetched: false } 
             
         case ACTIONS.GROUP_PAGE_FETCH_DONE:
             return {...state, groupPageLoadInProgress: false, groupPageFetched: false, groupPage: action.payload }
