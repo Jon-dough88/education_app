@@ -51,7 +51,7 @@ class GroupItem extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        openGroupPage: (_id) => { dispatch(getGroupPage(_id))}
+        openGroupPage: (groupId) => { dispatch(getGroupPage(groupId))}
     }
 }
 
