@@ -54,14 +54,14 @@ export const fetchGroups = (userId) => async dispatch => {
 
 // Linking to group page
 
-export const getGroupPage = (_id) => async dispatch => {
-    console.log(_id)
+export const getGroupPage = (groupId) => async dispatch => {
+    console.log(groupId)
 
     dispatch({type: GROUP_PAGE_FETCH_ONGOING})
 
     try {
 
-       await axios.post( `${groupUrl}/groupPages`, {_id} )
+       await axios.post( `${groupUrl}/groupPages/:${groupId}`)
          .then(response => {
             dispatch({type: GROUP_PAGE_FETCH_DONE, payload: response.data})
        }).catch(err => {
