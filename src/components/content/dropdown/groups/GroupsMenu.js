@@ -6,6 +6,7 @@ import { fetchUser } from '../../../../businessLogic/users/usersActions';
 import { fetchGroups } from '../../../../businessLogic/groups/groupActions';
 import GroupItem from './GroupItem';
 import './Groups.css';
+import { Redirect } from 'react-router';
 
 
 class GroupMenu extends Component {
@@ -42,6 +43,10 @@ class GroupMenu extends Component {
 
         const {groups} = this.props;
         const {groupPage} = this.props;
+
+        {groupsPage !== null && 
+            <Redirect />
+        }
         
         const {userName} = this.props;
         const {userId} = this.props;
