@@ -22,7 +22,7 @@ import GroupLandingPage from '../src/components/content/dropdown/groups/GroupLan
 import GroupCreationPage from './components/content/dropdown/groups/GroupCreationPage';
 import GroupCreator from './components/content/dropdown/groups/GroupCreator';
 import GroupMain from '../src/components/content/groupPage/GroupMain';
-// import GroupPage from './components/content/groupPage/GroupPage';
+import GroupPage from './components/content/groupPage/GroupPage';
 import LessonPage from './components/content/lessons/LessonPage/LessonPage';
 import NotificationPage from './components/content/notifications/NotificationsPage/NotificationPage';
 
@@ -82,7 +82,7 @@ class Homepage extends Component {
 
     render() { 
 
-        const { userName, userType, userId } = this.props;
+        const { userName, userType, userId, groupPage } = this.props;
         // console.log(`Current user: ${userName}. The user ID is ${userId}`);
 
         return ( 
@@ -109,7 +109,9 @@ class Homepage extends Component {
 
                         {userName && userType === "teacher" && 
                             <Redirect from="/login" to="/main" />
-                        }      
+                        }    
+
+                        {groupPage !== null}  
 
                         {/* <Route path="/" exact component={Main}></Route>  */}
                         
@@ -127,7 +129,7 @@ class Homepage extends Component {
                         {/* <Route path="/groups" component={GroupMenu}></Route> */}
                         <Route path="/groups" component={GroupLandingPage}></Route>
                         <Route path="/groupCreation" component={GroupCreationPage}></Route>
-                        {/* <Route path="/groupPage" component={GroupPage}></Route> */}
+                        <Route path="/groupPage" component={GroupPage}></Route> 
                         <Route path="/groupPage" component={GroupMain}></Route>
                         <Route path="/lessonTestPath" component={LessonPage} />
                         <Route path="/notifications" component={NotificationPage} />
@@ -145,7 +147,8 @@ const mapStateToProps = state => {
         userName: state.users.userName,
         userType: state.users.userType,
         userId: state.users.userId,
-        groups: state.groups.groups
+        groups: state.groups.groups, 
+        groupPage: state.groups.groupPage
     }
 }
 

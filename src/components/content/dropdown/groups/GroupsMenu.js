@@ -44,9 +44,9 @@ class GroupMenu extends Component {
         const {groups} = this.props;
         const {groupPage} = this.props;
 
-        {groupsPage !== null && 
-            <Redirect />
-        }
+        // {groupPage !== null && 
+        //     <Redirect />
+        // }
         
         const {userName} = this.props;
         const {userId} = this.props;
