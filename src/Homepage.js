@@ -98,6 +98,7 @@ class Homepage extends Component {
                             : <Route path="/" exact component={Main}></Route>
                         }   */}
                         <Route exact path="/" component={Home}></Route>
+                        
                         {userName && userType === "admin" && 
                             <Redirect from="/login" to="/admin" />
                         }
@@ -111,7 +112,9 @@ class Homepage extends Component {
                             <Redirect from="/login" to="/main" />
                         }    
 
-                        {groupPage !== null}  
+                        {groupPage !== null && 
+                            <Redirect from="/groups" to="/groupPage"/>
+                        }  
 
                         {/* <Route path="/" exact component={Main}></Route>  */}
                         
@@ -130,7 +133,7 @@ class Homepage extends Component {
                         <Route path="/groups" component={GroupLandingPage}></Route>
                         <Route path="/groupCreation" component={GroupCreationPage}></Route>
                         <Route path="/groupPage" component={GroupPage}></Route> 
-                        <Route path="/groupPage" component={GroupMain}></Route>
+                        <Route path="/groupMain" component={GroupMain}></Route>
                         <Route path="/lessonTestPath" component={LessonPage} />
                         <Route path="/notifications" component={NotificationPage} />
                     </Switch>
