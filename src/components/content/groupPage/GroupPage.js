@@ -4,9 +4,22 @@ import './GroupPage.css';
 import Slider from '../../elements/Slider/Slider';
 import SavedItemContainer from './groupSavedItems/SavedItemContainer';
 
+import { connect } from 'react-redux';
+
+
+
 class GroupPage extends Component {
-    state = {  }
+
+    componentDidMount(){
+
+    }
+
+    
     render() { 
+
+        
+
+
         return ( 
             <div className="jumbotron group-page-container">
                 <div className="row">
@@ -69,5 +82,11 @@ class GroupPage extends Component {
          );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        groupPage: state.groups.groupPage
+    }
+}
  
-export default GroupPage;
+export default connect(mapStateToProps, null)(GroupPage);
