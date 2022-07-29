@@ -27,6 +27,8 @@ class GroupPage extends Component {
         const groupId = groupPage._id;
         console.log(`Group ID: ${groupId}`);
 
+        const {userId} = this.props;
+
 
         return ( 
             <div className="jumbotron group-page-container">
@@ -49,7 +51,7 @@ class GroupPage extends Component {
                     </div>
                     <div className="row">
                         <div className="col group-btn-container">
-                            <button className="btn btn-lg btn-primary group-page-btn" onClick={() => {this.openGroupManagementMenu()}}>Manage Group</button>
+                            <button className="btn btn-lg btn-primary group-page-btn" onClick={() => {this.openGroupManagementMenu(userId, groupId)}}>Manage Group</button>
                             <button className="btn btn-lg btn-primary group-page-btn">Group Profile</button>
                         </div>
 
