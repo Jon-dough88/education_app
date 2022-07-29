@@ -10,7 +10,7 @@ const initialState = {
     groupsFetched: false,
     groupPageLoadInProgress: false,
     groupPageFetched: false,
-    groupPage: [],
+    groupPage: null,
     groupNameExists: false,
     message: [],
     studentList: [],
