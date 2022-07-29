@@ -14,10 +14,18 @@ class GroupPage extends Component {
 
     }
 
+    openGroupManagementMenu(){
+        console.log("Group management file clicked!")
+    }
+
     
     render() { 
 
-        
+        const {groupPage} = this.props;
+        console.log(groupPage);
+
+        const groupId = groupPage._id;
+        console.log(`Group ID: ${groupId}`);
 
 
         return ( 
@@ -29,11 +37,11 @@ class GroupPage extends Component {
                             <div className="col"></div>
                             <div className="col-md-3 col-sm-2">
                                 {/* <h1>{{GroupName}}</h1> */}
-                                <h1>Group Name</h1>
+                                <h1>{groupPage.groupName}</h1>
                             </div>
                             <div className="col"></div>
-                            <div className="col-md-3 col-sm-3">
-                                <h2 className="group-subtitle">Number of students</h2>
+                            <div className="col-md-4 col-sm-3">
+                                <h2 className="group-subtitle">Number of students: {groupPage.students.length}</h2>
                             </div>
                             <div className="col"></div>
                     
@@ -41,7 +49,7 @@ class GroupPage extends Component {
                     </div>
                     <div className="row">
                         <div className="col group-btn-container">
-                            <button className="btn btn-lg btn-primary group-page-btn">Manage Group</button>
+                            <button className="btn btn-lg btn-primary group-page-btn" onClick={() => {this.openGroupManagementMenu()}}>Manage Group</button>
                             <button className="btn btn-lg btn-primary group-page-btn">Group Profile</button>
                         </div>
 
@@ -85,6 +93,7 @@ class GroupPage extends Component {
 
 const mapStateToProps = state => {
     return {
+        userId: state.users.userId,
         groupPage: state.groups.groupPage
     }
 }
