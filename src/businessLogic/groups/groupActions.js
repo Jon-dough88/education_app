@@ -21,6 +21,9 @@ export const GROUP_NAME_CHECK = 'groups/findGroup';
 export const STUDENT_LIST_FETCHING = 'groups/fetchStudentList/inProgress';
 export const STUDENT_LIST_FETCHED = 'groups/fetchStudentList/success';
 export const STUDENT_LIST_FETCH_FAILED = 'groups/fetchStudentList/failure';
+export const GROUP_MANAGEMENT_PENDING = 'groups/manageGroup/pending';
+export const GROUP_MANAGEMENT_IN_PROGRESS = 'groups/manageGroup/:groupId';
+export const GROUP_MANAGEMENT_FAILED = 'groups/manageGroup/failed';
 
 
 
@@ -73,7 +76,7 @@ export const getGroupPage = (groupId) => async dispatch => {
        }) 
 
     } catch (error) {
-        
+        console.log(error)
     }
 }
 
@@ -129,7 +132,9 @@ export const manageGroup = (userId, groupId) => async dispatch => {
     
     dispatch({type: GROUP_MANAGEMENT_PENDING})
     try {
-        
+        await axios.post(`${groupUrl}/manageGroup`, {userId, groupId})
+            .then(response => dispatch({type: GROUP_MANAGEMENT_IN_PROGRESS}))
+            .catch(err => dispatch({type: GROUP_MANAGEMENT_FAILED}))
     } catch (error) {
         
     }

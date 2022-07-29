@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 import './GroupPage.css';
 import Slider from '../../elements/Slider/Slider';
 import SavedItemContainer from './groupSavedItems/SavedItemContainer';
 
-import { connect } from 'react-redux';
+import {manageGroup} from '../../../businessLogic/groups/groupActions';
+
 
 
 
 class GroupPage extends Component {
 
+    constructor(){
+        super();
+        this.state = {}
+    }
+
     componentDidMount(){
 
     }
 
-    openGroupManagementMenu(userId, groupId){
+    manageGroup(userId, groupId){
         console.log(`The user's ID is: ${userId}. The group's ID is: ${groupId} `)
         this.props.groupManagementDidStart(userId, groupId)
+    }
+
+    openGroupManagementMenu(){
+        
     }
 
     
@@ -52,7 +64,7 @@ class GroupPage extends Component {
                     </div>
                     <div className="row">
                         <div className="col group-btn-container">
-                            <button className="btn btn-lg btn-primary group-page-btn" onClick={() => {this.openGroupManagementMenu(userId, groupId)}}>Manage Group</button>
+                            <button className="btn btn-lg btn-primary group-page-btn" onClick={() => {this.openGroupManagementMenu()}}>Manage Group</button>
                             <button className="btn btn-lg btn-primary group-page-btn">Group Profile</button>
                         </div>
 
