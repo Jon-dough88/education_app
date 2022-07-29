@@ -20,7 +20,8 @@ export const GROUP_PAGE_FETCH_FAILED = 'groups/groupPages/failure';
 export const GROUP_NAME_CHECK = 'groups/findGroup';
 export const STUDENT_LIST_FETCHING = 'groups/fetchStudentList/inProgress';
 export const STUDENT_LIST_FETCHED = 'groups/fetchStudentList/success';
-export const STUDENT_LIST_FETCH_FAILED = 'groups/fetchStudentList/failure'
+export const STUDENT_LIST_FETCH_FAILED = 'groups/fetchStudentList/failure';
+
 
 
 // Fetching all groups taught by a certain teacher
@@ -124,6 +125,15 @@ export const createNewGroup = (values, userId) => async dispatch => {
 
 // Editing a group's details (grade, level, )
 
+export const manageGroup = (userId, groupId) => async dispatch => {
+    
+    dispatch({type: GROUP_MANAGEMENT_PENDING})
+    try {
+        
+    } catch (error) {
+        
+    }
+}
 
 
 // Searching for a student's name

@@ -14,8 +14,9 @@ class GroupPage extends Component {
 
     }
 
-    openGroupManagementMenu(){
-        console.log("Group management file clicked!")
+    openGroupManagementMenu(userId, groupId){
+        console.log(`The user's ID is: ${userId}. The group's ID is: ${groupId} `)
+        this.props.groupManagementDidStart(userId, groupId)
     }
 
     
@@ -99,5 +100,11 @@ const mapStateToProps = state => {
         groupPage: state.groups.groupPage
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return{
+        groupManagementDidStart: (userId, groupId) => {dispatch(manageGroup(userId, groupId))}
+    }
+}
  
-export default connect(mapStateToProps, null)(GroupPage);
+export default connect(mapStateToProps, mapDispatchToProps)(GroupPage);
