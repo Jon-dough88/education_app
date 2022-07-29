@@ -62,7 +62,7 @@ export const getGroupPage = (groupId) => async dispatch => {
     try {
 
     //    await axios.post( `${groupUrl}/groupPages/:${groupId}`)
-       await axios.post( `${groupUrl}/groupPages`, groupId)
+       await axios.post( `${groupUrl}/groupPages`, {groupId})
 
          .then((response) => {
             dispatch({type: GROUP_PAGE_FETCH_DONE, payload: response.data})

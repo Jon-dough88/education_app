@@ -88,7 +88,8 @@ const mapStateToProps = state => {
         userName: state.users.userName,
         userId: state.users.userId,
         accessToken: state.users.accessToken,
-        groups: state.users.groups
+        groups: state.users.groups,
+        groupPage: state.groups.groupPage
     }
 }
 

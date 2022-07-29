@@ -45,7 +45,7 @@ const groupReducer = (state = initialState, action) => {
             return {...state, groupPageLoadInProgress: true, groupPageFetched: false } 
             
         case ACTIONS.GROUP_PAGE_FETCH_DONE:
-            return {...state, groupPageLoadInProgress: false, groupPageFetched: false, groupPage: action.payload }
+            return {...state, groupPageLoadInProgress: false, groupPageFetched: false, groupPage: action.payload.groups }
 
         case ACTIONS.GROUP_PAGE_FETCH_FAILED:
             return {...state, groupPageLoadInProgress: false, groupPageFetched: false, error: action.payload.error }
