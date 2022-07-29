@@ -15,7 +15,9 @@ class GroupPage extends Component {
 
     constructor(){
         super();
-        this.state = {}
+        this.state = {
+            show: false
+        }
     }
 
     componentDidMount(){
@@ -28,7 +30,7 @@ class GroupPage extends Component {
     }
 
     openGroupManagementMenu(){
-        
+        this.setState({show: true})
     }
 
     
