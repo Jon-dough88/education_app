@@ -41,12 +41,14 @@ class GroupMenu extends Component {
     render() {
 
         const {groups} = this.props;
+        const {groupPage} = this.props;
         
         const {userName} = this.props;
         const {userId} = this.props;
 
-        console.log(`Current user of the group menu is ${userName}.ID: ${userId}`)
-        console.log(`${userName}'s groups are: ${groups}`);
+        // console.log(`Current user of the group menu is ${userName}.ID: ${userId}`)
+        // console.log(`${userName}'s groups are: ${groups}`);
+        console.log(groupPage);
 
         // console.log(userId)
 
