@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import './GroupPage.css';
 import Slider from '../../elements/Slider/Slider';
 import SavedItemContainer from './groupSavedItems/SavedItemContainer';
+import GroupModal from './GroupModal/GroupModal';
 
 import {manageGroup} from '../../../businessLogic/groups/groupActions';
 
@@ -33,6 +34,10 @@ class GroupPage extends Component {
         this.setState({show: true})
     }
 
+    closeModal(){
+        this.setState({show: false})
+    }
+
     
     render() { 
 
@@ -47,6 +52,7 @@ class GroupPage extends Component {
 
         return ( 
             <div className="jumbotron group-page-container">
+                <GroupModal />
                 <div className="row">
                     <div className="col group-title">
                         
@@ -66,7 +72,7 @@ class GroupPage extends Component {
                     </div>
                     <div className="row">
                         <div className="col group-btn-container">
-                            <button className="btn btn-lg btn-primary group-page-btn" onClick={() => {this.openGroupManagementMenu()}}>Manage Group</button>
+                            <button className="btn btn-lg btn-primary group-page-btn" data-bs-toggle="modal" data-bs-target="#groupModal" onClick={() => {this.openGroupManagementMenu()}}>Manage Group</button>
                             <button className="btn btn-lg btn-primary group-page-btn">Group Profile</button>
                         </div>
 
