@@ -151,7 +151,7 @@ export const fetchStudentList = (userId, userName) => async dispatch => {
 
     try {
         
-        await axios.get(`${groupUrl}/fetchStudentList`, {userId, userName})
+        await axios.get(`${groupUrl}/fetchStudentList`)
         .then(response => dispatch({type: STUDENT_LIST_FETCHED, payload: response.data}))
         .catch(err => dispatch({type: STUDENT_LIST_FETCH_FAILED, error: err}))
 
