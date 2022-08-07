@@ -1,6 +1,6 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
-import { findGroupName } from '../../../../businessLogic/groups/groupActions';
+import { fetchStudentList, findGroupName } from '../../../../businessLogic/groups/groupActions';
 
 import './GroupModal.css';
 
@@ -20,9 +20,13 @@ class GroupModal extends Component {
 
     showStudentList =() => {
         const userId = this.props.userId;
-        console.log(userId)
+        const userName = this.props.userName;
 
-        this.props.fetchStudentList(userId);
+        console.log(`User name is '${userName}'. User ID is: ${userId} `)
+
+        
+
+        this.props.fetchStudentList( userId, userName );
     }
 
     render() { 
@@ -47,8 +51,10 @@ class GroupModal extends Component {
                                             <div className="input-group mb-3">
                                                 <label for="group-changeName">Change your group's name</label>
                                                 <input type="text" className="form-control" id="group-changeName" onFocus={() => {this.groupValidations()}} onKeyPress={(e) => {this.checkGroupExists(e)}}></input>  
-                                                { message !== null && 
-                                                    <small className="warning-message">{message}</small>
+                                                { message && message !== null 
+                                                    ? <small className="warning-message">{message}</small>
+                                                    : ''
+                                                    
                                                 }
                                                   
                                             </div>
@@ -77,13 +83,15 @@ const mapStateToProps = state => {
     return {
         userName: state.users.userName,
         userId: state.users.userId,
-        message: state.groups.message
+        message: state.groups.message,
+        studentList: state.groups.studentList
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        checkGroupExists: (userId, groupNameInput) => dispatch(findGroupName(userId, groupNameInput))
+        checkGroupExists: (userId, groupNameInput) => dispatch(findGroupName(userId, groupNameInput)),
+        fetchStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName))
     }
 }
 
