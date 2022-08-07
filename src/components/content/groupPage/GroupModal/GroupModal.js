@@ -1,15 +1,31 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
+import { findGroupName } from '../../../../businessLogic/groups/groupActions';
+
 
 class GroupModal extends Component {
 
-    state = {  } 
+
+    groupValidations =() => {
+        console.log('Group validations!!!')
+    }
+
+    checkGroupExists = (e) => {
+        const userId = this.props.userId;
+        // console.log(`User ID at 'checkGroupExists is: ${userId}`)
+        this.props.checkGroupExists(userId, e.target.value);
+    }
 
     showStudentList =() => {
-        console.log("It works!")
+        const userId = this.props.userId;
+        console.log(userId)
+
+        this.props.fetchStudentList(userId);
     }
 
     render() { 
+        // const {userName} = this.props;
+        // console.log(userName);
 
         return (
             <div class="modal" tabindex="-1" id="groupModal">
@@ -26,7 +42,7 @@ class GroupModal extends Component {
                                         <div className="form-group">
                                             <div className="input-group mb-3">
                                                 <label for="group-changeName">Change your group's name</label>
-                                                <input type="text" className="form-control" id="group-changeName"></input>    
+                                                <input type="text" className="form-control" id="group-changeName" onFocus={() => {this.groupValidations()}} onKeyPress={(e) => {this.checkGroupExists(e)}}></input>    
                                             </div>
                                             <div className="input-group mb-3">
                                                 <label for="group-addStudents">Add students</label>
@@ -51,13 +67,15 @@ class GroupModal extends Component {
 
 const mapStateToProps = state => {
     return {
-
+        userName: state.users.userName,
+        userId: state.users.userId,
+        message: state.groups.message
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        
+        checkGroupExists: (userId, groupNameInput) => dispatch(findGroupName(userId, groupNameInput))
     }
 }
 
@@ -67,20 +85,3 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(GroupModal);
 
 
-// const GroupModal = ({ handleClose, show, children }) => {
-
-//     const showHideClassName = show ? "modal display-block" : "modal display-none";
-  
-//     return (
-//       <div className={showHideClassName}>
-//         <section className="modal-main">
-//           {children}
-//           <button type="button" onClick={handleClose}>
-//             Close
-//           </button>
-//         </section>
-//       </div>
-//     );
-//   };
-
-//   export default GroupModal
