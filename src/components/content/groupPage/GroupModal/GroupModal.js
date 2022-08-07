@@ -30,8 +30,8 @@ class GroupModal extends Component {
     }
 
     render() { 
-        // const {userName} = this.props;
-        // console.log(userName);
+        const {studentList} = this.props;
+        console.log(studentList);
 
         const {message} = this.props;
 
