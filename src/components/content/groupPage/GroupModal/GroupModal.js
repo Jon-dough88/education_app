@@ -19,14 +19,14 @@ class GroupModal extends Component {
     }
 
     showStudentList =() => {
-        const userId = this.props.userId;
-        const userName = this.props.userName;
+        // const userId = this.props.userId;
+        // const userName = this.props.userName;
 
-        console.log(`User name is '${userName}'. User ID is: ${userId} `)
+        // console.log(`User name is '${userName}'. User ID is: ${userId} `)
 
         
 
-        this.props.fetchStudentList( userId, userName );
+        this.props.fetchStudentList();
     }
 
     render() { 
@@ -91,7 +91,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         checkGroupExists: (userId, groupNameInput) => dispatch(findGroupName(userId, groupNameInput)),
-        fetchStudentList: (userId, userName) => dispatch(fetchStudentList(userId, userName))
+        fetchStudentList: () => dispatch(fetchStudentList())
     }
 }
 
