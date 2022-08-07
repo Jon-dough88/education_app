@@ -60,7 +60,8 @@ class GroupModal extends Component {
                                             </div>
                                             <div className="input-group mb-3">
                                                 <label for="group-addStudents">Add students</label>
-                                                <input type="text" className="form-control" id="group-addStudents" onFocus={() => {this.showStudentList()}}></input>    
+                                                <input type="text" className="form-control" id="group-addStudents" onFocus={() => {this.showStudentList()}}></input>
+                                                <div className="studentListContainer"></div>    
                                             </div>
                                         </div>
                                     </form>
