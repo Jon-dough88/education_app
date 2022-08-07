@@ -2,6 +2,8 @@ import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { findGroupName } from '../../../../businessLogic/groups/groupActions';
 
+import './GroupModal.css';
+
 
 class GroupModal extends Component {
 
@@ -27,6 +29,8 @@ class GroupModal extends Component {
         // const {userName} = this.props;
         // console.log(userName);
 
+        const {message} = this.props;
+
         return (
             <div class="modal" tabindex="-1" id="groupModal">
                 <div class="modal-dialog">
@@ -42,7 +46,11 @@ class GroupModal extends Component {
                                         <div className="form-group">
                                             <div className="input-group mb-3">
                                                 <label for="group-changeName">Change your group's name</label>
-                                                <input type="text" className="form-control" id="group-changeName" onFocus={() => {this.groupValidations()}} onKeyPress={(e) => {this.checkGroupExists(e)}}></input>    
+                                                <input type="text" className="form-control" id="group-changeName" onFocus={() => {this.groupValidations()}} onKeyPress={(e) => {this.checkGroupExists(e)}}></input>  
+                                                { message !== null && 
+                                                    <small className="warning-message">{message}</small>
+                                                }
+                                                  
                                             </div>
                                             <div className="input-group mb-3">
                                                 <label for="group-addStudents">Add students</label>
