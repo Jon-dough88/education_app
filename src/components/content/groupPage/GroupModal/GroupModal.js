@@ -1,6 +1,9 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
+
+
 import { fetchStudentList, findGroupName } from '../../../../businessLogic/groups/groupActions';
+import StudentListItem from '../StudentListItem/StudentListItem';
 
 import './GroupModal.css';
 
@@ -60,8 +63,19 @@ class GroupModal extends Component {
                                             </div>
                                             <div className="input-group mb-3">
                                                 <label for="group-addStudents">Add students</label>
-                                                <input type="text" className="form-control" id="group-addStudents" onFocus={() => {this.showStudentList()}}></input>
-                                                <div className="studentListContainer"></div>    
+                                                <input type="text" className="form-control" id="group-addStudents" onFocus={() => {this.showStudentList()}} placeholder="Click to view the full student list."></input>
+                                                <div className="row">
+                                                    {
+                                                        studentList === null
+                                                        ? <div className="col">
+                                                                <div className="alert alert-danger">No students found!</div>
+                                                          </div>
+                                                        : studentList.map((student) => (
+                                                            <StudentListItem key={student._id} student={student} />
+                                                        ))
+                                                    }
+                        
+                                                </div>    
                                             </div>
                                         </div>
                                     </form>

@@ -1,3 +1,10 @@
 .warning-message {
     color: red;
 }
+
+.studentListContainer{
+    height: 10rem;
+    width: 20rem;
+    border: 2px solid blue;
+
+}

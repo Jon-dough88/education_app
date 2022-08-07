@@ -1,6 +1,8 @@
-import React, { component } from 'react';
+import React, { Component } from 'react';
 
 class StudentListItem extends Component {
+
+
     constructor(props) {
         super(props);
     }
@@ -10,7 +12,7 @@ class StudentListItem extends Component {
     render() { 
         return ( 
            <div className="card">
-               
+               <h3>This is the title</h3>
            </div>     
         );
     }
